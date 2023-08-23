@@ -1,18 +1,31 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: { browser: true, es6: true, node: true },
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react-hooks/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    'plugin:prettier/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: true,
+    tsconfigRootDir: __dirname,
+  },
+  plugins: ["react-refresh"],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
+    "react/react-in-jsx-scope": "off", 
+    "react-refresh/only-export-components": [
+      "warn",
       { allowConstantExport: true },
     ],
+    "@typescript-eslint/no-non-null-assertion": "off",
   },
-}
+  ignorePatterns: [".eslintrc.cjs", "vite.config.ts"],
+};
