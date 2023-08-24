@@ -7,6 +7,8 @@ const Button = styled.button`
   border: none;
   border-radius: 10px;
   background-color: #1a1200;
+
+  font-family: prentendard;
   font-size: 16px;
   font-weight: 500;
   color: #fff8e7;
