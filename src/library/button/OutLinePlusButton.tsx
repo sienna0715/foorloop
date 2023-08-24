@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import plus from '../../asset/darkPlus.svg';
+import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 
 const Button = styled.button`
   width: 115px;
@@ -13,6 +14,7 @@ const Button = styled.button`
   border-radius: 10px;
   background-color: #ffffff;
 
+  ${FONT_STYLE_V1.text.text_16_medium}
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
