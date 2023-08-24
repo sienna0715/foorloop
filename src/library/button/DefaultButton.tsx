@@ -4,12 +4,16 @@ const Button = styled.button`
   width: 80px;
   height: 40px;
   padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 10px;
   background-color: #fff8e7;
 
   font-family: prentendard;
   font-size: 16px;
+  line-height: 24px;
   font-weight: 500;
   color: #1a1200;
 
