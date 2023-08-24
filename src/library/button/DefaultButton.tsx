@@ -11,7 +11,6 @@ const Button = styled.button`
   border-radius: 10px;
   background-color: #fff8e7;
 
-  font-family: prentendard;
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
