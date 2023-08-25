@@ -24,7 +24,7 @@ const Button = styled.button`
     box-shadow: 0 0 14px #fef7e6;
   }
   &:active {
-    border-color: #fff0cc;
+    border: 1px solid #fff0cc;
     box-shadow: 0 0 14px #66470020;
   }
 `;

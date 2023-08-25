@@ -20,6 +20,14 @@ const Button = styled.button`
   line-height: 24px;
   font-weight: 500;
   color: ${PALETTE_COMPONENT.primary_black};
+
+  &:hover {
+    box-shadow: 0 0 14px #66470020;
+  }
+  &:active {
+    background-color: #fff0cc;
+    box-shadow: 0 0 14px #66470020;
+  }
 `;
 
 function FilledOutLinePlusButton() {

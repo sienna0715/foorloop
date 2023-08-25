@@ -20,6 +20,15 @@ const Button = styled.button`
   line-height: 24px;
   font-weight: 500;
   color: ${PALETTE_COMPONENT.primary_black};
+
+  &:hover {
+    border-color: #fff0cc;
+    box-shadow: 0 0 14px #66470020;
+  }
+  &:active {
+    border-color: #ffd166;
+    box-shadow: 0 0 14px #66470020;
+  }
 `;
 
 function ROutLinePlusButton() {

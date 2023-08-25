@@ -20,6 +20,14 @@ const Button = styled.button`
   line-height: 24px;
   font-weight: 500;
   color: #fff8e7;
+
+  &:hover {
+    box-shadow: 0 0 14px #fef7e6;
+  }
+  &:active {
+    border: 1px solid #fff0cc;
+    box-shadow: 0 0 14px #66470020;
+  }
 `;
 
 function RDarkPlusButton() {
