@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
+import { PALETTE_COMPONENT } from '../../styles/colors';
 
 const Button = styled.button`
   width: 80px;
@@ -16,7 +17,7 @@ const Button = styled.button`
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
-  color: #1a1200;
+  color: ${PALETTE_COMPONENT.primary_black};
 
   &:hover {
     border-color: #fff0cc;
