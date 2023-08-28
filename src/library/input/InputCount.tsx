@@ -3,6 +3,7 @@ import styled from 'styled-components';
 // components
 import { PALETTE_COMPONENT } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
+import Delete from '../../assets/input-delete.png';
 
 const InputWrap = styled.div`
   width: 400px;
@@ -40,16 +41,7 @@ const TextLength = styled.span`
   top: 70px;
   right: 10px;
 `;
-const DeleteBtn = styled.button`
-  background-color: ${PALETTE_COMPONENT.gray03};
-  color: ${PALETTE_COMPONENT.primary_white};
-  width: 30px;
-  height: 15px;
-  font-size: 5px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-`;
+const DeleteBtn = styled.img``;
 
 export default function InputCount() {
   const [value, setValue] = useState('');
@@ -73,7 +65,7 @@ export default function InputCount() {
         />
       </InputContainer>
       {isFocus && count !== 0 && (
-        <DeleteBtn onClick={() => setValue('')}>X</DeleteBtn>
+        <DeleteBtn src={Delete} onClick={() => setValue('')} />
       )}
       <TextLength>{count}/50</TextLength>
     </InputWrap>
