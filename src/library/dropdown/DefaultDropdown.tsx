@@ -36,6 +36,7 @@ const Dropdown = styled.div`
 
 const DropdownList = styled(Result)`
   border: none;
+  border-radius: 0;
   &:hover {
     background-color: #fff0cc;
   }
