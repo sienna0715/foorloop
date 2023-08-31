@@ -3,9 +3,9 @@ import styled from 'styled-components';
 // components
 import { PALETTE_COMPONENT } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
-import Delete from '../../assets/input-delete.png';
-import Alert from '../../assets/input-alert.png';
-import Check from '../../assets/input-check.png';
+import DeleteIcon from '../../assets/input-delete.svg';
+import AlertIcon from '../../assets/input-alert.svg';
+import CheckIcon from '../../assets/input-check.svg';
 
 const InputForm = styled.form`
   border: 1px solid ${PALETTE_COMPONENT.gray03};
@@ -24,7 +24,8 @@ const InputWrap = styled.div`
   border: 1px solid ${PALETTE_COMPONENT.gray03};
   border-radius: 4px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
 `;
 const InputContainer = styled.div`
   width: 350px;
@@ -49,27 +50,33 @@ const Input = styled.input`
 `;
 const DeleteBtn = styled.img`
   padding-right: 0.5rem;
+  cursor: pointer;
 `;
-const ResultImg = styled.img``;
+const ResultImg = styled.img`
+  width: 16px;
+  height: 16px;
+`;
 
-export default function InputCheck() {
+export default function InputCheckIcon() {
   const [value, setValue] = useState('');
   const [isFocus, setIsFocus] = useState(false);
-  const [check, isCheck] = useState(false);
+  const [checkIcon, isCheckIcon] = useState(false);
   const count = value.length;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleCheck = () => {
     if (count > 8) {
-      isCheck(true);
+      isCheckIcon(true);
+    } else {
+      isCheckIcon(false);
     }
   };
 
   return (
-    <InputForm onChange={handleSubmit}>
+    <InputForm onChange={handleCheck}>
       {count === 0 ? (
         <InputWrap>
           <InputContainer>
@@ -83,28 +90,11 @@ export default function InputCheck() {
             />
           </InputContainer>
           {isFocus && count !== 0 && (
-            <DeleteBtn src={Delete} onClick={() => setValue('')} />
+            <DeleteBtn src={DeleteIcon} onClick={() => setValue('')} />
           )}
-        </InputWrap>
-      ) : check ? (
-        <InputWrap className="success">
-          <InputContainer>
-            <Label>아이디</Label>
-            <Input
-              type="text"
-              placeholder="id"
-              value={value}
-              onFocus={() => setIsFocus(true)}
-              onChange={handleChange}
-            />
-          </InputContainer>
-          {isFocus && count !== 0 && (
-            <DeleteBtn src={Delete} onClick={() => setValue('')} />
-          )}
-          <ResultImg src={Check} onClick={() => setValue('')} />
         </InputWrap>
       ) : (
-        <InputWrap className="error">
+        <InputWrap className={checkIcon ? 'success' : 'error'}>
           <InputContainer>
             <Label>아이디</Label>
             <Input
@@ -116,9 +106,12 @@ export default function InputCheck() {
             />
           </InputContainer>
           {isFocus && count !== 0 && (
-            <DeleteBtn src={Delete} onClick={() => setValue('')} />
+            <DeleteBtn src={DeleteIcon} onClick={() => setValue('')} />
           )}
-          <ResultImg src={Alert} onClick={() => setValue('')} />
+          <ResultImg
+            src={checkIcon ? CheckIcon : AlertIcon}
+            onClick={() => setValue('')}
+          />
         </InputWrap>
       )}
     </InputForm>
