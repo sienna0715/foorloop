@@ -52,7 +52,7 @@ const DeleteBtn = styled.img`
   padding-right: 0.5rem;
   cursor: pointer;
 `;
-const ResultImg = styled.img`
+const ResultIcon = styled.img`
   width: 16px;
   height: 16px;
 `;
@@ -108,7 +108,7 @@ export default function InputCheckIcon() {
           {isFocus && count !== 0 && (
             <DeleteBtn src={DeleteIcon} onClick={() => setValue('')} />
           )}
-          <ResultImg
+          <ResultIcon
             src={checkIcon ? CheckIcon : AlertIcon}
             onClick={() => setValue('')}
           />
