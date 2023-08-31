@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // components
 import { PALETTE_COMPONENT } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
-import Delete from '../../assets/input-delete.png';
+import DeleteIcon from '../../assets/input-delete.svg';
 
 const InputWrap = styled.div`
   width: 400px;
@@ -12,7 +12,8 @@ const InputWrap = styled.div`
   border: 1px solid ${PALETTE_COMPONENT.gray03};
   border-radius: 4px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
 `;
 const InputContainer = styled.div`
   width: 350px;
@@ -28,14 +29,18 @@ const Label = styled.label`
 `;
 const Input = styled.input`
   ${FONT_STYLE_V1.text.text_10_medium};
+  width: 100%;
   outline: none;
   border: none;
-  width: 100%;
   &::placeholder {
     color: ${PALETTE_COMPONENT.gray03};
   }
 `;
-const DeleteBtn = styled.img``;
+const DeleteBtn = styled.img`
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+`;
 
 export default function InputDefault() {
   const [value, setValue] = useState('');
@@ -60,7 +65,7 @@ export default function InputDefault() {
         />
       </InputContainer>
       {isFocus && count !== 0 && (
-        <DeleteBtn src={Delete} onClick={() => setValue('')} />
+        <DeleteBtn src={DeleteIcon} onClick={() => setValue('')} />
       )}
     </InputWrap>
   );
