@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { styled } from 'styled-components';
 // components
 import { PALETTE_COMPONENT } from '../../styles/colors';
-import Check from '../../assets/checkbox-white.png';
+import Check from '../../assets/checkbox-white.svg';
 
 const CheckboxWrap = styled.div`
   width: 25px;
