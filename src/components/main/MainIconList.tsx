@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
 import arrowB from '../../asset/arrow.svg';
+import data from '../../data/iconData';
 
 const Container = styled.div`
   width: 100vw;
@@ -39,10 +40,16 @@ const SideList = styled.div`
 `;
 
 const SideListContent = styled.div`
-  height: 100%;
+  width: 50%;
+  overflow: hidden;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 80px;
+`;
+
+const LeftSideListContent = styled(SideListContent)`
+  justify-content: flex-start;
 `;
 
 const SideListContentItem = styled.div`
@@ -56,6 +63,9 @@ const SideListContentItem = styled.div`
 const SideListContentItemIcon = styled.div`
   width: 160px;
   height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid ${PALETTE_COMPONENT.primary_beige};
   border-radius: 50%;
 `;
@@ -86,6 +96,9 @@ const SelectIcon = styled.div`
 const SelectIconImg = styled.div`
   width: 400px;
   height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   background-color: ${PALETTE_COMPONENT.primary_beige};
 `;
@@ -113,23 +126,16 @@ const LeftArrowButtonBorder = styled(ArrowButtonBorder)`
   transform: rotate(0.5turn);
 `;
 
+interface IMainIconList {
+  icon: (color: string, size: number) => string;
+  name: string;
+}
+
 function MainIconList() {
-  const [page, setPage] = useState<number>(2);
-  const [data, setData] = useState<string[]>([
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-  ]);
-  const [prevDatas, setPrevDatas] = useState<string[]>([]);
-  const [selectDatas, setSelectDatas] = useState('');
-  const [nextDatas, setNextDatas] = useState<string[]>([]);
+  const [page, setPage] = useState<number>(0);
+  const [prevDatas, setPrevDatas] = useState<IMainIconList[]>([]);
+  const [selectDatas, setSelectDatas] = useState<IMainIconList>(data[0]);
+  const [nextDatas, setNextDatas] = useState<IMainIconList[]>([]);
 
   useEffect(() => {
     const pre = data.slice(page - 4);
@@ -149,7 +155,7 @@ function MainIconList() {
     }
 
     setNextDatas(next);
-  }, [data, page]);
+  }, [page]);
 
   console.log(prevDatas, selectDatas, nextDatas);
 
@@ -159,25 +165,33 @@ function MainIconList() {
       <ListContainer>
         <SideList>
           <SideListContent>
-            <SideListContentItem>
-              <SideListContentItemIcon />
-              <SideListContentItemText>텍스트</SideListContentItemText>
-            </SideListContentItem>
-            <SideListContentItem>
-              <SideListContentItemIcon />
-              <SideListContentItemText>텍스트</SideListContentItemText>
-            </SideListContentItem>
+            {prevDatas.map((prevData) => (
+              <SideListContentItem>
+                <SideListContentItemIcon
+                  dangerouslySetInnerHTML={{
+                    __html: prevData.icon(PALETTE_COMPONENT.primary_beige, 55),
+                  }}
+                />
+                <SideListContentItemText>
+                  {prevData.name}
+                </SideListContentItemText>
+              </SideListContentItem>
+            ))}
           </SideListContent>
-          <SideListContent>
-            <SideListContentItem>
-              <SideListContentItemIcon />
-              <SideListContentItemText>텍스트</SideListContentItemText>
-            </SideListContentItem>
-            <SideListContentItem>
-              <SideListContentItemIcon />
-              <SideListContentItemText>텍스트</SideListContentItemText>
-            </SideListContentItem>
-          </SideListContent>
+          <LeftSideListContent>
+            {nextDatas.map((nextData) => (
+              <SideListContentItem>
+                <SideListContentItemIcon
+                  dangerouslySetInnerHTML={{
+                    __html: nextData.icon(PALETTE_COMPONENT.primary_beige, 55),
+                  }}
+                />
+                <SideListContentItemText>
+                  {nextData.name}
+                </SideListContentItemText>
+              </SideListContentItem>
+            ))}
+          </LeftSideListContent>
         </SideList>
         <ArrowButton>
           <ArrowButtonBorder>
@@ -188,8 +202,12 @@ function MainIconList() {
           </LeftArrowButtonBorder>
         </ArrowButton>
         <SelectIcon>
-          <SelectIconImg />
-          <SelectIconText>텍스트</SelectIconText>
+          <SelectIconImg
+            dangerouslySetInnerHTML={{
+              __html: selectDatas.icon(PALETTE_COMPONENT.primary_black, 140),
+            }}
+          />
+          <SelectIconText>{selectDatas.name}</SelectIconText>
         </SelectIcon>
       </ListContainer>
     </Container>
