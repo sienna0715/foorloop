@@ -138,13 +138,23 @@ function MainIconList() {
   const [nextDatas, setNextDatas] = useState<IMainIconList[]>([]);
 
   useEffect(() => {
-    const pre = data.slice(page - 4);
+    if (page < 4) {
+      const pre = data.slice(page - 4);
 
-    if (pre.length < 4) {
-      pre.push(...data.slice(0, 4 - pre.length));
+      if (pre.length < 4) {
+        pre.push(...data.slice(0, 4 - pre.length));
+      }
+
+      setPrevDatas(pre);
+    } else {
+      const pre = data.slice(page - 4, page);
+
+      if (pre.length < 4) {
+        pre.push(...data.slice(0, 4 - pre.length));
+      }
+
+      setPrevDatas(pre);
     }
-
-    setPrevDatas(pre);
 
     setSelectDatas(data[page]);
 
@@ -157,7 +167,21 @@ function MainIconList() {
     setNextDatas(next);
   }, [page]);
 
-  console.log(prevDatas, selectDatas, nextDatas);
+  const rightArrowButtonHandler = () => {
+    if (page === 0) {
+      setPage(data.length - 1);
+    } else {
+      setPage((prev) => prev - 1);
+    }
+  };
+
+  const leftArrowButtonHandler = () => {
+    if (page === data.length - 1) {
+      setPage(0);
+    } else {
+      setPage((prev) => prev + 1);
+    }
+  };
 
   return (
     <Container>
@@ -194,10 +218,10 @@ function MainIconList() {
           </LeftSideListContent>
         </SideList>
         <ArrowButton>
-          <ArrowButtonBorder>
+          <ArrowButtonBorder onClick={rightArrowButtonHandler}>
             <img src={arrowB} alt="right arrowButton" />
           </ArrowButtonBorder>
-          <LeftArrowButtonBorder>
+          <LeftArrowButtonBorder onClick={leftArrowButtonHandler}>
             <img src={arrowB} alt="left arrowButton" />
           </LeftArrowButtonBorder>
         </ArrowButton>
