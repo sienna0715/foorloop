@@ -10,4 +10,7 @@ export const PALETTE_COMPONENT = {
   gray04: '#A5A5A5',
 };
 
-export const PALLETTE_MAIN = {};
+export const PALLETTE_MAIN = {
+  main: '#171717',
+  sub_main: '#FFF8E7',
+};
