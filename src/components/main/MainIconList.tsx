@@ -5,8 +5,7 @@ import arrowB from '../../asset/arrow.svg';
 import data from '../../data/iconData';
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -16,10 +15,10 @@ const Container = styled.div`
 
 const Title = styled.div`
   position: absolute;
-  margin-bottom: 35%;
-  font-size: 100px;
+  margin-bottom: 43rem;
+  font-size: 6.25rem;
   font-weight: 400;
-  line-height: 40px;
+  line-height: 2.5rem;
   color: ${PALETTE_COMPONENT.primary_beige};
 `;
 
@@ -32,11 +31,11 @@ const ListContainer = styled.div`
 const SideList = styled.div`
   position: absolute;
   width: 100%;
-  height: 200px;
+  height: 12.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 45%;
+  gap: 56.25rem;
 `;
 
 const SideListContent = styled.div`
@@ -45,7 +44,7 @@ const SideListContent = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 80px;
+  gap: 5rem;
 `;
 
 const LeftSideListContent = styled(SideListContent)`
@@ -57,12 +56,12 @@ const SideListContentItem = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 `;
 
 const SideListContentItemIcon = styled.div`
-  width: 160px;
-  height: 160px;
+  width: 10rem;
+  height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,8 +70,8 @@ const SideListContentItemIcon = styled.div`
 `;
 
 const SideListContentItemText = styled.div`
-  height: 30px;
-  font-size: 24px;
+  height: 1.875rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: ${PALETTE_COMPONENT.primary_beige};
 `;
@@ -83,7 +82,7 @@ const ArrowButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25%;
+  gap: 32.5rem;
 `;
 
 const SelectIcon = styled.div`
@@ -94,8 +93,8 @@ const SelectIcon = styled.div`
 `;
 
 const SelectIconImg = styled.div`
-  width: 400px;
-  height: 400px;
+  width: 25rem;
+  height: 25rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,15 +104,20 @@ const SelectIconImg = styled.div`
 
 const SelectIconText = styled.div`
   position: absolute;
-  height: 570px;
+  height: 42.25rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
 
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: 400;
   color: ${PALETTE_COMPONENT.primary_beige};
+
+  > div {
+    padding: 1.25rem 3.125rem;
+    background-color: ${PALETTE_COMPONENT.primary_black};
+  }
 `;
 
 const ArrowButtonBorder = styled.div`
@@ -231,7 +235,9 @@ function MainIconList() {
               __html: selectDatas.icon(PALETTE_COMPONENT.primary_black, 140),
             }}
           />
-          <SelectIconText>{selectDatas.name}</SelectIconText>
+          <SelectIconText>
+            <div>{selectDatas.name}</div>
+          </SelectIconText>
         </SelectIcon>
       </ListContainer>
     </Container>

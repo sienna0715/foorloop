@@ -3,8 +3,7 @@ import MainIconBackground from './MainIconBackground';
 import MainIconList from './MainIconList';
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
