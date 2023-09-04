@@ -1,24 +1,47 @@
-import { styled } from 'styled-components';
+import { styled, keyframes } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
 
+const rotate = keyframes`
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(1turn);
+  }
+`;
+
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: ${PALETTE_COMPONENT.primary_black};
-  > svg {
-    position: absolute;
-  }
+  overflow: hidden;
+`;
+
+const OutterSvg = styled.svg`
+  position: absolute;
+  animation: ${rotate} 15s linear infinite;
+`;
+
+const MiddleSvg = styled.svg`
+  position: absolute;
+  animation: ${rotate} 15s linear infinite;
+`;
+
+const InnerSvg = styled.svg`
+  position: absolute;
+  animation: ${rotate} 15s linear infinite;
 `;
 
 function MainIconBackground() {
   return (
     <Container>
-      <svg
+      <OutterSvg
         width="1600"
-        height="1080"
+        height="1700"
         viewBox="0 0 1600 1080"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -45,9 +68,9 @@ function MainIconBackground() {
           strokeOpacity="0.05"
           strokeWidth="2"
         />
-      </svg>
+      </OutterSvg>
 
-      <svg
+      <MiddleSvg
         width="1000"
         height="1000"
         viewBox="0 0 1000 1000"
@@ -72,9 +95,9 @@ function MainIconBackground() {
           strokeOpacity="0.1"
           strokeWidth="2"
         />
-      </svg>
+      </MiddleSvg>
 
-      <svg
+      <InnerSvg
         width="600"
         height="600"
         viewBox="0 0 600 600"
@@ -89,7 +112,7 @@ function MainIconBackground() {
           strokeOpacity="0.1"
           strokeWidth="2"
         />
-      </svg>
+      </InnerSvg>
     </Container>
   );
 }
