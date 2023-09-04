@@ -1,7 +1,8 @@
 import './App.css';
+import Main from './pages/Main';
 
 function App() {
-  return <div>배포 확인?!</div>;
+  return <Main />;
 }
 
 export default App;
