@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import MainColorTypographyTypographyTitle from './MainC&TTypographyTitle';
-import MainColorTypographyTypographyF from './MainC&TTypographyF';
+
 import MainColorTypographyTypographyT from './MainC&TTypographyT';
+import MainColorTypographyTypographyF from './MainC&TTypographyF';
 import MainColorTypographyTypographyL from './MainC&TTypographyL';
 
 const Container = styled.div`
