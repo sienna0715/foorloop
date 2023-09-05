@@ -9,6 +9,7 @@ const LandingWrap = styled.div`
   width: 100%;
   height: min-content;
   position: relative;
+  margin-bottom: 3rem;
 `;
 const LandingContainer = styled.div`
   margin: 0 10rem;

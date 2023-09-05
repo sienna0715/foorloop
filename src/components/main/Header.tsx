@@ -4,7 +4,7 @@ import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 const HeaderWrap = styled.div`
   width: 100%;
   height: 80px;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 `;
 const HeaderContainer = styled.div`
   height: 80px;
