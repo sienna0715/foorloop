@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
-import arrowB from '../../asset/arrow.svg';
+import arrowB from '../../assets/arrowButton.svg';
 import data from '../../data/iconData';
 
 const Container = styled.div`
