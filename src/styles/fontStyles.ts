@@ -42,6 +42,10 @@ export const FONT_STYLE_V1 = {
       font-family: 'Pretendard-Medium';
       font-size: 30px;
     `,
+    text_40_medium: css`
+      font-family: 'Pretendard-Medium';
+      font-size: 40px;
+    `,
     text_100_medium: css`
       font-family: 'Pretendard-Medium';
       font-size: 100px;

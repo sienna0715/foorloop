@@ -48,13 +48,12 @@ function IntroSVG() {
             x1="50%"
             y1="950"
             x2="50%"
-            y2="1300"
+            y2="1400"
             strokeWidth={3}
             stroke={PALLETTE_MAIN.sub_main}
           />
         </BottomTransfer>
-
-        <BottomContainer width="100%" height="100%" viewBox="0 0 1940 1600">
+        <BottomContainer width="100%" height="100%" viewBox="0 0 1940 1700">
           <BottomPath
             d="M970 1040 C 970 1200, 800 1200, 800 1200"
             fill="none"
@@ -99,7 +98,7 @@ function IntroSVG() {
             x1="300"
             y1="1350"
             x2="300"
-            y2="1550"
+            y2="1750"
             strokeWidth={3}
             stroke={PALLETTE_MAIN.sub_main}
           />
@@ -107,7 +106,7 @@ function IntroSVG() {
             x1="1650"
             y1="1350"
             x2="1650"
-            y2="1550"
+            y2="1750"
             strokeWidth={3}
             stroke={PALLETTE_MAIN.sub_main}
           />

@@ -4,7 +4,7 @@ import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import { BREAKPOINTDESKTOP } from '../../breakpoint';
 import IntroSVG from './IntroSVG';
-import { ReactComponent as ArrowIcon } from '../../assets/arrow.svg';
+import ArrowButton from '../ArrowButton';
 
 const IntroWrap = styled.div`
   width: 100%;
@@ -61,22 +61,6 @@ const Content = styled.span`
     padding: 0;
   }
 `;
-const Button = styled.button`
-  padding: 1rem;
-  border-radius: 50%;
-  border: 3px solid ${PALLETTE_MAIN.sub_main};
-  background-color: transparent;
-  cursor: pointer;
-  &:hover {
-    background-color: ${PALLETTE_MAIN.sub_main};
-    .icon {
-      fill: ${PALLETTE_MAIN.main};
-    }
-  }
-  .icon {
-    fill: ${PALLETTE_MAIN.sub_main};
-  }
-`;
 
 function Intro() {
   return (
@@ -98,9 +82,7 @@ function Intro() {
           </Content>
         </TextContainer>
         <ButtonBox>
-          <Button>
-            <ArrowIcon className="icon" />
-          </Button>
+          <ArrowButton />
         </ButtonBox>
       </IntroContainer>
     </IntroWrap>
