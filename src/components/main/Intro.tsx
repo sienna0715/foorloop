@@ -4,15 +4,18 @@ import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import { BREAKPOINTDESKTOP } from '../../breakpoint';
 import IntroSVG from './IntroSVG';
-import { ReactComponent as ArrowIcon } from '../../assets/arrow.svg';
+import ArrowButton from '../ArrowButton';
 
 const IntroWrap = styled.div`
   width: 100%;
   margin-top: 8rem;
+  display: flex;
+  justify-content: center;
   position: relative;
 `;
 const IntroContainer = styled.div`
-  height: max-content;
+  max-width: 1800px;
+  max-height: max-content;
   margin: 0 10rem;
   padding: 5rem;
   border: 3px solid ${PALLETTE_MAIN.sub_main};
@@ -24,10 +27,10 @@ const IntroContainer = styled.div`
 `;
 const TextContainer = styled.div`
   display: flex;
+  margin-bottom: 3rem;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3rem;
   }
 `;
 const TitleBox = styled.div`
@@ -49,28 +52,13 @@ const Title = styled.div`
 `;
 const Content = styled.span`
   ${FONT_STYLE_V1.text.text_24_medium};
+  min-width: 500px;
   letter-spacing: 2px;
   line-height: 1.5;
   padding-left: 5rem;
   padding-top: 2rem;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     padding: 0;
-  }
-`;
-const Button = styled.button`
-  padding: 1rem;
-  border-radius: 50%;
-  border: 2px solid ${PALLETTE_MAIN.sub_main};
-  background-color: transparent;
-  cursor: pointer;
-  &:hover {
-    background-color: ${PALLETTE_MAIN.sub_main};
-    .icon {
-      fill: ${PALLETTE_MAIN.main};
-    }
-  }
-  .icon {
-    fill: ${PALLETTE_MAIN.sub_main};
   }
 `;
 
@@ -94,9 +82,7 @@ function Intro() {
           </Content>
         </TextContainer>
         <ButtonBox>
-          <Button>
-            <ArrowIcon className="icon" />
-          </Button>
+          <ArrowButton />
         </ButtonBox>
       </IntroContainer>
     </IntroWrap>
