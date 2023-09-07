@@ -1,5 +1,6 @@
 // components
 import Contents from '../components/main/Contents';
+import Footer from '../components/main/Footer';
 import Header from '../components/main/Header';
 import Intro from '../components/main/Intro';
 import Landing from '../components/main/Landing';
@@ -17,6 +18,7 @@ function Main() {
       <MainIcon />
       <MainColorTypography />
       <MainComponent />
+      <Footer />
     </>
   );
 }
