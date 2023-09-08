@@ -281,7 +281,7 @@ const data = [
   </defs>
   </svg>
   `,
-    name: 'Download',
+    name: 'Download2',
   },
   {
     icon: (
@@ -405,7 +405,7 @@ const data = [
   </defs>
   </svg>
   `,
-    name: 'Snow',
+    name: 'Snow2',
   },
   {
     icon: (color: string, size: number) => `<svg width=${size} height=${
