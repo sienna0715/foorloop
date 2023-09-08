@@ -188,6 +188,10 @@ function MainIconList() {
     }
   };
 
+  const sideItemClickHandler = (name: string) => {
+    setPage(data.map((el) => el.name).indexOf(name));
+  };
+
   return (
     <Container>
       <Title>ICON</Title>
@@ -195,7 +199,9 @@ function MainIconList() {
         <SideList>
           <SideListContent>
             {prevDatas.map((prevData) => (
-              <SideListContentItem>
+              <SideListContentItem
+                onClick={() => sideItemClickHandler(prevData.name)}
+              >
                 <SideListContentItemIcon
                   dangerouslySetInnerHTML={{
                     __html: prevData.icon(PALETTE_COMPONENT.primary_beige, 55),
@@ -209,7 +215,9 @@ function MainIconList() {
           </SideListContent>
           <LeftSideListContent>
             {nextDatas.map((nextData) => (
-              <SideListContentItem>
+              <SideListContentItem
+                onClick={() => sideItemClickHandler(nextData.name)}
+              >
                 <SideListContentItemIcon
                   dangerouslySetInnerHTML={{
                     __html: nextData.icon(PALETTE_COMPONENT.primary_beige, 55),
