@@ -200,6 +200,7 @@ function MainIconList() {
           <SideListContent>
             {prevDatas.map((prevData) => (
               <SideListContentItem
+                key={data.map((el) => el.name).indexOf(prevData.name)}
                 onClick={() => sideItemClickHandler(prevData.name)}
               >
                 <SideListContentItemIcon
@@ -216,6 +217,7 @@ function MainIconList() {
           <LeftSideListContent>
             {nextDatas.map((nextData) => (
               <SideListContentItem
+                key={data.map((el) => el.name).indexOf(nextData.name)}
                 onClick={() => sideItemClickHandler(nextData.name)}
               >
                 <SideListContentItemIcon
