@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
-import arrowB from '../../assets/arrowButton.svg';
 import data from '../../data/iconData';
+import ArrowButton from '../ArrowButton';
 
 const Container = styled.div`
   width: 100%;
@@ -76,7 +76,7 @@ const SideListContentItemText = styled.div`
   color: ${PALETTE_COMPONENT.primary_beige};
 `;
 
-const ArrowButton = styled.div`
+const ArrowButtonContainer = styled.div`
   position: absolute;
   width: 100%;
   display: flex;
@@ -124,10 +124,11 @@ const ArrowButtonBorder = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: rotate(0.5turn);
 `;
 
 const LeftArrowButtonBorder = styled(ArrowButtonBorder)`
-  transform: rotate(0.5turn);
+  transform: none;
 `;
 
 interface IMainIconList {
@@ -187,6 +188,10 @@ function MainIconList() {
     }
   };
 
+  const sideItemClickHandler = (name: string) => {
+    setPage(data.map((el) => el.name).indexOf(name));
+  };
+
   return (
     <Container>
       <Title>ICON</Title>
@@ -194,7 +199,10 @@ function MainIconList() {
         <SideList>
           <SideListContent>
             {prevDatas.map((prevData) => (
-              <SideListContentItem>
+              <SideListContentItem
+                key={data.map((el) => el.name).indexOf(prevData.name)}
+                onClick={() => sideItemClickHandler(prevData.name)}
+              >
                 <SideListContentItemIcon
                   dangerouslySetInnerHTML={{
                     __html: prevData.icon(PALETTE_COMPONENT.primary_beige, 55),
@@ -208,7 +216,10 @@ function MainIconList() {
           </SideListContent>
           <LeftSideListContent>
             {nextDatas.map((nextData) => (
-              <SideListContentItem>
+              <SideListContentItem
+                key={data.map((el) => el.name).indexOf(nextData.name)}
+                onClick={() => sideItemClickHandler(nextData.name)}
+              >
                 <SideListContentItemIcon
                   dangerouslySetInnerHTML={{
                     __html: nextData.icon(PALETTE_COMPONENT.primary_beige, 55),
@@ -221,14 +232,14 @@ function MainIconList() {
             ))}
           </LeftSideListContent>
         </SideList>
-        <ArrowButton>
+        <ArrowButtonContainer>
           <ArrowButtonBorder onClick={rightArrowButtonHandler}>
-            <img src={arrowB} alt="right arrowButton" />
+            <ArrowButton />
           </ArrowButtonBorder>
           <LeftArrowButtonBorder onClick={leftArrowButtonHandler}>
-            <img src={arrowB} alt="left arrowButton" />
+            <ArrowButton />
           </LeftArrowButtonBorder>
-        </ArrowButton>
+        </ArrowButtonContainer>
         <SelectIcon>
           <SelectIconImg
             dangerouslySetInnerHTML={{
