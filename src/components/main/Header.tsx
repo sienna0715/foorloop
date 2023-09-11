@@ -9,7 +9,7 @@ import { ReactComponent as Hamberger } from '../../assets/list.svg';
 
 const HeaderWrap = styled.div`
   width: 100%;
-  height: 80px;
+  height: 85px;
   margin-bottom: 5rem;
   display: flex;
   justify-content: center;
@@ -29,7 +29,7 @@ const HeaderContainer = styled.div`
   align-items: center;
 `;
 const Logo = styled.span`
-  ${FONT_STYLE_V1.text.text_24_medium};
+  ${FONT_STYLE_V1.text.text_14_medium};
   padding-right: 1rem;
   cursor: pointer;
 `;
@@ -46,14 +46,14 @@ const Button = styled.button`
   }
 `;
 const MenuBox = styled.ul`
-  ${FONT_STYLE_V1.text.text_18_medium};
+  ${FONT_STYLE_V1.text.text_14_medium};
   display: flex;
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     display: none;
   }
 `;
 const MMenuBox = styled.ul`
-  ${FONT_STYLE_V1.text.text_18_medium};
+  ${FONT_STYLE_V1.text.text_14_medium};
   display: flex;
   flex-direction: column;
   align-items: center;
