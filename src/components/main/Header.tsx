@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { styled } from 'styled-components';
+import { keyframes, styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 // components
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
@@ -46,14 +46,24 @@ const Button = styled.button`
   }
 `;
 const MenuBox = styled.ul`
-  ${FONT_STYLE_V1.text.text_14_medium};
+  ${FONT_STYLE_V1.text.text_12_medium};
   display: flex;
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     display: none;
   }
 `;
-const MMenuBox = styled.ul`
-  ${FONT_STYLE_V1.text.text_14_medium};
+const menuSlideOpen = keyframes`
+  from {
+    visibility: hidden;
+    height: 20vh;
+  }
+  to {
+    visibility: visible;
+    height: 100vh;
+  }
+`;
+const MMenuBox = styled.ul<{ isSlide: boolean }>`
+  ${FONT_STYLE_V1.text.text_12_medium};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,10 +73,12 @@ const MMenuBox = styled.ul`
   position: absolute;
   top: 80px;
   z-index: 999;
+  animation: ${menuSlideOpen} 1s ease;
   @media screen and (min-width: ${BREAKPOINTMOBILE}px) {
     display: none;
   }
 `;
+
 const Menu = styled.li`
   width: max-content;
   cursor: pointer;
@@ -104,7 +116,7 @@ function Header() {
         </Button>
       </HeaderContainer>
       {isMenu && (
-        <MMenuBox>
+        <MMenuBox isSlide={isMenu}>
           <Menu>components</Menu>
           <Menu>icon</Menu>
           <Menu>about us</Menu>
