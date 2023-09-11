@@ -7,7 +7,7 @@ import ArrowButton from '../ArrowButton';
 const ContentsWrap = styled.div`
   width: 100%;
   margin-top: -15rem;
-  margin-bottom: 10rem;
+  margin-bottom: 15.6rem;
 `;
 const ContentsContainer = styled.div`
   margin: 0 10rem;

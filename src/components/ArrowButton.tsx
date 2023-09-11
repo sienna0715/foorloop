@@ -1,22 +1,32 @@
 import { styled } from 'styled-components';
 // components
 import { PALLETTE_MAIN } from '../styles/colors';
-import { ReactComponent as ArrowIcon } from '../assets/arrow.svg';
+import { ReactComponent as ArrowIcon } from '../assets/arrowButton.svg';
 
 const Button = styled.button`
-  padding: 1rem;
-  border-radius: 50%;
-  border: 3px solid ${PALLETTE_MAIN.sub_main};
+  border: none;
   background-color: transparent;
+  transform: rotate(0.5turn);
   cursor: pointer;
-  &:hover {
-    background-color: ${PALLETTE_MAIN.sub_main};
-    .icon {
+  .icon {
+    circle {
       fill: ${PALLETTE_MAIN.main};
+      stroke: ${PALLETTE_MAIN.sub_main};
+    }
+    path {
+      fill: ${PALLETTE_MAIN.sub_main};
     }
   }
-  .icon {
-    fill: ${PALLETTE_MAIN.sub_main};
+  &:hover {
+    .icon {
+      circle {
+        fill: ${PALLETTE_MAIN.sub_main};
+        stroke: ${PALLETTE_MAIN.sub_main};
+      }
+      path {
+        fill: ${PALLETTE_MAIN.main};
+      }
+    }
   }
 `;
 
