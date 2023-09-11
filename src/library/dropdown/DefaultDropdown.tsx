@@ -8,12 +8,12 @@ const Container = styled.div`
 `;
 
 const Result = styled.div<{ isDropdown?: boolean }>`
-  width: 100%;
+  width: 300px;
   height: 50px;
   padding: 12px;
   display: flex;
   align-items: center;
-
+  background-color: ${PALETTE_COMPONENT.primary_white};
   border: 1px solid ${PALETTE_COMPONENT.gray03};
   border-radius: ${(props) => (props.isDropdown ? '10px 10px 0 0' : '10px')};
 
