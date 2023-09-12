@@ -68,7 +68,7 @@ const menuSlideOpen = keyframes`
     height: 100vh;
   }
 `;
-const MMenuBox = styled.ul<{ isSlide: boolean }>`
+const MMenuBox = styled.ul`
   ${FONT_STYLE_V1.text.text_14_medium};
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@ function Header() {
         </Button>
       </HeaderContainer>
       {isMenu && (
-        <MMenuBox isSlide={isMenu}>
+        <MMenuBox>
           <Menu>components</Menu>
           <Menu>icon</Menu>
           <Menu>about us</Menu>
