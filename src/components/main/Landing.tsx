@@ -59,9 +59,6 @@ const Contents = styled.span`
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     ${FONT_STYLE_V1.text.text_60_medium};
   }
-  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    ${FONT_STYLE_V1.text.text_60_medium};
-  }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_24_medium};
     margin-bottom: 0;
@@ -83,7 +80,7 @@ const Button = styled.button`
     color: ${PALLETTE_MAIN.main};
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    ${FONT_STYLE_V1.text.text_10_medium};
+    ${FONT_STYLE_V1.text.text_12_medium};
     border: 1px solid ${PALLETTE_MAIN.sub_main};
     padding: 0 4rem;
   }
