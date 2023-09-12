@@ -23,7 +23,7 @@ function MainComponentItems() {
     <Container>
       {datas.map((data) => {
         return (
-          <MainComponentItem title={data.title}>
+          <MainComponentItem key={data.title} title={data.title}>
             {data.component}
           </MainComponentItem>
         );

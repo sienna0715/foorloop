@@ -1,3 +1,3 @@
-export const BREAKPOINTMOBILE = 335;
-export const BREAKPOINTTABLET = 758;
-export const BREAKPOINTDESKTOP = 1024;
+export const BREAKPOINTMOBILE = 42.5;
+export const BREAKPOINTTABLET = 76.8;
+export const BREAKPOINTDESKTOP = 144;
