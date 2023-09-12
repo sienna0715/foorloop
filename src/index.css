@@ -62,11 +62,16 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 62.5%;
   background-color: #171717;
   color: #FFF8E7;
 }
 
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF8E7;
 }
