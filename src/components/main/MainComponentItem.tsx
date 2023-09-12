@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
-import arrowButton from '../../assets/arrowButton.svg';
+import ArrowButton from '../ArrowButton';
 
 const Container = styled.div`
   width: 22.5rem;
@@ -12,6 +12,7 @@ const Container = styled.div`
   border: 2px solid ${PALETTE_COMPONENT.primary_beige};
   border-radius: 3.75rem;
   background-color: ${PALETTE_COMPONENT.primary_black};
+  cursor: pointer;
 `;
 
 const Title = styled.div`
@@ -34,8 +35,10 @@ const Item = styled.div`
   align-items: center;
 `;
 
-const ArrowButton = styled.div`
-  transform: rotate(0.5turn);
+const ArrowButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 interface MainComponentItemprops {
@@ -48,9 +51,9 @@ function MainComponentItem({ title, children }: MainComponentItemprops) {
     <Container>
       <Title>{title}</Title>
       <Item>{children}</Item>
-      <ArrowButton>
-        <img src={arrowButton} alt="button" />
-      </ArrowButton>
+      <ArrowButtonContainer>
+        <ArrowButton />
+      </ArrowButtonContainer>
     </Container>
   );
 }

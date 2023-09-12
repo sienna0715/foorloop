@@ -7,15 +7,16 @@ const Container = styled.div`
   width: 300px;
 `;
 
-const Result = styled.div<{ isDropdown?: boolean }>`
-  width: 100%;
+const Result = styled.div<{ isdropdown?: string }>`
+  width: 300px;
   height: 50px;
   padding: 12px;
   display: flex;
   align-items: center;
-
+  background-color: ${PALETTE_COMPONENT.primary_white};
   border: 1px solid ${PALETTE_COMPONENT.gray03};
-  border-radius: ${(props) => (props.isDropdown ? '10px 10px 0 0' : '10px')};
+  border-radius: ${(props) =>
+    props.isdropdown === 'true' ? '10px 10px 0 0' : '10px'};
 
   ${FONT_STYLE_V1.text.text_16_medium}
   font-size: 16px;
@@ -43,25 +44,29 @@ const DropdownList = styled(Result)`
 `;
 
 function DefaultDropdown() {
-  const [isDropdown, setIsDropdown] = useState(false);
+  const [isDropdown, setIsDropdown] = useState('false');
   const [result, setResult] = useState('옵션 1');
 
   const resultDropdownHandler = () => {
-    setIsDropdown((prev) => !prev);
+    if (isDropdown === 'false') {
+      setIsDropdown('true');
+    } else if (isDropdown === 'true') {
+      setIsDropdown('false');
+    }
   };
 
   const changeResultHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget.textContent) {
       setResult(e.currentTarget.textContent);
-      setIsDropdown(false);
+      setIsDropdown('false');
     }
   };
   return (
     <Container>
-      <Result onClick={resultDropdownHandler} isDropdown={isDropdown}>
+      <Result onClick={resultDropdownHandler} isdropdown={isDropdown}>
         {result}
       </Result>
-      {isDropdown ? (
+      {isDropdown === 'true' ? (
         <Dropdown>
           <DropdownList onClick={changeResultHandler}>옵션 1</DropdownList>
           <DropdownList onClick={changeResultHandler}>옵션 2</DropdownList>
