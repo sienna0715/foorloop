@@ -18,7 +18,7 @@ const IntroWrap = styled.div`
   position: relative;
 `;
 const IntroContainer = styled.div`
-  max-width: ${BREAKPOINTDESKTOP}px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 5rem;
   border: 3px solid ${PALLETTE_MAIN.sub_main};
@@ -28,13 +28,15 @@ const IntroContainer = styled.div`
   position: absolute;
   top: 450px;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    max-width: 1000px;
+    width: 900px;
+    margin: 0 5rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    max-width: 600px;
+    width: 600px;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    max-width: 320px;
+    min-width: 300px;
+    max-width: 300px;
     padding: 4rem;
   }
 `;
