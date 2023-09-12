@@ -15,10 +15,10 @@ const Container = styled.div`
 
 const Title = styled.div`
   position: absolute;
-  margin-bottom: 43rem;
-  font-size: 6.25rem;
+  margin-bottom: 70rem;
+  font-size: 10rem;
   font-weight: 400;
-  line-height: 2.5rem;
+  line-height: 4rem;
   color: ${PALETTE_COMPONENT.primary_beige};
 `;
 
@@ -31,11 +31,11 @@ const ListContainer = styled.div`
 const SideList = styled.div`
   position: absolute;
   width: 100%;
-  height: 12.5rem;
+  height: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 56.25rem;
+  gap: 90rem;
 `;
 
 const SideListContent = styled.div`
@@ -44,7 +44,7 @@ const SideListContent = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 5rem;
+  gap: 8rem;
 `;
 
 const LeftSideListContent = styled(SideListContent)`
@@ -56,13 +56,13 @@ const SideListContentItem = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 1.25rem;
+  gap: 2rem;
   cursor: pointer;
 `;
 
 const SideListContentItemIcon = styled.div`
-  width: 10rem;
-  height: 10rem;
+  width: 16rem;
+  height: 16rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,8 +71,8 @@ const SideListContentItemIcon = styled.div`
 `;
 
 const SideListContentItemText = styled.div`
-  height: 1.875rem;
-  font-size: 1.5rem;
+  height: 3rem;
+  font-size: 2.4rem;
   font-weight: 400;
   color: ${PALETTE_COMPONENT.primary_beige};
 `;
@@ -83,7 +83,7 @@ const ArrowButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32.5rem;
+  gap: 52rem;
 `;
 
 const SelectIcon = styled.div`
@@ -94,8 +94,8 @@ const SelectIcon = styled.div`
 `;
 
 const SelectIconImg = styled.div`
-  width: 25rem;
-  height: 25rem;
+  width: 40rem;
+  height: 40rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,18 +105,18 @@ const SelectIconImg = styled.div`
 
 const SelectIconText = styled.div`
   position: absolute;
-  height: 42.25rem;
+  height: 67.6rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
 
-  font-size: 3.125rem;
+  font-size: 5rem;
   font-weight: 400;
   color: ${PALETTE_COMPONENT.primary_beige};
 
   > div {
-    padding: 1.25rem 3.125rem;
+    padding: 2rem 5rem;
     background-color: ${PALETTE_COMPONENT.primary_black};
   }
 `;
