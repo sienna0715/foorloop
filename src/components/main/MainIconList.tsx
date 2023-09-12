@@ -57,6 +57,7 @@ const SideListContentItem = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 1.25rem;
+  cursor: pointer;
 `;
 
 const SideListContentItemIcon = styled.div`
