@@ -37,40 +37,46 @@ const TextBox = styled.div`
   align-items: center;
 `;
 const Title = styled.span`
-  ${FONT_STYLE_V1.text.text_100_medium};
+  ${FONT_STYLE_V1.text.text_180_medium};
   padding: 1rem 2rem;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    ${FONT_STYLE_V1.text.text_80_medium};
+    ${FONT_STYLE_V1.text.text_100_medium};
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_120_medium};
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    ${FONT_STYLE_V1.text.text_30_medium};
+    ${FONT_STYLE_V1.text.text_45_medium};
     padding: 0;
   }
 `;
 const Contents = styled.span`
-  ${FONT_STYLE_V1.text.text_50_medium};
+  ${FONT_STYLE_V1.text.text_100_medium};
   width: max-content;
   text-align: center;
   line-height: 1;
   margin-bottom: 3rem;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    ${FONT_STYLE_V1.text.text_40_medium};
+    ${FONT_STYLE_V1.text.text_60_medium};
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_60_medium};
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    ${FONT_STYLE_V1.text.text_14_medium};
+    ${FONT_STYLE_V1.text.text_24_medium};
     margin-bottom: 0;
     margin-top: 0.5rem;
     line-height: 1.2;
   }
 `;
 const Button = styled.button`
-  ${FONT_STYLE_V1.text.text_20_light};
-  padding: 0 8rem;
+  ${FONT_STYLE_V1.text.text_30_medium};
+  padding: 0 9rem;
+  line-height: 1.2;
   border-radius: 5rem;
   border: 3px solid ${PALLETTE_MAIN.sub_main};
   background-color: transparent;
   color: ${PALLETTE_MAIN.sub_main};
-  letter-spacing: -1.5px;
   cursor: pointer;
   &:hover {
     background-color: ${PALLETTE_MAIN.sub_main};
@@ -78,7 +84,8 @@ const Button = styled.button`
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_10_medium};
-    padding: 0 3rem;
+    border: 1px solid ${PALLETTE_MAIN.sub_main};
+    padding: 0 4rem;
   }
 `;
 

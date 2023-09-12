@@ -13,21 +13,21 @@ const HeaderWrap = styled.div`
   margin-bottom: 5rem;
   display: flex;
   justify-content: center;
-  @media screen and (max-width: ${BREAKPOINTMOBILE}rem) {
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     flex-direction: column;
     align-items: center;
     position: relative;
   }
 `;
 const HeaderContainer = styled.div`
-  max-width: ${BREAKPOINTDESKTOP}rem;
+  max-width: ${BREAKPOINTDESKTOP}px;
   width: 100%;
   height: 100%;
   padding: 0 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media screen and (max-width: ${BREAKPOINTMOBILE}rem) {
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     padding: 0 2rem;
   }
 `;
@@ -35,7 +35,7 @@ const Logo = styled.span`
   ${FONT_STYLE_V1.text.text_24_medium};
   padding-right: 1rem;
   cursor: pointer;
-  @media screen and (max-width: ${BREAKPOINTMOBILE}rem) {
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_18_medium};
   }
 `;
@@ -47,14 +47,14 @@ const Button = styled.button`
   border-radius: 0;
   cursor: pointer;
   display: none;
-  @media screen and (max-width: ${BREAKPOINTMOBILE}rem) {
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     display: block;
   }
 `;
 const MenuBox = styled.ul`
   ${FONT_STYLE_V1.text.text_18_medium};
   display: flex;
-  @media screen and (max-width: ${BREAKPOINTMOBILE}rem) {
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     display: none;
   }
 `;
@@ -80,7 +80,7 @@ const MMenuBox = styled.ul<{ isSlide: boolean }>`
   top: 80px;
   z-index: 999;
   animation: ${menuSlideOpen} 1s ease;
-  @media screen and (min-width: ${BREAKPOINTMOBILE}rem) {
+  @media screen and (min-width: ${BREAKPOINTMOBILE}px) {
     display: none;
   }
 `;
@@ -91,10 +91,10 @@ const Menu = styled.li`
   &:hover {
     text-shadow: 0px 0px 1.5px ${PALLETTE_MAIN.sub_main};
   }
-  @media screen and (max-width: ${BREAKPOINTMOBILE}rem) {
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     line-height: 3.5;
   }
-  @media screen and (min-width: ${BREAKPOINTMOBILE + 0.1}rem) {
+  @media screen and (min-width: ${BREAKPOINTMOBILE + 1}px) {
     margin-right: 3rem;
     &:nth-last-child(1) {
       margin-right: 0;
