@@ -12,6 +12,7 @@ const Container = styled.div`
   border: 2px solid ${PALETTE_COMPONENT.primary_beige};
   border-radius: 3.75rem;
   background-color: ${PALETTE_COMPONENT.primary_black};
+  cursor: pointer;
 `;
 
 const Title = styled.div`
