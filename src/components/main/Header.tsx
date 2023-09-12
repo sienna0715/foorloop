@@ -23,15 +23,21 @@ const HeaderContainer = styled.div`
   max-width: ${BREAKPOINTDESKTOP}px;
   width: 100%;
   height: 100%;
-  padding: 0 2rem;
+  padding: 0 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    padding: 0 2rem;
+  }
 `;
 const Logo = styled.span`
-  ${FONT_STYLE_V1.text.text_14_medium};
+  ${FONT_STYLE_V1.text.text_24_medium};
   padding-right: 1rem;
   cursor: pointer;
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_18_medium};
+  }
 `;
 const Button = styled.button`
   appearance: none;
@@ -46,7 +52,7 @@ const Button = styled.button`
   }
 `;
 const MenuBox = styled.ul`
-  ${FONT_STYLE_V1.text.text_12_medium};
+  ${FONT_STYLE_V1.text.text_18_medium};
   display: flex;
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     display: none;
@@ -63,7 +69,7 @@ const menuSlideOpen = keyframes`
   }
 `;
 const MMenuBox = styled.ul<{ isSlide: boolean }>`
-  ${FONT_STYLE_V1.text.text_12_medium};
+  ${FONT_STYLE_V1.text.text_14_medium};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,6 +88,9 @@ const MMenuBox = styled.ul<{ isSlide: boolean }>`
 const Menu = styled.li`
   width: max-content;
   cursor: pointer;
+  &:hover {
+    text-shadow: 0px 0px 1.5px ${PALLETTE_MAIN.sub_main};
+  }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     line-height: 3.5;
   }
