@@ -27,22 +27,22 @@ const Item = styled.div`
   display: flex;
 `;
 
-const BlackColor = styled.div<{ hover: boolean }>`
+const BlackColor = styled.div<{ ishover: string }>`
   padding: 2.5rem;
   border: 2px solid ${PALETTE_COMPONENT.primary_beige};
   border-radius: 2.5rem;
   background-color: ${PALETTE_COMPONENT.primary_black};
   color: ${(props) =>
-    props.hover
+    props.ishover === 'true'
       ? PALETTE_COMPONENT.primary_beige
       : PALETTE_COMPONENT.primary_black};
   transition: all 0.5s 0.5s;
 `;
 
-const BeigeColor = styled.div<{ hover: boolean }>`
+const BeigeColor = styled.div<{ ishover: string }>`
   position: absolute;
   padding: 2.5rem;
-  margin-left: ${(props) => (props.hover ? '26rem' : '7.5rem')};
+  margin-left: ${(props) => (props.ishover === 'true' ? '26rem' : '7.5rem')};
   border: 2px solid ${PALETTE_COMPONENT.primary_beige};
   border-radius: 2.5rem;
   background-color: ${PALETTE_COMPONENT.primary_beige};
@@ -72,14 +72,14 @@ const ColorExText = styled.div`
 `;
 
 function MainColorTypographyColor() {
-  const [hover, setHover] = useState(false);
+  const [isHover, setIsHover] = useState('false');
 
   const mouseHoverHandler = () => {
-    setHover(true);
+    setIsHover('true');
   };
 
   const mouseLeaveHandler = () => {
-    setHover(false);
+    setIsHover('false');
   };
   return (
     <Container>
@@ -89,12 +89,12 @@ function MainColorTypographyColor() {
         <BlackColor
           onMouseEnter={mouseHoverHandler}
           onMouseLeave={mouseLeaveHandler}
-          hover={hover}
+          ishover={isHover}
         >
           <ColorHexText>HEX #171717</ColorHexText>
           <ColorExText>Aa</ColorExText>
         </BlackColor>
-        <BeigeColor hover={hover}>
+        <BeigeColor ishover={isHover}>
           <ColorHexText>HEX #FFF8E7</ColorHexText>
           <ColorExText>Aa</ColorExText>
         </BeigeColor>
