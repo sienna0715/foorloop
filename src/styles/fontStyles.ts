@@ -78,6 +78,14 @@ export const FONT_STYLE_V1 = {
       font-family: 'PPRadioGrotesk-Regular';
       font-size: 10rem;
     `,
+    text_120_medium: css`
+      font-family: 'PPRadioGrotesk-Regular';
+      font-size: 12rem;
+    `,
+    text_130_medium: css`
+      font-family: 'PPRadioGrotesk-Regular';
+      font-size: 13rem;
+    `,
     text_180_medium: css`
       font-family: 'PPRadioGrotesk-Regular';
       font-size: 18rem;
