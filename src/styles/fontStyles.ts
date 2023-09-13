@@ -90,6 +90,10 @@ export const FONT_STYLE_V1 = {
       font-family: 'PPRadioGrotesk-Regular';
       font-size: 18rem;
     `,
+    text_200_medium: css`
+      font-family: 'PPRadioGrotesk-Regular';
+      font-size: 20rem;
+    `,
   },
 };
 

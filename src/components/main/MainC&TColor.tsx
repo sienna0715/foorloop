@@ -1,26 +1,38 @@
 import { useState } from 'react';
 import { styled } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
+import { FONT_STYLE_V1 } from '../../styles/fontStyles';
+import { BREAKPOINTDESKTOP, BREAKPOINTTABLET } from '../../breakpoint';
 
 const Container = styled.div`
-  margin-left: 10.625rem;
+  margin-left: 17rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    margin-left: 0;
+    margin-bottom: 10rem;
+  }
 `;
 
 const Title = styled.div`
-  margin-bottom: 0.625rem;
-  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  ${FONT_STYLE_V1.text.text_20_medium}
   font-weight: 900;
   color: ${PALETTE_COMPONENT.primary_beige};
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_12_medium}
+  }
 `;
 
 const TitleInfo = styled.div`
-  margin-bottom: 2.875rem;
-  font-size: 1.25rem;
+  margin-bottom: 4.6rem;
+  ${FONT_STYLE_V1.text.text_20_medium}
   font-weight: 400;
   color: ${PALETTE_COMPONENT.gray04};
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_12_medium}
+  }
 `;
 
 const Item = styled.div`
@@ -28,47 +40,80 @@ const Item = styled.div`
 `;
 
 const BlackColor = styled.div<{ ishover: string }>`
-  padding: 2.5rem;
+  padding: 4rem;
   border: 2px solid ${PALETTE_COMPONENT.primary_beige};
-  border-radius: 2.5rem;
+  border-radius: 4rem;
   background-color: ${PALETTE_COMPONENT.primary_black};
   color: ${(props) =>
     props.ishover === 'true'
       ? PALETTE_COMPONENT.primary_beige
       : PALETTE_COMPONENT.primary_black};
   transition: all 0.5s 0.5s;
+  transition: margin 1s;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    margin-right: 8rem;
+    &:hover {
+      margin-right: 30.6rem;
+    }
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    padding: 2rem;
+    border-radius: 3rem;
+    &:hover {
+      margin-right: 17.5rem;
+    }
+  }
 `;
 
 const BeigeColor = styled.div<{ ishover: string }>`
   position: absolute;
-  padding: 2.5rem;
-  margin-left: ${(props) => (props.ishover === 'true' ? '26rem' : '7.5rem')};
+  padding: 4rem;
+  margin-left: ${(props) => (props.ishover === 'true' ? '41.6rem' : '12rem')};
   border: 2px solid ${PALETTE_COMPONENT.primary_beige};
-  border-radius: 2.5rem;
+  border-radius: 4rem;
   background-color: ${PALETTE_COMPONENT.primary_beige};
   color: ${PALETTE_COMPONENT.primary_black};
   transition: all 1s;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    margin-left: ${(props) => (props.ishover === 'true' ? '30.6rem' : '8rem')};
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    padding: 2rem;
+    margin-left: ${(props) => (props.ishover === 'true' ? '17.5rem' : '5rem')};
+    border-radius: 3rem;
+  }
 `;
 
 const ColorHexText = styled.div`
-  margin-right: 13.125rem;
-  margin-bottom: 24.375rem;
+  margin-right: 21rem;
+  margin-bottom: 39rem;
 
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
-  font-size: 1.25rem;
+  ${FONT_STYLE_V1.text.text_20_medium}
   font-weight: 400;
+
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    margin-right: 10rem;
+    margin-bottom: 23rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_12_medium}
+    margin-right: 5.8rem;
+    margin-bottom: 10.8rem;
+  }
 `;
 
 const ColorExText = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  font-size: 5rem;
+  ${FONT_STYLE_V1.text.text_80_medium}
   font-weight: 400;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_50_medium}
+  }
 `;
 
 function MainColorTypographyColor() {
