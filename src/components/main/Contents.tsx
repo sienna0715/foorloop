@@ -57,48 +57,55 @@ const CardContainer = styled.div`
   }
 `;
 const Card = styled.div`
-  width: 350px;
-  height: 550px;
-  padding: 5rem;
+  width: 36rem;
+  height: 50rem;
+  padding: 3rem;
   margin-right: 5rem;
   &:nth-last-child(1) {
     margin-right: 0;
   }
   border: 3px solid ${PALLETTE_MAIN.sub_main};
-  border-radius: 3rem;
+  border-radius: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    width: 280px;
-    height: 400px;
+    width: 28rem;
+    height: 40rem;
     margin-right: 3rem;
     &:nth-last-child(1) {
       margin-right: 0;
     }
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    width: 600px;
-    height: 400px;
+    width: 40rem;
+    height: 50rem;
     margin: 0;
     margin-bottom: 5rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    width: 300px;
-    height: 400px;
+    width: 21.6rem;
+    height: 30rem;
+    border-radius: 3.6rem;
     margin: 0;
     margin-bottom: 3rem;
   }
 `;
 const CardImgBox = styled.div`
   width: 100%;
-  flex-grow: 2;
+  flex-grow: 3;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    svg {
+      width: 8rem;
+    }
+  }
 `;
 const CardTextBox = styled.div`
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,6 +139,12 @@ const ButtonBox = styled.div`
   position: absolute;
   bottom: 2rem;
   right: 2rem;
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    svg {
+      width: 2.88rem;
+      height: 2.88rem;
+    }
+  }
 `;
 
 function Contents() {

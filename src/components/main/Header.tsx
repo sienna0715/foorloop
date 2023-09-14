@@ -40,6 +40,8 @@ const Logo = styled.span`
   }
 `;
 const Button = styled.button`
+  width: 5rem;
+  height: 5rem;
   appearance: none;
   border: 0;
   padding: 0;

@@ -5,8 +5,8 @@ import { PALETTE_COMPONENT } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import DeleteIcon from '../../assets/input-delete.svg';
 
-const InputWrap = styled.div`
-  width: 400px;
+const InputWrap = styled.div<{ width: number }>`
+  width: ${(props) => (props.width ? props.width : 400)}px;
   height: 60px;
   padding: 0.8rem;
   border: 1px solid ${PALETTE_COMPONENT.gray03};
@@ -27,11 +27,13 @@ const Label = styled.label`
   color: ${PALETTE_COMPONENT.gray04};
   padding-bottom: 0.3rem;
 `;
-const Input = styled.input`
+const Input = styled.input<{ color: string }>`
   ${FONT_STYLE_V1.text.text_10_medium};
   width: 100%;
   outline: none;
   border: none;
+  background-color: transparent;
+  color: ${(props) => (props.color ? props.color : 'black')};
   &::placeholder {
     color: ${PALETTE_COMPONENT.gray03};
   }
@@ -49,7 +51,15 @@ const DeleteBtn = styled.img`
   cursor: pointer;
 `;
 
-export default function InputCount() {
+interface IInputCountProps {
+  width: number;
+  color: string;
+}
+
+export default function InputCount({
+  width = 400,
+  color = 'black',
+}: IInputCountProps) {
   const [value, setValue] = useState('');
   const [isFocus, setIsFocus] = useState(false);
   const count = value.length;
@@ -59,7 +69,7 @@ export default function InputCount() {
   };
 
   return (
-    <InputWrap>
+    <InputWrap width={width}>
       <InputContainer>
         <Label>아이디</Label>
         <Input
@@ -68,6 +78,7 @@ export default function InputCount() {
           value={value}
           onFocus={() => setIsFocus(true)}
           onChange={handleChange}
+          color={color}
         />
       </InputContainer>
       {isFocus && count !== 0 && (

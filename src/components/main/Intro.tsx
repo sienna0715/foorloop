@@ -22,21 +22,22 @@ const IntroContainer = styled.div`
   margin: 0 auto;
   padding: 5rem;
   border: 3px solid ${PALLETTE_MAIN.sub_main};
-  border-radius: 3rem;
+  border-radius: 6rem;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 450px;
+  top: 45rem;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    width: 900px;
+    width: 90rem;
     margin: 0 5rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    width: 600px;
+    width: 60rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 30rem;
+    max-width: 30rem;
+    border-radius: 3.6rem;
     padding: 4rem;
   }
 `;
@@ -59,6 +60,13 @@ const TitleBox = styled.div`
 const ButtonBox = styled.div`
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    svg {
+      width: 2.88rem;
+      height: 2.88rem;
+    }
+  }
 `;
 const Title = styled.div`
   ${FONT_STYLE_V1.text.text_100_medium};
