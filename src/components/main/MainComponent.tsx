@@ -4,8 +4,8 @@ import MainComponentItems from './MainComponentItems';
 
 const Container = styled.div`
   width: 100%;
-  padding: 0 5.625rem;
-  margin-bottom: 20.75rem;
+  padding: 0 9rem;
+  margin-bottom: 33.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
