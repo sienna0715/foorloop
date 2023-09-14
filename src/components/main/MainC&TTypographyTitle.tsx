@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
+import { FONT_STYLE_V1 } from '../../styles/fontStyles';
+import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../../breakpoint';
 
 interface IMainColorTypographyTypographyTitleProps {
   value: string;
@@ -8,13 +10,22 @@ interface IMainColorTypographyTypographyTitleProps {
   setSelectTitle: (a: string) => void;
 }
 
-const Container = styled.div<{ isSelect: boolean }>`
-  font-size: 1.25rem;
-  font-weight: ${(props) => (props.isSelect ? 900 : 400)};
+const Container = styled.div<{ isselect: string }>`
+  ${FONT_STYLE_V1.text.text_30_medium}
+  font-size: 2rem;
+  font-weight: ${(props) => (props.isselect === 'true' ? 900 : 400)};
+  text-align: center;
   color: ${(props) =>
-    props.isSelect
+    props.isselect === 'true'
       ? PALETTE_COMPONENT.primary_beige
       : PALETTE_COMPONENT.gray04};
+  cursor: pointer;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_14_medium}
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_10_medium}
+  }
 `;
 
 function MainColorTypographyTypographyTitle({
@@ -22,13 +33,13 @@ function MainColorTypographyTypographyTitle({
   selectTitle,
   setSelectTitle,
 }: IMainColorTypographyTypographyTitleProps) {
-  const [isSelect, setIsSelect] = useState(false);
+  const [isSelect, setIsSelect] = useState('false');
 
   useEffect(() => {
     if (value === selectTitle) {
-      setIsSelect(true);
+      setIsSelect('true');
     } else {
-      setIsSelect(false);
+      setIsSelect('false');
     }
   }, [value, selectTitle]);
 
@@ -37,7 +48,7 @@ function MainColorTypographyTypographyTitle({
   };
 
   return (
-    <Container onClick={titleClickHandler} isSelect={isSelect}>
+    <Container onClick={titleClickHandler} isselect={isSelect}>
       {value}
     </Container>
   );

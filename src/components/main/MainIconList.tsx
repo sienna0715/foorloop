@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
-import arrowB from '../../assets/arrowButton.svg';
 import data from '../../data/iconData';
+import ArrowButton from '../ArrowButton';
+import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../../breakpoint';
+import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 
 const Container = styled.div`
   width: 100%;
@@ -15,11 +17,19 @@ const Container = styled.div`
 
 const Title = styled.div`
   position: absolute;
-  margin-bottom: 43rem;
-  font-size: 6.25rem;
+  margin-bottom: 70rem;
+  ${FONT_STYLE_V1.text.text_100_medium}
   font-weight: 400;
-  line-height: 2.5rem;
+  line-height: 4rem;
   color: ${PALETTE_COMPONENT.primary_beige};
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin-bottom: 55rem;
+    font-size: 6rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    margin-bottom: 35rem;
+    font-size: 3rem;
+  }
 `;
 
 const ListContainer = styled.div`
@@ -31,11 +41,17 @@ const ListContainer = styled.div`
 const SideList = styled.div`
   position: absolute;
   width: 100%;
-  height: 12.5rem;
+  height: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 56.25rem;
+  gap: 90rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    gap: 45rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    gap: 22rem;
+  }
 `;
 
 const SideListContent = styled.div`
@@ -44,7 +60,13 @@ const SideListContent = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 5rem;
+  gap: 8rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    gap: 4rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    gap: 2rem;
+  }
 `;
 
 const LeftSideListContent = styled(SideListContent)`
@@ -56,33 +78,65 @@ const SideListContentItem = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 1.25rem;
+  gap: 2rem;
+  cursor: pointer;
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    gap: 0.5rem;
+  }
 `;
 
 const SideListContentItemIcon = styled.div`
-  width: 10rem;
-  height: 10rem;
+  width: 16rem;
+  height: 16rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid ${PALETTE_COMPONENT.primary_beige};
   border-radius: 50%;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 8rem;
+    height: 8rem;
+    > svg {
+      width: 2.7rem;
+      height: 2.7rem;
+    }
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 4rem;
+    height: 4rem;
+    > svg {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+  }
 `;
 
 const SideListContentItemText = styled.div`
-  height: 1.875rem;
-  font-size: 1.5rem;
+  height: 3rem;
+  ${FONT_STYLE_V1.text.text_24_medium}
   font-weight: 400;
   color: ${PALETTE_COMPONENT.primary_beige};
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    font-size: 0.6rem;
+  }
 `;
 
-const ArrowButton = styled.div`
+const ArrowButtonContainer = styled.div`
   position: absolute;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32.5rem;
+  gap: 52rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    gap: 25rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    gap: 12rem;
+  }
 `;
 
 const SelectIcon = styled.div`
@@ -93,30 +147,61 @@ const SelectIcon = styled.div`
 `;
 
 const SelectIconImg = styled.div`
-  width: 25rem;
-  height: 25rem;
+  width: 40rem;
+  height: 40rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   background-color: ${PALETTE_COMPONENT.primary_beige};
+
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 20rem;
+    height: 20rem;
+    > svg {
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 10rem;
+    height: 10rem;
+    > svg {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
 `;
 
 const SelectIconText = styled.div`
   position: absolute;
-  height: 42.25rem;
+  height: 67.6rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-
-  font-size: 3.125rem;
+  ${FONT_STYLE_V1.text.text_50_medium}
   font-weight: 400;
   color: ${PALETTE_COMPONENT.primary_beige};
 
   > div {
-    padding: 1.25rem 3.125rem;
+    padding: 2rem 5rem;
     background-color: ${PALETTE_COMPONENT.primary_black};
+  }
+
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    height: 33.8rem;
+    font-size: 3rem;
+    > div {
+      padding: 1rem 2.5rem;
+    }
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    height: 16.9rem;
+    font-size: 1.5rem;
+    > div {
+      padding: 0.5rem 1.25rem;
+    }
   }
 `;
 
@@ -124,10 +209,23 @@ const ArrowButtonBorder = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: rotate(0.5turn);
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    svg {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
 `;
 
 const LeftArrowButtonBorder = styled(ArrowButtonBorder)`
-  transform: rotate(0.5turn);
+  transform: none;
 `;
 
 interface IMainIconList {
@@ -187,6 +285,10 @@ function MainIconList() {
     }
   };
 
+  const sideItemClickHandler = (name: string) => {
+    setPage(data.map((el) => el.name).indexOf(name));
+  };
+
   return (
     <Container>
       <Title>ICON</Title>
@@ -194,7 +296,10 @@ function MainIconList() {
         <SideList>
           <SideListContent>
             {prevDatas.map((prevData) => (
-              <SideListContentItem>
+              <SideListContentItem
+                key={data.map((el) => el.name).indexOf(prevData.name)}
+                onClick={() => sideItemClickHandler(prevData.name)}
+              >
                 <SideListContentItemIcon
                   dangerouslySetInnerHTML={{
                     __html: prevData.icon(PALETTE_COMPONENT.primary_beige, 55),
@@ -208,7 +313,10 @@ function MainIconList() {
           </SideListContent>
           <LeftSideListContent>
             {nextDatas.map((nextData) => (
-              <SideListContentItem>
+              <SideListContentItem
+                key={data.map((el) => el.name).indexOf(nextData.name)}
+                onClick={() => sideItemClickHandler(nextData.name)}
+              >
                 <SideListContentItemIcon
                   dangerouslySetInnerHTML={{
                     __html: nextData.icon(PALETTE_COMPONENT.primary_beige, 55),
@@ -221,14 +329,14 @@ function MainIconList() {
             ))}
           </LeftSideListContent>
         </SideList>
-        <ArrowButton>
+        <ArrowButtonContainer>
           <ArrowButtonBorder onClick={rightArrowButtonHandler}>
-            <img src={arrowB} alt="right arrowButton" />
+            <ArrowButton />
           </ArrowButtonBorder>
           <LeftArrowButtonBorder onClick={leftArrowButtonHandler}>
-            <img src={arrowB} alt="left arrowButton" />
+            <ArrowButton />
           </LeftArrowButtonBorder>
-        </ArrowButton>
+        </ArrowButtonContainer>
         <SelectIcon>
           <SelectIconImg
             dangerouslySetInnerHTML={{

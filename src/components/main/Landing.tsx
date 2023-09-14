@@ -2,70 +2,105 @@ import { styled } from 'styled-components';
 // components
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import { PALLETTE_MAIN } from '../../styles/colors';
-import Left from '../../assets/landing-left.svg';
-import Right from '../../assets/landing-right.svg';
+import {
+  BREAKPOINTMOBILE,
+  BREAKPOINTTABLET,
+  BREAKPOINTDESKTOP,
+} from '../../breakpoint';
+import { ReactComponent as LeftImg } from '../../assets/landing-left.svg';
+import { ReactComponent as RightImg } from '../../assets/landing-right.svg';
 
 const LandingWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const LandingContainer = styled.div`
   width: 100%;
   height: min-content;
   position: relative;
   margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    justify-content: center;
+    .side_img {
+      display: none;
+    }
+  }
 `;
-const LandingContainer = styled.div`
-  margin: 0 10rem;
+const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-`;
-const LeftImg = styled.img`
-  position: absolute;
-  top: 5rem;
-  left: 0;
-`;
-const RightImg = styled.img`
-  position: absolute;
-  top: 5rem;
-  right: 0;
 `;
 const Title = styled.span`
   ${FONT_STYLE_V1.text.text_180_medium};
-  padding-bottom: 1rem;
+  padding: 1rem 2rem;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    ${FONT_STYLE_V1.text.text_100_medium};
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_120_medium};
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_45_medium};
+    padding: 0;
+  }
 `;
 const Contents = styled.span`
   ${FONT_STYLE_V1.text.text_100_medium};
+  width: max-content;
   text-align: center;
-  line-height: 0.9;
+  line-height: 1;
   margin-bottom: 3rem;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    ${FONT_STYLE_V1.text.text_60_medium};
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_24_medium};
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+    line-height: 1.2;
+  }
 `;
 const Button = styled.button`
-  ${FONT_STYLE_V1.text.text_40_light};
-  width: 25rem;
+  ${FONT_STYLE_V1.text.text_30_medium};
+  padding: 0 9rem;
+  line-height: 1.2;
   border-radius: 5rem;
   border: 3px solid ${PALLETTE_MAIN.sub_main};
   background-color: transparent;
   color: ${PALLETTE_MAIN.sub_main};
-  letter-spacing: -1.5px;
   cursor: pointer;
   &:hover {
     background-color: ${PALLETTE_MAIN.sub_main};
     color: ${PALLETTE_MAIN.main};
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_12_medium};
+    border: 1px solid ${PALLETTE_MAIN.sub_main};
+    padding: 0 4rem;
   }
 `;
 
 function Landing() {
   return (
     <LandingWrap>
-      <LeftImg src={Left} />
-      <RightImg src={Right} />
       <LandingContainer>
-        <Title>FOR&#123;LOOP&#125;</Title>
-        <Contents>
-          DESIGNER & DEVELOPER <br />
-          COMPONENT LIBRARY
-        </Contents>
-        <Button>TRY NOW</Button>
+        <LeftImg className="side_img" />
+        <TextBox>
+          <Title>FOR&#123;LOOP&#125;</Title>
+          <Contents>
+            DESIGNER & DEVELOPER <br />
+            COMPONENT LIBRARY
+          </Contents>
+        </TextBox>
+        <RightImg className="side_img" />
       </LandingContainer>
+      <Button>TRY NOW</Button>
     </LandingWrap>
   );
 }

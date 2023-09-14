@@ -1,5 +1,6 @@
 import { styled, keyframes } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
+import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../../breakpoint';
 
 const rotate = keyframes`
   from{
@@ -24,16 +25,40 @@ const Container = styled.div`
 const OutterSvg = styled.svg`
   position: absolute;
   animation: ${rotate} 15s linear infinite;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 80rem;
+    height: 80rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 40rem;
+    height: 40rem;
+  }
 `;
 
 const MiddleSvg = styled.svg`
   position: absolute;
   animation: ${rotate} 15s linear infinite;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 50rem;
+    height: 50rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 25rem;
+    height: 25rem;
+  }
 `;
 
 const InnerSvg = styled.svg`
   position: absolute;
   animation: ${rotate} 15s linear infinite;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 30rem;
+    height: 30rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 15rem;
+    height: 15rem;
+  }
 `;
 
 function MainIconBackground() {
@@ -41,7 +66,7 @@ function MainIconBackground() {
     <Container>
       <OutterSvg
         width="1600"
-        height="1700"
+        height="1600"
         viewBox="0 0 1600 1080"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

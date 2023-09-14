@@ -10,20 +10,32 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1024px) {
+    justify-content: center;
+  }
 `;
 
 function MainComponentItems() {
   const datas = [
     { title: 'checkbox', component: <CheckboxRedLabel /> },
     { title: 'button', component: <PlusButton /> },
-    { title: 'input', component: <InputDefault /> },
-    { title: 'dropdown', component: <DefaultDropdown /> },
+    { title: 'input', component: <InputDefault width={200} color="white" /> },
+    {
+      title: 'dropdown',
+      component: (
+        <DefaultDropdown
+          width={200}
+          list={['옵션 1', '옵션 2', '옵션 3', '옵션 4', '옵션 5']}
+        />
+      ),
+    },
   ];
   return (
     <Container>
       {datas.map((data) => {
         return (
-          <MainComponentItem title={data.title}>
+          <MainComponentItem key={data.title} title={data.title}>
             {data.component}
           </MainComponentItem>
         );

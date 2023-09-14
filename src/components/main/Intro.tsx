@@ -2,7 +2,11 @@ import { styled } from 'styled-components';
 // components
 import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
-import { BREAKPOINTDESKTOP } from '../../breakpoint';
+import {
+  BREAKPOINTMOBILE,
+  BREAKPOINTTABLET,
+  BREAKPOINTDESKTOP,
+} from '../../breakpoint';
 import IntroSVG from './IntroSVG';
 import ArrowButton from '../ArrowButton';
 
@@ -14,31 +18,55 @@ const IntroWrap = styled.div`
   position: relative;
 `;
 const IntroContainer = styled.div`
-  max-width: 1800px;
-  max-height: max-content;
-  margin: 0 10rem;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 5rem;
   border: 3px solid ${PALLETTE_MAIN.sub_main};
-  border-radius: 3rem;
+  border-radius: 6rem;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 450px;
+  top: 45rem;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    width: 90rem;
+    margin: 0 5rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 60rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    min-width: 30rem;
+    max-width: 30rem;
+    border-radius: 3.6rem;
+    padding: 4rem;
+  }
 `;
 const TextContainer = styled.div`
   display: flex;
   margin-bottom: 3rem;
-  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 100%;
+    margin-bottom: 1rem;
     flex-direction: column;
     align-items: center;
   }
 `;
 const TitleBox = styled.div`
   padding-bottom: 5rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    padding-bottom: 2rem;
+  }
 `;
 const ButtonBox = styled.div`
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    svg {
+      width: 2.88rem;
+      height: 2.88rem;
+    }
+  }
 `;
 const Title = styled.div`
   ${FONT_STYLE_V1.text.text_100_medium};
@@ -47,18 +75,23 @@ const Title = styled.div`
     padding-left: 2rem;
   }
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    font-size: 60px;
+    ${FONT_STYLE_V1.text.text_60_medium};
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_30_medium};
   }
 `;
 const Content = styled.span`
-  ${FONT_STYLE_V1.text.text_24_medium};
-  min-width: 500px;
+  ${FONT_STYLE_V1.text.text_18_medium};
   letter-spacing: 2px;
   line-height: 1.5;
   padding-left: 5rem;
   padding-top: 2rem;
-  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     padding: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_12_medium};
   }
 `;
 

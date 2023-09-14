@@ -5,21 +5,27 @@ import { PALETTE_COMPONENT } from '../../styles/colors';
 import Check from '../../assets/checkbox-beige.svg';
 
 const CheckboxWrap = styled.div`
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
 `;
 const Checkbox = styled.div`
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border: 1px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 2px;
 `;
 const CheckboxFill = styled.div`
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   background-color: ${PALETTE_COMPONENT.primary_black};
   border: 1px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const CheckIcon = styled.img``;
 

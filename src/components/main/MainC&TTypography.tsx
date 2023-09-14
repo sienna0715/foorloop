@@ -5,15 +5,34 @@ import MainColorTypographyTypographyTitle from './MainC&TTypographyTitle';
 import MainColorTypographyTypographyT from './MainC&TTypographyT';
 import MainColorTypographyTypographyF from './MainC&TTypographyF';
 import MainColorTypographyTypographyL from './MainC&TTypographyL';
+import {
+  BREAKPOINTDESKTOP,
+  BREAKPOINTMOBILE,
+  BREAKPOINTTABLET,
+} from '../../breakpoint';
 
 const Container = styled.div`
-  width: 680px;
-  margin-right: 4.375rem;
+  width: 68rem;
+  margin-right: 7rem;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    height: 53.2rem;
+    margin-right: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 35rem;
+    height: 30.8rem;
+    margin-right: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 28rem;
+    height: 13.5rem;
+    margin-right: 0;
+  }
 `;
 
-const Tap = styled.div`
+const Tab = styled.div`
   display: flex;
   justify-content: space-between;
 `;
@@ -46,7 +65,7 @@ function MainColorTypographyTypography() {
 
   return (
     <Container>
-      <Tap>
+      <Tab>
         <MainColorTypographyTypographyTitle
           value="TYPOGRAPHY"
           selectTitle={selectTitle}
@@ -62,7 +81,7 @@ function MainColorTypographyTypography() {
           selectTitle={selectTitle}
           setSelectTitle={setSelectTitle}
         />
-      </Tap>
+      </Tab>
       <Item>{data[page]}</Item>
     </Container>
   );
