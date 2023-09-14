@@ -22,7 +22,7 @@ const IntroContainer = styled.div`
   margin: 0 auto;
   padding: 5rem;
   border: 3px solid ${PALLETTE_MAIN.sub_main};
-  border-radius: 3rem;
+  border-radius: 6rem;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -59,6 +59,7 @@ const TitleBox = styled.div`
 const ButtonBox = styled.div`
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 `;
 const Title = styled.div`
   ${FONT_STYLE_V1.text.text_100_medium};
