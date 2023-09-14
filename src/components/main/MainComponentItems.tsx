@@ -21,7 +21,15 @@ function MainComponentItems() {
     { title: 'checkbox', component: <CheckboxRedLabel /> },
     { title: 'button', component: <PlusButton /> },
     { title: 'input', component: <InputDefault /> },
-    { title: 'dropdown', component: <DefaultDropdown /> },
+    {
+      title: 'dropdown',
+      component: (
+        <DefaultDropdown
+          width={200}
+          list={['옵션 1', '옵션 2', '옵션 3', '옵션 4', '옵션 5']}
+        />
+      ),
+    },
   ];
   return (
     <Container>
