@@ -24,6 +24,7 @@ const ContentsWrap = styled.div`
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     margin-top: -35.5rem;
+    margin-bottom: 0;
   }
 `;
 const ContentsContainer = styled.div`

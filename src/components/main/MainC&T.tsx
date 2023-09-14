@@ -13,6 +13,7 @@ const Container = styled.div`
     margin-bottom: 20rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    margin-top: 0;
     margin-bottom: 20rem;
   }
 `;
