@@ -18,13 +18,13 @@ const BottomContainer = styled.svg`
 `;
 const BottomTransfer = styled.g`
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    transform: translateY(-55px);
+    transform: translateY(-5.5rem);
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    transform: translateY(17px);
+    transform: translateY(1.7rem);
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    transform: translateY(-93px);
+    transform: translateY(-11.3rem);
   }
 `;
 const TopLine = styled.line``;
