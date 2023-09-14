@@ -10,6 +10,10 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1024px) {
+    justify-content: center;
+  }
 `;
 
 function MainComponentItems() {
