@@ -20,7 +20,7 @@ function MainComponentItems() {
   const datas = [
     { title: 'checkbox', component: <CheckboxRedLabel /> },
     { title: 'button', component: <PlusButton /> },
-    { title: 'input', component: <InputDefault /> },
+    { title: 'input', component: <InputDefault width={200} color="white" /> },
     {
       title: 'dropdown',
       component: (
