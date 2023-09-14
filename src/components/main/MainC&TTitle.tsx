@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
-import { BREAKPOINTDESKTOP } from '../../breakpoint';
+import { BREAKPOINTDESKTOP, BREAKPOINTMOBILE } from '../../breakpoint';
 
 const Container = styled.div`
   margin-bottom: 7.5rem;
@@ -15,7 +15,7 @@ const Container = styled.div`
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     ${FONT_STYLE_V1.text.text_60_medium}
   }
-  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_30_medium}
   }
 `;
