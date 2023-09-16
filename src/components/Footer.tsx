@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
-import { FONT_STYLE_V1 } from '../../styles/fontStyles';
-import { PALLETTE_MAIN } from '../../styles/colors';
-import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../../breakpoint';
+import { FONT_STYLE_V1 } from '../styles/fontStyles';
+import { PALLETTE_MAIN } from '../styles/colors';
+import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../breakpoint';
 
 const FooterWrap = styled.div`
   width: 100%;
