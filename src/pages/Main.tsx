@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 // components
 import Contents from '../components/main/Contents';
-import Footer from '../components/main/Footer';
-import Header from '../components/main/Header';
 import Intro from '../components/main/Intro';
 import Landing from '../components/main/Landing';
 import MainColorTypography from '../components/main/MainC&T';
@@ -18,14 +16,12 @@ const MainWrap = styled.div`
 function Main() {
   return (
     <MainWrap>
-      <Header />
       <Landing />
       <Intro />
       <Contents />
       <MainIcon />
       <MainColorTypography />
       <MainComponent />
-      <Footer />
     </MainWrap>
   );
 }
