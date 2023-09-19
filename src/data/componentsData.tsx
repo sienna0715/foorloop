@@ -24,12 +24,12 @@ import OutLineButton from '../library/button/OutLineButton';
 import DarkDefaultButton from '../library/button/DarkDefaultButton';
 import PlusButton from '../library/button/PlusButton';
 import RPlusButton from '../library/button/RPlusButton';
-// import FilledOutLinePlusButton from '../library/button/FilledOutLinePlusButton';
-// import RFilledOutLinePlusButton from '../library/button/RFilledOutLinePlusButton';
-// import OutLinePlusButton from '../library/button/OutLinePlusButton';
-// import ROutLinePlusButton from '../library/button/ROutLinePlusButton';
-// import DarkPlusButton from '../library/button/DarkPlusButton';
-// import RDarkPlusButton from '../library/button/RDarkPlusButton';
+import FilledOutLinePlusButton from '../library/button/FilledOutLinePlusButton';
+import RFilledOutLinePlusButton from '../library/button/RFilledOutLinePlusButton';
+import OutLinePlusButton from '../library/button/OutLinePlusButton';
+import ROutLinePlusButton from '../library/button/ROutLinePlusButton';
+import DarkPlusButton from '../library/button/DarkPlusButton';
+import RDarkPlusButton from '../library/button/RDarkPlusButton';
 import DisableButton from '../library/button/DisableButton';
 import DisableFilledButton from '../library/button/DisableFilledButton';
 import DisableOutLineButton from '../library/button/DisableOutLineButton';
@@ -160,36 +160,36 @@ const componentsData = {
       name: 'Button',
       component: <RPlusButton />,
     },
-    // {
-    //   id: 23,
-    //   name: 'Button',
-    //   component: <FilledOutLinePlusButton />,
-    // },
-    // {
-    //   id: 24,
-    //   name: 'Button',
-    //   component: <RFilledOutLinePlusButton />,
-    // },
-    // {
-    //   id: 25,
-    //   name: 'Button',
-    //   component: <OutLinePlusButton />,
-    // },
-    // {
-    //   id: 26,
-    //   name: 'Button',
-    //   component: <ROutLinePlusButton />,
-    // },
-    // {
-    //   id: 27,
-    //   name: 'Button',
-    //   component: <DarkPlusButton />,
-    // },
-    // {
-    //   id: 28,
-    //   name: 'Button',
-    //   component: <RDarkPlusButton />,
-    // },
+    {
+      id: 23,
+      name: 'Button',
+      component: <FilledOutLinePlusButton />,
+    },
+    {
+      id: 24,
+      name: 'Button',
+      component: <RFilledOutLinePlusButton />,
+    },
+    {
+      id: 25,
+      name: 'Button',
+      component: <OutLinePlusButton />,
+    },
+    {
+      id: 26,
+      name: 'Button',
+      component: <ROutLinePlusButton />,
+    },
+    {
+      id: 27,
+      name: 'Button',
+      component: <DarkPlusButton />,
+    },
+    {
+      id: 28,
+      name: 'Button',
+      component: <RDarkPlusButton />,
+    },
     {
       id: 29,
       name: 'Button',
@@ -217,7 +217,7 @@ const componentsData = {
     {
       id: 32,
       name: 'Search',
-      component: <Search />,
+      component: <Search width={300} color="white" />,
     },
   ],
   toggles: [

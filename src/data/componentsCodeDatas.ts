@@ -1,5 +1,6 @@
 const codeData = {
-  inputDefault: `<InputWrap width={width}>
+  code: [
+    `<InputWrap width={width}>
   <InputContainer>
     <Label>아이디</Label>
     <Input
@@ -16,6 +17,7 @@ const codeData = {
     <DeleteBtn src={DeleteIcon} onClick={() => setValue('')} />
   )}
 </InputWrap>`,
+  ],
 };
 
 export default codeData;
