@@ -59,7 +59,7 @@ const ResultIcon = styled.img`
   height: 16px;
 `;
 
-interface IInputCheckIconProps {
+interface IInputCheckProps {
   width: number;
   color: string;
 }
@@ -67,7 +67,7 @@ interface IInputCheckIconProps {
 export default function InputCheckIcon({
   width = 400,
   color = 'black',
-}: IInputCheckIconProps) {
+}: IInputCheckProps) {
   const [value, setValue] = useState('');
   const [isFocus, setIsFocus] = useState(false);
   const [checkIcon, isCheckIcon] = useState(false);
