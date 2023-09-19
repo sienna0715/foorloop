@@ -3,6 +3,7 @@ import styled from 'styled-components';
 // components
 import ComponentsTop from '../components/component/ComponentsTop';
 import ComponentsBottom from '../components/component/ComponentsBottom';
+import codeData from '../data/componentsCodeDatas';
 
 const ComponentsWrap = styled.div`
   width: 100%;
@@ -16,10 +17,11 @@ const ComponentsContainer = styled.div`
 
 function Components() {
   // const [currentItem, setCurrentItem] = useState('');
+
   return (
     <ComponentsWrap>
       <ComponentsContainer>
-        <ComponentsTop />
+        <ComponentsTop codeDatas={codeData.code} />
         <ComponentsBottom />
       </ComponentsContainer>
     </ComponentsWrap>
