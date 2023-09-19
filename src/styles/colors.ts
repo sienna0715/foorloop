@@ -13,4 +13,5 @@ export const PALETTE_COMPONENT = {
 export const PALLETTE_MAIN = {
   main: '#171717',
   sub_main: '#FFF8E7',
+  code: '#1d1f21',
 };

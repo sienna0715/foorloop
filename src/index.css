@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'PPRadioGrotesk-Regular';
   src: url('./assets/PPRadioGrotesk-Regular.otf')
-    format('otf');
+    format('opentype');
   font-style: normal;
   font-display: swap;
 }
