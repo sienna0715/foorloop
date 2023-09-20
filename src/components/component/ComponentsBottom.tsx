@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 // images
-import inputComponents from '../../assets/images/input.png';
-import checkboxComponents from '../../assets/images/checkbox.png';
-import buttonComponents from '../../assets/images/button.png';
+import inputComponents from '../../assets/images/input-min.png';
+import checkboxComponents from '../../assets/images/checkbox-min.png';
+import buttonComponents from '../../assets/images/button-min.png';
 
 const ComponentsBottomWrap = styled.div`
   width: 100%;
@@ -42,7 +42,7 @@ const ComponentBigBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-indent: -99rem;
+  text-indent: -9999rem;
   cursor: pointer;
   .input_default {
     background-position-y: -40.5rem;
@@ -73,7 +73,7 @@ const ComponentBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-indent: -999rem;
+  text-indent: -9999rem;
   cursor: pointer;
   .button_default {
     background-position-y: 0rem;
@@ -146,7 +146,7 @@ const ComponentFilledBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-indent: -999rem;
+  text-indent: -9999rem;
   cursor: pointer;
   .button_outline_filled {
     background-position-y: -88.6rem;
@@ -199,12 +199,12 @@ const CheckboxImg = styled.div`
 `;
 
 interface IComponentsBottomProps {
-  setCurrentItem: (state: string | null) => void;
+  setCurrentItem: (state: string) => void;
 }
 
 function ComponentsBottom({ setCurrentItem }: IComponentsBottomProps) {
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    setCurrentItem(e.currentTarget.textContent);
+    setCurrentItem(e.currentTarget.innerText);
   };
 
   return (
