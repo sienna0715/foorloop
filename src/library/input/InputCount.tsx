@@ -9,7 +9,7 @@ const InputWrap = styled.div<{ width: number }>`
   width: ${(props) => (props.width ? props.width : 400)}px;
   height: 60px;
   padding: 0.8rem;
-  border: 1px solid ${PALETTE_COMPONENT.gray03};
+  border: 1px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
@@ -34,9 +34,6 @@ const Input = styled.input<{ color: string }>`
   border: none;
   background-color: transparent;
   color: ${(props) => (props.color ? props.color : 'black')};
-  &::placeholder {
-    color: ${PALETTE_COMPONENT.gray03};
-  }
 `;
 const TextLength = styled.span`
   ${FONT_STYLE_V1.text.text_8_medium};
@@ -74,7 +71,6 @@ export default function InputCount({
         <Label>아이디</Label>
         <Input
           type="text"
-          placeholder="id"
           value={value}
           onFocus={() => setIsFocus(true)}
           onChange={handleChange}

@@ -20,7 +20,7 @@ const InputWrap = styled.div<{ width: number }>`
   width: ${(props) => (props.width ? props.width : 400)}px;
   height: 60px;
   padding: 0.8rem;
-  border: 1px solid ${PALETTE_COMPONENT.gray03};
+  border: 1px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
@@ -92,7 +92,6 @@ export default function InputCheckIcon({
             <Label>아이디</Label>
             <Input
               type="text"
-              placeholder="id"
               value={value}
               onFocus={() => setIsFocus(true)}
               onChange={handleChange}
