@@ -8,7 +8,6 @@ import AlertIcon from '../../assets/input-alert.svg';
 import CheckIcon from '../../assets/input-check.svg';
 
 const InputForm = styled.form`
-  border: 1px solid ${PALETTE_COMPONENT.gray03};
   border-radius: 4px;
   .success {
     border: 1px solid ${PALETTE_COMPONENT.primary_blue};
@@ -22,7 +21,7 @@ const InputWrap = styled.div<{ width: number }>`
   height: 60px;
   padding: 0.8rem;
   border: 1px solid ${PALETTE_COMPONENT.gray03};
-  border-radius: 4px;
+  border-radius: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +39,7 @@ const Label = styled.label`
   padding-bottom: 0.3rem;
 `;
 const Input = styled.input<{ color: string }>`
-  ${FONT_STYLE_V1.text.text_10_medium};
+  ${FONT_STYLE_V1.text.text_18_medium};
   width: 100%;
   outline: none;
   border: none;
