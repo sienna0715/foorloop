@@ -30,13 +30,17 @@ const IconPreView = styled.div`
   justify-content: flex-end;
 `;
 
-const ZoomIcon = styled.div`
+const ZoomIcon = styled.div<{ $fill: string }>`
   width: 68rem;
   height: 68rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${PALETTE_COMPONENT.primary_white};
+  background-color: ${(props) =>
+    props.$fill === 'true'
+      ? PALETTE_COMPONENT.primary_black
+      : PALETTE_COMPONENT.primary_beige};
+  border: 2px solid ${PALETTE_COMPONENT.primary_beige};
   border-radius: 50%;
 `;
 
@@ -187,7 +191,20 @@ interface ISelectedColor {
   r: number;
   g: number;
   b: number;
-  a: number;
+  a?: number;
+}
+
+interface IHSL {
+  a?: number | undefined;
+  h: number;
+  l: number;
+  s: number;
+}
+
+interface IColor {
+  hex: string;
+  hsl: IHSL;
+  rgb: ISelectedColor;
 }
 
 function Icons() {
@@ -206,7 +223,7 @@ function Icons() {
     setSelectedData(data[data.map((el) => el.name).indexOf(name)]);
   };
 
-  const rgbaToHexA = ({ r, g, b, a }: ISelectedColor) => {
+  const rgbaToHexA = ({ r, g, b, a = 1 }: ISelectedColor) => {
     const hexArr = [
       r.toString(16),
       g.toString(16),
@@ -223,7 +240,7 @@ function Icons() {
     setHexColor(`#${mapHexArr.join('')}`);
   };
 
-  const onChangeCompleteHandler = (color) => {
+  const onChangeCompleteHandler = (color: IColor) => {
     setSelectedColor(color.rgb);
     rgbaToHexA(color.rgb);
   };
@@ -248,6 +265,7 @@ function Icons() {
             dangerouslySetInnerHTML={{
               __html: selectedData.icon(hexColor, 370),
             }}
+            $fill={isFill}
           />
           <IconBackgroundToggle onClick={isFillClickHandler} $fill={isFill}>
             {isFill === 'true' ? 'Fill' : null}
