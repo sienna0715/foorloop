@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+import { ChromePicker } from 'react-color';
 import { PALETTE_COMPONENT } from '../styles/colors';
 import CodeBlock from '../components/CodeBlock';
 import { FONT_STYLE_V1 } from '../styles/fontStyles';
+import data from '../data/iconData';
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,6 +12,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 16.5rem;
+  margin-bottom: 18rem;
 `;
 
 const PreView = styled.div`
@@ -21,9 +25,9 @@ const PreView = styled.div`
 `;
 
 const IconPreView = styled.div`
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
 `;
 
 const ZoomIcon = styled.div`
@@ -32,8 +36,45 @@ const ZoomIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${PALETTE_COMPONENT.primary_beige};
+  background-color: ${PALETTE_COMPONENT.primary_white};
   border-radius: 50%;
+`;
+
+const IconBackgroundToggle = styled.div<{ $fill: string }>`
+  position: absolute;
+  width: 12rem;
+  height: 5rem;
+  padding: ${(props) =>
+    props.$fill === 'true' ? `0 0.75rem 0 2rem` : `0 0.75rem`};
+  display: flex;
+  align-items: center;
+  border: 1px solid ${PALETTE_COMPONENT.primary_beige};
+  border-radius: 2.5rem;
+  background-color: ${(props) =>
+    props.$fill === 'true'
+      ? PALETTE_COMPONENT.primary_beige
+      : PALETTE_COMPONENT.primary_black};
+  ${FONT_STYLE_V1.text.text_24_medium}
+  font-weight: 400;
+  color: ${(props) =>
+    props.$fill === 'true'
+      ? PALETTE_COMPONENT.primary_black
+      : PALETTE_COMPONENT.primary_beige};
+  transition: background-color 0.5s ease-in;
+`;
+
+const IconBackgroundToggleDot = styled.div<{ $fill: string }>`
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: ${(props) => (props.$fill === 'true' ? null : '0.4rem')};
+  border-radius: 50%;
+  background-color: ${(props) =>
+    props.$fill === 'true'
+      ? PALETTE_COMPONENT.primary_black
+      : PALETTE_COMPONENT.primary_beige};
+  transform: ${(props) =>
+    props.$fill === 'true' ? 'translateX(71%)' : 'none'};
+  transition: background-color transform 0.5s ease-in;
 `;
 
 const CodePreView = styled.div`
@@ -65,6 +106,7 @@ const TitleText = styled.div`
   color: ${PALETTE_COMPONENT.primary_beige};
 `;
 const Color = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -83,38 +125,176 @@ const ColorText = styled.div`
   font-weight: 400;
   color: ${PALETTE_COMPONENT.primary_beige};
 `;
-const SelectedColor = styled.div`
+const SelectedColor = styled.div<{ $color: ISelectedColor }>`
   width: 18rem;
   height: 3.6rem;
   margin-bottom: 5rem;
   border: 2px solid ${PALETTE_COMPONENT.primary_beige};
   border-radius: 1.8rem;
-  background-color: ${PALETTE_COMPONENT.primary_beige};
+  background-color: ${(props) =>
+    `rgba(${props.$color.r}, ${props.$color.g}, ${props.$color.b}, ${props.$color.a})`};
+`;
+const ColorPicker = styled.div`
+  position: absolute;
+  top: 3.8rem;
+  left: 19.5rem;
+  z-index: 999;
+  > div {
+    width: 18.2rem !important;
+    border-radius: 1.8rem !important;
+    background-color: ${PALETTE_COMPONENT.primary_beige} !important;
+    overflow: hidden;
+  }
+`;
+const IconsList = styled.div`
+  width: 100%;
+  padding-top: 18rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border-top: 2px solid ${PALETTE_COMPONENT.primary_beige};
+`;
+const IconListItem = styled.div`
+  width: 11rem;
+  height: 15rem;
+  padding-top: 3.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+`;
+const IconListItemIcon = styled.div`
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const IconText = styled.div`
+  margin-top: 5rem;
+  ${FONT_STYLE_V1.text.text_18_medium}
+  font-weight: 400;
 `;
 
-const IconsList = styled.div``;
+interface IMainIconList {
+  icon: (color: string, size: number) => string;
+  name: string;
+}
+
+interface ISelectedColor {
+  r: number;
+  g: number;
+  b: number;
+  a: number;
+}
+
 function Icons() {
+  const [selectedData, setSelectedData] = useState<IMainIconList>(data[0]);
+  const [selectedColor, setSelectedColor] = useState<ISelectedColor>({
+    r: 0,
+    g: 0,
+    b: 0,
+    a: 1,
+  });
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
+  const [hexColor, setHexColor] = useState('#000000');
+  const [isFill, setIsFill] = useState('false');
+
+  const IconClickHandler = (name: string) => {
+    setSelectedData(data[data.map((el) => el.name).indexOf(name)]);
+  };
+
+  const rgbaToHexA = ({ r, g, b, a }: ISelectedColor) => {
+    const hexArr = [
+      r.toString(16),
+      g.toString(16),
+      b.toString(16),
+      Math.round(a * 255).toString(16),
+    ];
+    const mapHexArr = hexArr.map((el) => {
+      if (el.length === 1) {
+        return `0${el}`;
+      }
+      return el;
+    });
+
+    setHexColor(`#${mapHexArr.join('')}`);
+  };
+
+  const onChangeCompleteHandler = (color) => {
+    setSelectedColor(color.rgb);
+    rgbaToHexA(color.rgb);
+  };
+
+  const displayColorPickerHandler = () => {
+    setDisplayColorPicker(!displayColorPicker);
+  };
+
+  const isFillClickHandler = () => {
+    if (isFill === 'true') {
+      setIsFill('false');
+    } else if (isFill === 'false') {
+      setIsFill('true');
+    }
+  };
+
   return (
     <Wrapper>
       <PreView>
         <IconPreView>
-          <ZoomIcon />
+          <ZoomIcon
+            dangerouslySetInnerHTML={{
+              __html: selectedData.icon(hexColor, 370),
+            }}
+          />
+          <IconBackgroundToggle onClick={isFillClickHandler} $fill={isFill}>
+            {isFill === 'true' ? 'Fill' : null}
+            <IconBackgroundToggleDot $fill={isFill} />
+            {isFill === 'true' ? null : 'Empty'}
+          </IconBackgroundToggle>
         </IconPreView>
         <CodePreView>
           <Title>
             <TitleDot />
-            <TitleText>{`icon > home icon`}</TitleText>
+            <TitleText>{`icon > ${selectedData.name} icon`}</TitleText>
           </Title>
           <Color>
             <ColorText>color</ColorText>
-            <SelectedColor />
+            <SelectedColor
+              $color={selectedColor}
+              onClick={displayColorPickerHandler}
+            />
             {/* react color 추가 */}
+            {displayColorPicker ? (
+              <ColorPicker>
+                <ChromePicker
+                  color={selectedColor}
+                  onChangeComplete={onChangeCompleteHandler}
+                />
+              </ColorPicker>
+            ) : null}
           </Color>
           {/* react code block 추기 */}
-          <CodeBlock />
+          <CodeBlock
+            titles={['React', 'SVG']}
+            codes={['react code', selectedData.icon(hexColor, 370)]}
+          />
         </CodePreView>
       </PreView>
-      <IconsList>{/* icon map 적용하기 */}</IconsList>
+      <IconsList>
+        {data.map((el) => (
+          <IconListItem key={el.name} onClick={() => IconClickHandler(el.name)}>
+            <IconListItemIcon
+              dangerouslySetInnerHTML={{
+                __html: el.icon(PALETTE_COMPONENT.primary_beige, 40),
+              }}
+            />
+            <IconText>{el.name}</IconText>
+          </IconListItem>
+        ))}
+      </IconsList>
     </Wrapper>
   );
 }
