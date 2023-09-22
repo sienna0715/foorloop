@@ -117,7 +117,9 @@ function Header() {
           <Menu>
             <Link to="/components">components</Link>
           </Menu>
-          <Menu>icon</Menu>
+          <Menu>
+            <Link to="/icons">icons</Link>
+          </Menu>
           <Menu>about us</Menu>
         </MenuBox>
         <Button>
