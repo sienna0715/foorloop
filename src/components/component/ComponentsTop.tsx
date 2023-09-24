@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 // components
 import { PALLETTE_MAIN } from '../../styles/colors';
+// import componentsData from '../../data/componentsData';
+import codeDatas from '../../data/componentsCodeDatas';
 import CodeBlock from '../CodeBlock';
 
 const ComponentsTopWrap = styled.div`
@@ -17,19 +19,26 @@ const Preview = styled.div`
   background-color: ${PALLETTE_MAIN.sub_main};
   border-radius: 3rem;
   margin-right: 13rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 interface IComponentsTopProps {
-  codeDatas: string[];
+  currentItem: string;
 }
 
-function ComponentsTop({ codeDatas }: IComponentsTopProps) {
+function ComponentsTop({ currentItem }: IComponentsTopProps) {
+  const datas = codeDatas.filter((item) => {
+    return item.name === currentItem;
+  });
+
   return (
     <ComponentsTopWrap>
-      <Preview>g</Preview>
+      <Preview>{datas[0]?.component}</Preview>
       <CodeBlock
         titles={['React', 'Styled-components']}
-        codes={[codeDatas[0], '']}
+        codes={datas[0]?.code}
       />
     </ComponentsTopWrap>
   );

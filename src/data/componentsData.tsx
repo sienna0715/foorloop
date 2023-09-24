@@ -43,25 +43,25 @@ const componentsData = {
   name: ['Input', 'Dropdown', 'Checkbox', 'Button', 'Search', 'Toggle'],
   inputs: [
     {
-      id: 1,
-      name: 'inputDefault',
+      id: 0,
+      name: 'input_default',
       component: <InputDefault width={300} color="white" />,
     },
     {
-      id: 2,
-      name: 'Input',
+      id: 1,
+      name: 'input_count',
       component: <InputCount width={300} color="white" />,
     },
     {
-      id: 3,
-      name: 'Input',
+      id: 2,
+      name: 'input_check',
       component: <InputCheck width={300} color="white" />,
     },
   ],
   dropdowns: [
     {
-      id: 4,
-      name: 'Dropdown',
+      id: 3,
+      name: 'dropdown_default',
       component: (
         <DefaultDropdown
           width={300}
@@ -70,165 +70,167 @@ const componentsData = {
       ),
     },
   ],
+  searchs: [
+    {
+      id: 4,
+      name: 'search_bar',
+      component: <Search width={500} color="black" />,
+    },
+  ],
   checkboxs: [
     {
       id: 5,
-      name: 'Checkbox',
+      name: 'checkbox_beige',
       component: <CheckboxBeige />,
     },
     {
-      id: 8,
-      name: 'Checkbox',
+      id: 6,
+      name: 'round_checkbox_beige',
       component: <RCheckboxBeige />,
     },
     {
-      id: 11,
-      name: 'Checkbox',
+      id: 7,
+      name: 'checkbox_beige_label',
       component: <CheckboxBeigeLabel />,
     },
     {
-      id: 14,
-      name: 'Checkbox',
+      id: 8,
+      name: 'round_checkbox_beige_label',
       component: <RCheckboxBeigeLabel />,
     },
     {
-      id: 7,
-      name: 'Checkbox',
+      id: 9,
+      name: 'checkbox_red',
       component: <CheckboxRed />,
     },
     {
       id: 10,
-      name: 'Checkbox',
+      name: 'round_checkbox_red',
       component: <RCheckboxRed />,
     },
     {
-      id: 13,
-      name: 'Checkbox',
+      id: 11,
+      name: 'checkbox_red_label',
       component: <CheckboxRedLabel />,
     },
     {
-      id: 16,
-      name: 'Checkbox',
+      id: 12,
+      name: 'round_checkbox_red_label',
       component: <RCheckboxRedLabel />,
     },
   ],
   darkCheckboxs: [
     {
-      id: 6,
-      name: 'Checkbox',
+      id: 13,
+      name: 'checkbox_black',
       component: <CheckboxBlack />,
     },
     {
-      id: 9,
-      name: 'Checkbox',
+      id: 14,
+      name: 'round_checkbox_black',
       component: <RCheckboxBlack />,
     },
     {
-      id: 12,
-      name: 'Checkbox',
+      id: 15,
+      name: 'chceckbox_black_label',
       component: <CheckboxBlackLabel />,
     },
     {
-      id: 15,
-      name: 'Checkbox',
+      id: 16,
+      name: 'round_checkbox_black_label',
       component: <RCheckboxBlackLabel />,
     },
   ],
   buttons: [
     {
       id: 17,
-      name: 'Button',
+      name: 'button_default',
       component: <DefaultButton />,
     },
     {
       id: 18,
-      name: 'Button',
-      component: <FilledOutLineButton />,
+      name: 'button_plus_left',
+      component: <PlusButton />,
     },
     {
       id: 19,
-      name: 'Button',
+      name: 'button_plus_right',
+      component: <RPlusButton />,
+    },
+    {
+      id: 20,
+      name: 'button_outline',
       component: <OutLineButton />,
     },
     {
       id: 21,
-      name: 'Button',
-      component: <PlusButton />,
-    },
-    {
-      id: 22,
-      name: 'Button',
-      component: <RPlusButton />,
-    },
-    {
-      id: 23,
-      name: 'Button',
-      component: <FilledOutLinePlusButton />,
-    },
-    {
-      id: 24,
-      name: 'Button',
-      component: <RFilledOutLinePlusButton />,
-    },
-    {
-      id: 25,
-      name: 'Button',
+      name: 'button_outline_plus_left',
       component: <OutLinePlusButton />,
     },
     {
-      id: 26,
-      name: 'Button',
+      id: 22,
+      name: 'button_outline_plus_right',
       component: <ROutLinePlusButton />,
-    },
-    {
-      id: 27,
-      name: 'Button',
-      component: <DarkPlusButton />,
-    },
-    {
-      id: 28,
-      name: 'Button',
-      component: <RDarkPlusButton />,
-    },
-    {
-      id: 29,
-      name: 'Button',
-      component: <DisableButton />,
-    },
-    {
-      id: 30,
-      name: 'Button',
-      component: <DisableFilledButton />,
-    },
-    {
-      id: 31,
-      name: 'Button',
-      component: <DisableOutLineButton />,
     },
   ],
   darkButtons: [
     {
-      id: 20,
-      name: 'Button',
+      id: 23,
+      name: 'button_outline_filled',
+      component: <FilledOutLineButton />,
+    },
+    {
+      id: 24,
+      name: 'button_outline_filled_plus_left',
+      component: <FilledOutLinePlusButton />,
+    },
+    {
+      id: 25,
+      name: 'button_outline_filled_plus_right',
+      component: <RFilledOutLinePlusButton />,
+    },
+    {
+      id: 26,
+      name: 'button_default_dark',
       component: <DarkDefaultButton />,
     },
-  ],
-  searchs: [
     {
-      id: 32,
-      name: 'Search',
-      component: <Search width={300} color="white" />,
+      id: 27,
+      name: 'button_plus_left_dark',
+      component: <DarkPlusButton />,
+    },
+    {
+      id: 28,
+      name: 'button_plus_right_dark',
+      component: <RDarkPlusButton />,
+    },
+  ],
+  disableButton: [
+    {
+      id: 29,
+      name: 'button_disable',
+      component: <DisableButton />,
+    },
+    {
+      id: 30,
+      name: 'button_filled_disable',
+      component: <DisableFilledButton />,
+    },
+    {
+      id: 31,
+      name: 'button_outline_disable',
+      component: <DisableOutLineButton />,
     },
   ],
   toggles: [
     {
-      id: 33,
-      name: 'Toggle',
+      id: 32,
+      name: 'toggle_aos',
       component: <AosToggle />,
     },
     {
-      id: 34,
-      name: 'Toggle',
+      id: 33,
+      name: 'toggle_ios',
       component: <IosToggle />,
     },
   ],
