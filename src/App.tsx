@@ -12,32 +12,13 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Suspense>
-              <Main />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/components"
-          element={
-            <Suspense>
-              <Components />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/icons"
-          element={
-            <Suspense>
-              <Icons />
-            </Suspense>
-          }
-        />
-      </Routes>
+      <Suspense>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/components" element={<Components />} />
+          <Route path="/icons" element={<Icons />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </BrowserRouter>
   );
