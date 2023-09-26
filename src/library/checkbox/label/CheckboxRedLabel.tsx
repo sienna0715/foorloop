@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 import { PALETTE_COMPONENT } from '../../../styles/colors';
 import Check from '../../../assets/checkbox-white.svg';
 
-const CheckboxWrap = styled.div`
+const CheckboxWrap = styled.div<{ scale: number }>`
   width: max-content;
   height: 20px;
   display: flex;
@@ -13,6 +13,8 @@ const CheckboxWrap = styled.div`
   .false {
     color: ${PALETTE_COMPONENT.gray04};
   }
+  transform: scale(${(props) => (props.scale ? props.scale : 1)});
+  cursor: pointer;
 `;
 const Checkbox = styled.div`
   width: 20px;
@@ -36,11 +38,15 @@ const Label = styled.label`
   color: ${PALETTE_COMPONENT.primary_red};
 `;
 
-export default function CheckboxRedLabel() {
+interface ICheckboxProps {
+  scale: number;
+}
+
+export default function CheckboxRedLabel({ scale }: ICheckboxProps) {
   const [check, isCheck] = useState(false);
 
   return (
-    <CheckboxWrap onClick={() => isCheck(!check)}>
+    <CheckboxWrap scale={scale} onClick={() => isCheck(!check)}>
       {check ? (
         <>
           <CheckboxFill>
