@@ -1,9 +1,9 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 // components
 import ComponentsTop from '../components/component/ComponentsTop';
 import ComponentsBottom from '../components/component/ComponentsBottom';
-import codeData from '../data/componentsCodeDatas';
+// import codeData from '../data/componentsCodeDatas';
 
 const ComponentsWrap = styled.div`
   width: 100%;
@@ -16,13 +16,13 @@ const ComponentsContainer = styled.div`
 `;
 
 function Components() {
-  // const [currentItem, setCurrentItem] = useState('');
+  const [currentItem, setCurrentItem] = useState('');
 
   return (
     <ComponentsWrap>
       <ComponentsContainer>
-        <ComponentsTop codeDatas={codeData.code} />
-        <ComponentsBottom />
+        <ComponentsTop currentItem={currentItem} />
+        <ComponentsBottom setCurrentItem={setCurrentItem} />
       </ComponentsContainer>
     </ComponentsWrap>
   );

@@ -32,6 +32,7 @@ const TabBox = styled.div`
   }
 `;
 const CodeBox = styled.div`
+  ${FONT_STYLE_V1.text.text_16_medium};
   width: 70rem;
   height: 45rem;
   padding: 3rem 1rem;
@@ -71,7 +72,7 @@ interface ICodeBlockProps {
 
 function CodeBlock({
   titles = ['React', 'SVG'],
-  codes = ['1', '2'],
+  codes = ['', ''],
 }: ICodeBlockProps) {
   const [currentTab, setCurrentTab] = useState(1);
   const TabMenus = [

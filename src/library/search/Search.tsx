@@ -9,7 +9,7 @@ import { ReactComponent as SearchIcon } from '../../assets/search.svg';
 const SearchWrap = styled.div<{ color: string }>`
   .focus {
     border: 1px solid ${(props) => (props.color ? props.color : 'black')};
-    box-shadow: 0px 0px 9px 0px
+    box-shadow: 0px 0px 3px 0px
       ${(props) => (props.color ? props.color : 'black')};
   }
   cursor: pointer;
@@ -18,7 +18,7 @@ const SearchContainer = styled.div<{ width: number }, { color: string }>`
   width: ${(props) => (props.width ? props.width : 400)}px;
   height: 60px;
   padding: 0.8rem;
-  border: 1px solid ${PALETTE_COMPONENT.gray03};
+  border: 1px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
@@ -28,7 +28,7 @@ const SearchContainer = styled.div<{ width: number }, { color: string }>`
   }
 `;
 const Input = styled.input<{ color: string }>`
-  ${FONT_STYLE_V1.text.text_10_medium};
+  ${FONT_STYLE_V1.text.text_18_medium};
   width: 100%;
   margin: 0 10px;
   outline: none;
@@ -36,7 +36,7 @@ const Input = styled.input<{ color: string }>`
   background-color: transparent;
   color: ${(props) => (props.color ? props.color : 'black')};
   &::placeholder {
-    color: ${PALETTE_COMPONENT.gray03};
+    color: ${PALETTE_COMPONENT.gray04};
   }
 `;
 const DeleteBtn = styled.img`
