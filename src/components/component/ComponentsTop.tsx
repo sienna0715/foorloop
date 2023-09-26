@@ -29,17 +29,12 @@ interface IComponentsTopProps {
 }
 
 function ComponentsTop({ currentItem }: IComponentsTopProps) {
-  const datas = codeDatas.filter((item) => {
-    return item.name === currentItem;
-  });
+  const datas = codeDatas[+currentItem];
 
   return (
     <ComponentsTopWrap>
-      <Preview>{datas[0]?.component}</Preview>
-      <CodeBlock
-        titles={['React', 'Styled-components']}
-        codes={datas[0]?.code}
-      />
+      <Preview>{datas?.component}</Preview>
+      <CodeBlock titles={['React', 'Styled-components']} codes={datas?.code} />
     </ComponentsTopWrap>
   );
 }
