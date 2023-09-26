@@ -118,7 +118,6 @@ function Header() {
             <Link to="/components">components</Link>
           </Menu>
           <Menu>
-            {' '}
             <Link to="/icons">icons</Link>
           </Menu>
           <Menu>about us</Menu>
