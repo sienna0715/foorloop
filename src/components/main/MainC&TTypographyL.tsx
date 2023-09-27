@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { PALETTE_COMPONENT } from '../../styles/colors';
+import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../../breakpoint';
 
@@ -7,7 +7,7 @@ const Container = styled.div`
   margin-top: 13.2rem;
   ${FONT_STYLE_V1.text.text_60_medium}
   font-weight: 400;
-  color: ${PALETTE_COMPONENT.primary_beige};
+  color: ${PALLETTE_MAIN.sub_main};
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     margin-top: 7.8rem;
     ${FONT_STYLE_V1.text.text_30_medium}

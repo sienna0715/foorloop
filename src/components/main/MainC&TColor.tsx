@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { styled } from 'styled-components';
-import { PALETTE_COMPONENT } from '../../styles/colors';
+import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import { BREAKPOINTDESKTOP, BREAKPOINTTABLET } from '../../breakpoint';
 
@@ -19,7 +19,7 @@ const Title = styled.div`
   margin-bottom: 1rem;
   ${FONT_STYLE_V1.text.text_20_medium}
   font-weight: 900;
-  color: ${PALETTE_COMPONENT.primary_beige};
+  color: ${PALLETTE_MAIN.sub_main};
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_12_medium}
   }
@@ -29,7 +29,7 @@ const TitleInfo = styled.div`
   margin-bottom: 4.6rem;
   ${FONT_STYLE_V1.text.text_20_medium}
   font-weight: 400;
-  color: ${PALETTE_COMPONENT.gray04};
+  color: ${PALLETTE_MAIN.gray};
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_12_medium}
   }
@@ -41,13 +41,11 @@ const Item = styled.div`
 
 const BlackColor = styled.div<{ ishover: string }>`
   padding: 4rem;
-  border: 2px solid ${PALETTE_COMPONENT.primary_beige};
+  border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 4rem;
-  background-color: ${PALETTE_COMPONENT.primary_black};
+  background-color: ${PALLETTE_MAIN.sub_main};
   color: ${(props) =>
-    props.ishover === 'true'
-      ? PALETTE_COMPONENT.primary_beige
-      : PALETTE_COMPONENT.primary_black};
+    props.ishover === 'true' ? PALLETTE_MAIN.sub_main : PALLETTE_MAIN.main};
   transition: all 0.5s 0.5s;
   transition: margin 1s;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
@@ -69,10 +67,10 @@ const BeigeColor = styled.div<{ ishover: string }>`
   position: absolute;
   padding: 4rem;
   margin-left: ${(props) => (props.ishover === 'true' ? '41.6rem' : '12rem')};
-  border: 2px solid ${PALETTE_COMPONENT.primary_beige};
+  border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 4rem;
-  background-color: ${PALETTE_COMPONENT.primary_beige};
-  color: ${PALETTE_COMPONENT.primary_black};
+  background-color: ${PALLETTE_MAIN.sub_main};
+  color: ${PALLETTE_MAIN.main};
   transition: all 1s;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     margin-left: ${(props) => (props.ishover === 'true' ? '30.6rem' : '8rem')};

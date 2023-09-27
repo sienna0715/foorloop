@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
-import { PALETTE_COMPONENT } from '../../styles/colors';
+import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../../breakpoint';
 
@@ -16,9 +16,7 @@ const Container = styled.div<{ isselect: string }>`
   font-weight: ${(props) => (props.isselect === 'true' ? 900 : 400)};
   text-align: center;
   color: ${(props) =>
-    props.isselect === 'true'
-      ? PALETTE_COMPONENT.primary_beige
-      : PALETTE_COMPONENT.gray04};
+    props.isselect === 'true' ? PALLETTE_MAIN.sub_main : PALLETTE_MAIN.gray};
   cursor: pointer;
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_14_medium}
