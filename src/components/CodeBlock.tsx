@@ -136,8 +136,8 @@ function CodeBlock({
           <CopyBlock
             theme={hybrid}
             text={codes[1]}
-            codeBlock
             copied
+            codeBlock
             wrapLongLines={false}
             language="jsx"
           />

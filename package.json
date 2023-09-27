@@ -13,7 +13,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "@types/react-router-dom": "^5.3.3",
     "react": "^18.2.0",
-    "react-code-blocks": "^0.1.4",
+    "react-code-blocks": "0.0.9-0",
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
