@@ -1,5 +1,5 @@
 export const PALETTE_COMPONENT = {
-  primary_black: '#171717',
+  primary_black: '#000000',
   primary_white: '#FFFFFF',
   primary_beige: '#FFF8E7',
   primary_red: '#DF1D1D',
