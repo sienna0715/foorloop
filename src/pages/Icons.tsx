@@ -5,7 +5,11 @@ import { PALETTE_COMPONENT } from '../styles/colors';
 import CodeBlock from '../components/CodeBlock';
 import { FONT_STYLE_V1 } from '../styles/fontStyles';
 import data from '../data/iconData';
-import { BREAKPOINTDESKTOP, BREAKPOINTTABLET } from '../breakpoint';
+import {
+  BREAKPOINTDESKTOP,
+  BREAKPOINTMOBILE,
+  BREAKPOINTTABLET,
+} from '../breakpoint';
 
 const Wrapper = styled.div`
   max-width: 1920px;
@@ -22,6 +26,10 @@ const Wrapper = styled.div`
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     margin: 0 2rem;
     margin-bottom: 18rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    margin: 0 1rem;
+    margin-bottom: 10rem;
   }
 `;
 
@@ -61,6 +69,14 @@ const ZoomIcon = styled.div<{ $fill: string }>`
       width: 20rem;
       height: 20rem;
     }
+    @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+      width: 30rem;
+      height: 30rem;
+      > svg {
+        width: 15rem;
+        height: 15rem;
+      }
+    }
   }
 `;
 
@@ -94,6 +110,13 @@ const IconBackgroundToggle = styled.div<{ $fill: string }>`
       props.$fill === 'true' ? `0 1.2rem 0 0.8rem` : `0 0.2rem 0 0.5rem`};
     ${FONT_STYLE_V1.text.text_10_medium}
   }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 5rem;
+    height: 2rem;
+    padding: ${(props) =>
+      props.$fill === 'true' ? `0 1.2rem 0 0.8rem` : `0 0.4rem 0 0.4rem`};
+    ${FONT_STYLE_V1.text.text_10_medium}
+  }
 `;
 
 const IconBackgroundToggleDot = styled.div<{ $fill: string }>`
@@ -112,6 +135,10 @@ const IconBackgroundToggleDot = styled.div<{ $fill: string }>`
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     width: 2rem;
     height: 2rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 1rem;
+    height: 1rem;
   }
 `;
 
@@ -178,6 +205,11 @@ const ColorText = styled.div`
     height: 2.5rem;
     ${FONT_STYLE_V1.text.text_18_medium}
   }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 7rem;
+    height: 2rem;
+    ${FONT_STYLE_V1.text.text_14_medium}
+  }
 `;
 
 const SelectedColor = styled.div<{ $color: ISelectedColor }>`
@@ -191,6 +223,10 @@ const SelectedColor = styled.div<{ $color: ISelectedColor }>`
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     width: 9rem;
     height: 2.5rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 7rem;
+    height: 2rem;
   }
 `;
 
@@ -208,6 +244,10 @@ const ColorPicker = styled.div`
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     top: 2.7rem;
     left: 10.5rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    top: 2.2rem;
+    left: 8.5rem;
   }
 `;
 
