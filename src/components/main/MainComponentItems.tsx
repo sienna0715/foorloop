@@ -18,9 +18,9 @@ const Container = styled.div`
 
 function MainComponentItems() {
   const datas = [
-    { title: 'checkbox', component: <CheckboxRedLabel /> },
+    { title: 'checkbox', component: <CheckboxRedLabel scale={1.5} /> },
     { title: 'button', component: <PlusButton /> },
-    { title: 'input', component: <InputDefault width={200} color="white" /> },
+    { title: 'input', component: <InputDefault width={200} /> },
     {
       title: 'dropdown',
       component: (
