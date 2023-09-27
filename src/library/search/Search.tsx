@@ -6,35 +6,34 @@ import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import DeleteImg from '../../assets/input-delete.svg';
 import { ReactComponent as SearchIcon } from '../../assets/search.svg';
 
-const SearchWrap = styled.div<{ color: string }>`
+const SearchWrap = styled.div`
   .focus {
-    border: 1px solid ${(props) => (props.color ? props.color : 'black')};
-    box-shadow: 0px 0px 3px 0px
-      ${(props) => (props.color ? props.color : 'black')};
+    border: 1px solid ${PALETTE_COMPONENT.primary_black};
+    box-shadow: 0px 0px 3px 0px ${PALETTE_COMPONENT.primary_black};
   }
   cursor: pointer;
 `;
-const SearchContainer = styled.div<{ width: number }, { color: string }>`
+const SearchContainer = styled.div<{ width: number }>`
   width: ${(props) => (props.width ? props.width : 400)}px;
-  height: 60px;
-  padding: 0.8rem;
+  height: 70px;
+  padding: 1rem;
   border: 1px solid ${PALETTE_COMPONENT.primary_black};
-  border-radius: 4px;
+  border-radius: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   svg {
-    fill: ${(props) => (props.color ? props.color : 'black')};
+    fill: ${PALETTE_COMPONENT.primary_black};
   }
 `;
-const Input = styled.input<{ color: string }>`
+const Input = styled.input`
   ${FONT_STYLE_V1.text.text_18_medium};
   width: 100%;
-  margin: 0 10px;
+  margin: 0 1rem;
   outline: none;
   border: none;
   background-color: transparent;
-  color: ${(props) => (props.color ? props.color : 'black')};
+  color: ${PALETTE_COMPONENT.primary_black};
   &::placeholder {
     color: ${PALETTE_COMPONENT.gray04};
   }
@@ -47,10 +46,9 @@ const DeleteBtn = styled.img`
 
 interface ISearchProps {
   width: number;
-  color: string;
 }
 
-export default function Search({ width = 400, color = 'black' }: ISearchProps) {
+export default function Search({ width = 400 }: ISearchProps) {
   const [value, setValue] = useState('');
   const [isFocus, setIsFocus] = useState(false);
   const count = value.length;
@@ -60,12 +58,8 @@ export default function Search({ width = 400, color = 'black' }: ISearchProps) {
   };
 
   return (
-    <SearchWrap color={color}>
-      <SearchContainer
-        className={isFocus ? 'focus' : ''}
-        width={width}
-        color={color}
-      >
+    <SearchWrap>
+      <SearchContainer className={isFocus ? 'focus' : ''} width={width}>
         <SearchIcon />
         <Input
           type="text"
@@ -74,7 +68,6 @@ export default function Search({ width = 400, color = 'black' }: ISearchProps) {
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
           onChange={handleChange}
-          color={color}
         />
         {count !== 0 && (
           <DeleteBtn src={DeleteImg} onClick={() => setValue('')} />

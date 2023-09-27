@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { PALETTE_COMPONENT } from '../../styles/colors';
+import { PALLETTE_MAIN } from '../../styles/colors';
 import ArrowButton from '../ArrowButton';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import { BREAKPOINTTABLET } from '../../breakpoint';
@@ -13,9 +13,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 2px solid ${PALETTE_COMPONENT.primary_beige};
+  border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 6rem;
-  background-color: ${PALETTE_COMPONENT.primary_black};
+  background-color: ${PALLETTE_MAIN.main};
   cursor: pointer;
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     width: 21.6rem;
@@ -34,10 +34,10 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 1.8rem;
-  background-color: ${PALETTE_COMPONENT.primary_beige};
+  background-color: ${PALLETTE_MAIN.sub_main};
   ${FONT_STYLE_V1.text.text_16_medium}
   font-weight: 400;
-  color: ${PALETTE_COMPONENT.primary_black};
+  color: ${PALLETTE_MAIN.main};
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     width: 5.76rem;
     height: 2.16rem;
