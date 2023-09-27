@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { keyframes, styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 // components
-import { FONT_STYLE_V1 } from '../../styles/fontStyles';
-import { PALLETTE_MAIN } from '../../styles/colors';
-import { BREAKPOINTMOBILE, BREAKPOINTDESKTOP } from '../../breakpoint';
-import { ReactComponent as Hamberger } from '../../assets/list.svg';
+import { FONT_STYLE_V1 } from '../styles/fontStyles';
+import { PALLETTE_MAIN } from '../styles/colors';
+import { BREAKPOINTMOBILE, BREAKPOINTDESKTOP } from '../breakpoint';
+import { ReactComponent as Hamberger } from '../assets/list.svg';
 
 const HeaderWrap = styled.div`
   width: 100%;
@@ -114,8 +114,12 @@ function Header() {
           <Logo>FOR&#123;LOOP&#125;</Logo>
         </Link>
         <MenuBox>
-          <Menu>components</Menu>
-          <Menu>icon</Menu>
+          <Menu>
+            <Link to="/components">components</Link>
+          </Menu>
+          <Menu>
+            <Link to="/icons">icons</Link>
+          </Menu>
           <Menu>about us</Menu>
         </MenuBox>
         <Button>

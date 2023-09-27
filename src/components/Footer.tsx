@@ -1,7 +1,8 @@
 import { styled } from 'styled-components';
-import { FONT_STYLE_V1 } from '../../styles/fontStyles';
-import { PALLETTE_MAIN } from '../../styles/colors';
-import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../../breakpoint';
+import { Link } from 'react-router-dom';
+import { FONT_STYLE_V1 } from '../styles/fontStyles';
+import { PALLETTE_MAIN } from '../styles/colors';
+import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../breakpoint';
 
 const FooterWrap = styled.div`
   width: 100%;
@@ -55,7 +56,9 @@ function Footer() {
         <Logo>FOR&#123;LOOP&#125;</Logo>
         <MenuBox>
           <Menu>components</Menu>
-          <Menu>icon</Menu>
+          <Menu>
+            <Link to="/icons">icons</Link>
+          </Menu>
           <Menu>about us</Menu>
         </MenuBox>
       </FooterContainer>
