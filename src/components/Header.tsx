@@ -132,8 +132,12 @@ function Header() {
       </HeaderContainer>
       {isMenu && (
         <MMenuBox>
-          <Menu>components</Menu>
-          <Menu>icon</Menu>
+          <Menu onClick={() => setIsMenu(false)}>
+            <Link to="/components">components</Link>
+          </Menu>
+          <Menu onClick={() => setIsMenu(false)}>
+            <Link to="/icons">icon</Link>
+          </Menu>
           <Menu>about us</Menu>
         </MMenuBox>
       )}
