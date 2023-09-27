@@ -5,14 +5,32 @@ import { PALLETTE_MAIN } from '../styles/colors';
 import CodeBlock from '../components/CodeBlock';
 import { FONT_STYLE_V1 } from '../styles/fontStyles';
 import data from '../data/iconData';
+import {
+  BREAKPOINTDESKTOP,
+  BREAKPOINTMOBILE,
+  BREAKPOINTTABLET,
+} from '../breakpoint';
 
 const Wrapper = styled.div`
+  max-width: 1920px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 16.5rem;
   margin-bottom: 18rem;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    margin: 0 8rem;
+    margin-bottom: 18rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin: 0 2rem;
+    margin-bottom: 18rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    margin: 0 1rem;
+    margin-bottom: 10rem;
+  }
 `;
 
 const PreView = styled.div`
@@ -20,8 +38,10 @@ const PreView = styled.div`
   margin-top: 5rem;
   margin-bottom: 10rem;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  gap: 13rem;
 `;
 
 const IconPreView = styled.div`
@@ -40,6 +60,22 @@ const ZoomIcon = styled.div<{ $fill: string }>`
     props.$fill === 'true' ? PALLETTE_MAIN.main : PALLETTE_MAIN.sub_main};
   border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 50%;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 40rem;
+    height: 40rem;
+    > svg {
+      width: 20rem;
+      height: 20rem;
+    }
+    @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+      width: 30rem;
+      height: 30rem;
+      > svg {
+        width: 15rem;
+        height: 15rem;
+      }
+    }
+  }
 `;
 
 const IconBackgroundToggle = styled.div<{ $fill: string }>`
@@ -47,8 +83,9 @@ const IconBackgroundToggle = styled.div<{ $fill: string }>`
   width: 12rem;
   height: 5rem;
   padding: ${(props) =>
-    props.$fill === 'true' ? `0 0.75rem 0 2rem` : `0 0.75rem`};
+    props.$fill === 'true' ? `0 3rem 0 2rem` : `0 0.75rem`};
   display: flex;
+  justify-content: space-around;
   align-items: center;
   border: 1px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 2.5rem;
@@ -59,6 +96,21 @@ const IconBackgroundToggle = styled.div<{ $fill: string }>`
   color: ${(props) =>
     props.$fill === 'true' ? PALLETTE_MAIN.main : PALLETTE_MAIN.sub_main};
   transition: background-color 0.5s ease-in;
+
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 7rem;
+    height: 3rem;
+    padding: ${(props) =>
+      props.$fill === 'true' ? `0 1.2rem 0 0.8rem` : `0 0.2rem 0 0.5rem`};
+    ${FONT_STYLE_V1.text.text_10_medium}
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 5rem;
+    height: 2rem;
+    padding: ${(props) =>
+      props.$fill === 'true' ? `0 1.2rem 0 0.8rem` : `0 0.4rem 0 0.4rem`};
+    ${FONT_STYLE_V1.text.text_10_medium}
+  }
 `;
 
 const IconBackgroundToggleDot = styled.div<{ $fill: string }>`
@@ -71,6 +123,15 @@ const IconBackgroundToggleDot = styled.div<{ $fill: string }>`
   transform: ${(props) =>
     props.$fill === 'true' ? 'translateX(71%)' : 'none'};
   transition: background-color transform 0.5s ease-in;
+
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 2rem;
+    height: 2rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 1rem;
+    height: 1rem;
+  }
 `;
 
 const CodePreView = styled.div`
@@ -86,13 +147,19 @@ const Title = styled.div`
   display: flex;
   align-items: center;
 `;
+
 const TitleDot = styled.div`
   width: 2rem;
   height: 2rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   background-color: ${PALLETTE_MAIN.sub_main};
   border-radius: 50%;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 1rem;
+    height: 1rem;
+  }
 `;
+
 const TitleText = styled.div`
   display: flex;
   justify-content: center;
@@ -100,13 +167,18 @@ const TitleText = styled.div`
   ${FONT_STYLE_V1.text.text_18_medium}
   font-weight: 400;
   color: ${PALLETTE_MAIN.sub_main};
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_12_medium}
+  }
 `;
+
 const Color = styled.div`
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
 `;
+
 const ColorText = styled.div`
   width: 18rem;
   height: 3.6rem;
@@ -120,7 +192,18 @@ const ColorText = styled.div`
   ${FONT_STYLE_V1.text.text_24_medium}
   font-weight: 400;
   color: ${PALLETTE_MAIN.sub_main};
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 9rem;
+    height: 2.5rem;
+    ${FONT_STYLE_V1.text.text_18_medium}
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 7rem;
+    height: 2rem;
+    ${FONT_STYLE_V1.text.text_14_medium}
+  }
 `;
+
 const SelectedColor = styled.div<{ $color: ISelectedColor }>`
   width: 18rem;
   height: 3.6rem;
@@ -129,7 +212,16 @@ const SelectedColor = styled.div<{ $color: ISelectedColor }>`
   border-radius: 1.8rem;
   background-color: ${(props) =>
     `rgba(${props.$color.r}, ${props.$color.g}, ${props.$color.b}, ${props.$color.a})`};
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 9rem;
+    height: 2.5rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 7rem;
+    height: 2rem;
+  }
 `;
+
 const ColorPicker = styled.div`
   position: absolute;
   top: 3.8rem;
@@ -141,16 +233,27 @@ const ColorPicker = styled.div`
     background-color: ${PALLETTE_MAIN.sub_main} !important;
     overflow: hidden;
   }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    top: 2.7rem;
+    left: 10.5rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    top: 2.2rem;
+    left: 8.5rem;
+  }
 `;
+
 const IconsList = styled.div`
   width: 100%;
   padding-top: 18rem;
   display: flex;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
   border-top: 2px solid ${PALLETTE_MAIN.sub_main};
 `;
+
 const IconListItem = styled.div`
   width: 11rem;
   height: 15rem;
@@ -161,6 +264,7 @@ const IconListItem = styled.div`
   align-items: center;
   cursor: pointer;
 `;
+
 const IconListItemIcon = styled.div`
   width: 4rem;
   height: 4rem;
@@ -168,6 +272,7 @@ const IconListItemIcon = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 const IconText = styled.div`
   margin-top: 5rem;
   ${FONT_STYLE_V1.text.text_18_medium}
