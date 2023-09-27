@@ -97,39 +97,53 @@ const codeData = [
   {
     id: 1,
     name: 'input_default',
-    code: [
-      `<InputWrap width={width}>
-    <InputContainer>
-      <Label>아이디</Label>
-      <Input
-        type="text"
-        placeholder="id"
-        value={value}
-        onFocus={() => setIsFocus(true)}
-        // onBlur={() => setIsFocus(false)}
-        onChange={handleChange}
-        color={color}
-      />
-    </InputContainer>
-    {isFocus && count !== 0 && (
-      <DeleteBtn src={DeleteIcon} onClick={() => setValue('')} />
-    )}
-  </InputWrap>`,
-      '메롱',
-    ],
+    code: [`<InputDefault width={450} color="black" />`, '메롱'],
     component: (
       <Suspense fallback={renderLoader()}>
-        <InputDefault width={450} color="black" />
+        <InputDefault width={500} />
       </Suspense>
     ),
   },
   {
     id: 2,
     name: 'input_count',
-    code: ['', ''],
+    code: [
+      `interface IInputCountProps {
+      width: number;
+    }
+    
+    export default function InputCount({ width = 400 }: IInputCountProps) {
+      const [value, setValue] = useState('');
+      const [isFocus, setIsFocus] = useState(false);
+      const count = value.length;
+    
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(e.target.value);
+      };
+    
+      return (
+        <InputWrap width={width}>
+          <InputContainer>
+            <Label>아이디</Label>
+            <Input
+              type="text"
+              value={value}
+              onFocus={() => setIsFocus(true)}
+              onChange={handleChange}
+            />
+          </InputContainer>
+          {isFocus && count !== 0 && (
+            <DeleteBtn src={DeleteIcon} onClick={() => setValue('')} />
+          )}
+          <TextLength>{count}/50</TextLength>
+        </InputWrap>
+      );
+    }`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
-        <InputCount width={450} color="black" />
+        <InputCount width={500} />
       </Suspense>
     ),
   },
@@ -139,7 +153,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <InputCheck width={450} color="black" />
+        <InputCheck width={500} />
       </Suspense>
     ),
   },
@@ -150,7 +164,7 @@ const codeData = [
     component: (
       <Suspense fallback={renderLoader()}>
         <DefaultDropdown
-          width={300}
+          width={400}
           list={['옵션 1', '옵션 2', '옵션 3', '옵션 4', '옵션 5']}
         />
       </Suspense>
@@ -162,7 +176,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <Search width={500} color="black" />
+        <Search width={500} />
       </Suspense>
     ),
   },
@@ -172,7 +186,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <CheckboxBeige />
+        <CheckboxBeige scale={3} />
       </Suspense>
     ),
   },
@@ -182,7 +196,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <RCheckboxBeige />
+        <RCheckboxBeige scale={3} />
       </Suspense>
     ),
   },
@@ -192,7 +206,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <CheckboxBeigeLabel />
+        <CheckboxBeigeLabel scale={3} />
       </Suspense>
     ),
   },
@@ -202,7 +216,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <RCheckboxBeigeLabel />
+        <RCheckboxBeigeLabel scale={3} />
       </Suspense>
     ),
   },
@@ -212,7 +226,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <CheckboxRed />
+        <CheckboxRed scale={3} />
       </Suspense>
     ),
   },
@@ -222,7 +236,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <RCheckboxRed />
+        <RCheckboxRed scale={3} />
       </Suspense>
     ),
   },
@@ -232,7 +246,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <CheckboxRedLabel />
+        <CheckboxRedLabel scale={3} />
       </Suspense>
     ),
   },
@@ -242,7 +256,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <RCheckboxRedLabel />
+        <RCheckboxRedLabel scale={3} />
       </Suspense>
     ),
   },
@@ -252,7 +266,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <CheckboxBlack />
+        <CheckboxBlack scale={3} />
       </Suspense>
     ),
   },
@@ -262,7 +276,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <RCheckboxBlack />
+        <RCheckboxBlack scale={3} />
       </Suspense>
     ),
   },
@@ -272,7 +286,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <CheckboxBlackLabel />
+        <CheckboxBlackLabel scale={3} />
       </Suspense>
     ),
   },
@@ -282,7 +296,7 @@ const codeData = [
     code: ['', ''],
     component: (
       <Suspense fallback={renderLoader()}>
-        <RCheckboxBlackLabel />
+        <RCheckboxBlackLabel scale={3} />
       </Suspense>
     ),
   },

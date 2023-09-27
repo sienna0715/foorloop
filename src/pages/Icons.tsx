@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { ChromePicker } from 'react-color';
-import { PALETTE_COMPONENT } from '../styles/colors';
+import { PALLETTE_MAIN } from '../styles/colors';
 import CodeBlock from '../components/CodeBlock';
 import { FONT_STYLE_V1 } from '../styles/fontStyles';
 import data from '../data/iconData';
@@ -37,10 +37,8 @@ const ZoomIcon = styled.div<{ $fill: string }>`
   justify-content: center;
   align-items: center;
   background-color: ${(props) =>
-    props.$fill === 'true'
-      ? PALETTE_COMPONENT.primary_black
-      : PALETTE_COMPONENT.primary_beige};
-  border: 2px solid ${PALETTE_COMPONENT.primary_beige};
+    props.$fill === 'true' ? PALLETTE_MAIN.main : PALLETTE_MAIN.sub_main};
+  border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 50%;
 `;
 
@@ -52,18 +50,14 @@ const IconBackgroundToggle = styled.div<{ $fill: string }>`
     props.$fill === 'true' ? `0 0.75rem 0 2rem` : `0 0.75rem`};
   display: flex;
   align-items: center;
-  border: 1px solid ${PALETTE_COMPONENT.primary_beige};
+  border: 1px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 2.5rem;
   background-color: ${(props) =>
-    props.$fill === 'true'
-      ? PALETTE_COMPONENT.primary_beige
-      : PALETTE_COMPONENT.primary_black};
+    props.$fill === 'true' ? PALLETTE_MAIN.sub_main : PALLETTE_MAIN.main};
   ${FONT_STYLE_V1.text.text_24_medium}
   font-weight: 400;
   color: ${(props) =>
-    props.$fill === 'true'
-      ? PALETTE_COMPONENT.primary_black
-      : PALETTE_COMPONENT.primary_beige};
+    props.$fill === 'true' ? PALLETTE_MAIN.main : PALLETTE_MAIN.sub_main};
   transition: background-color 0.5s ease-in;
 `;
 
@@ -73,9 +67,7 @@ const IconBackgroundToggleDot = styled.div<{ $fill: string }>`
   margin-right: ${(props) => (props.$fill === 'true' ? null : '0.4rem')};
   border-radius: 50%;
   background-color: ${(props) =>
-    props.$fill === 'true'
-      ? PALETTE_COMPONENT.primary_black
-      : PALETTE_COMPONENT.primary_beige};
+    props.$fill === 'true' ? PALLETTE_MAIN.main : PALLETTE_MAIN.sub_main};
   transform: ${(props) =>
     props.$fill === 'true' ? 'translateX(71%)' : 'none'};
   transition: background-color transform 0.5s ease-in;
@@ -98,7 +90,7 @@ const TitleDot = styled.div`
   width: 2rem;
   height: 2rem;
   margin-right: 2rem;
-  background-color: ${PALETTE_COMPONENT.primary_beige};
+  background-color: ${PALLETTE_MAIN.sub_main};
   border-radius: 50%;
 `;
 const TitleText = styled.div`
@@ -107,7 +99,7 @@ const TitleText = styled.div`
   align-items: center;
   ${FONT_STYLE_V1.text.text_18_medium}
   font-weight: 400;
-  color: ${PALETTE_COMPONENT.primary_beige};
+  color: ${PALLETTE_MAIN.sub_main};
 `;
 const Color = styled.div`
   position: relative;
@@ -123,17 +115,17 @@ const ColorText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid ${PALETTE_COMPONENT.primary_beige};
+  border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 1.8rem;
   ${FONT_STYLE_V1.text.text_24_medium}
   font-weight: 400;
-  color: ${PALETTE_COMPONENT.primary_beige};
+  color: ${PALLETTE_MAIN.sub_main};
 `;
 const SelectedColor = styled.div<{ $color: ISelectedColor }>`
   width: 18rem;
   height: 3.6rem;
   margin-bottom: 5rem;
-  border: 2px solid ${PALETTE_COMPONENT.primary_beige};
+  border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 1.8rem;
   background-color: ${(props) =>
     `rgba(${props.$color.r}, ${props.$color.g}, ${props.$color.b}, ${props.$color.a})`};
@@ -146,7 +138,7 @@ const ColorPicker = styled.div`
   > div {
     width: 18.2rem !important;
     border-radius: 1.8rem !important;
-    background-color: ${PALETTE_COMPONENT.primary_beige} !important;
+    background-color: ${PALLETTE_MAIN.sub_main} !important;
     overflow: hidden;
   }
 `;
@@ -157,7 +149,7 @@ const IconsList = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
-  border-top: 2px solid ${PALETTE_COMPONENT.primary_beige};
+  border-top: 2px solid ${PALLETTE_MAIN.sub_main};
 `;
 const IconListItem = styled.div`
   width: 11rem;
@@ -306,7 +298,7 @@ function Icons() {
           <IconListItem key={el.name} onClick={() => IconClickHandler(el.name)}>
             <IconListItemIcon
               dangerouslySetInnerHTML={{
-                __html: el.icon(PALETTE_COMPONENT.primary_beige, 40),
+                __html: el.icon(PALLETTE_MAIN.sub_main, 40),
               }}
             />
             <IconText>{el.name}</IconText>
