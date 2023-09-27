@@ -213,154 +213,154 @@ function ComponentsBottom({ setCurrentItem }: IComponentsBottomProps) {
         <Title>Input</Title>
         <ComponentsBottomRow>
           <ComponentBigBox onClick={handleClick}>
-            input_default
+            0
             <InputImg className="input_default" />
           </ComponentBigBox>
           <ComponentBigBox onClick={handleClick}>
-            input_count
+            1
             <InputImg className="input_count" />
           </ComponentBigBox>
           <ComponentBigBox onClick={handleClick}>
-            input_check
+            2
             <InputImg className="input_check" />
           </ComponentBigBox>
         </ComponentsBottomRow>
-        <Title>Dropdown</Title>
+        <Title>Dropdown & Search</Title>
         <ComponentsBottomRow>
           <ComponentBigBox onClick={handleClick}>
-            dropdown_default
+            3
             <InputImg className="dropdown_default" />
           </ComponentBigBox>
           <ComponentBigBox onClick={handleClick}>
-            search_bar
+            4
             <InputImg className="search_bar" />
           </ComponentBigBox>
         </ComponentsBottomRow>
         <Title>Checkbox</Title>
         <ComponentsBottomRow>
           <ComponentBox onClick={handleClick}>
-            checkbox_beige
+            5
             <CheckboxImg className="checkbox_beige" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            round_checkbox_beige
+            6
             <CheckboxImg className="round_checkbox_beige" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            checkbox_beige_label
+            7
             <CheckboxImg className="checkbox_beige_label" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            round_checkbox_beige_label
+            8
             <CheckboxImg className="round_checkbox_beige_label" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            checkbox_red
+            9
             <CheckboxImg className="checkbox_red" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            round_checkbox_red
+            10
             <CheckboxImg className="round_checkbox_red" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            checkbox_red_label
+            11
             <CheckboxImg className="checkbox_red_label" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            round_checkbox_red_label
+            12
             <CheckboxImg className="round_checkbox_red_label" />
           </ComponentBox>
           <ComponentFilledBox onClick={handleClick}>
-            checkbox_black
+            13
             <CheckboxImg className="checkbox_black" />
           </ComponentFilledBox>
           <ComponentFilledBox onClick={handleClick}>
-            round_checkbox_black
+            14
             <CheckboxImg className="round_checkbox_black" />
           </ComponentFilledBox>
           <ComponentFilledBox onClick={handleClick}>
-            chceckbox_black_label
+            15
             <CheckboxImg className="chceckbox_black_label" />
           </ComponentFilledBox>
           <ComponentFilledBox onClick={handleClick}>
-            round_checkbox_black_label
+            16
             <CheckboxImg className="round_checkbox_black_label" />
           </ComponentFilledBox>
         </ComponentsBottomRow>
         <Title>Button</Title>
         <ComponentsBottomRow>
           <ComponentBox onClick={handleClick}>
-            button_default
+            17
             <ButtonImg className="button_default" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            button_plus_left
+            18
             <ButtonImg className="button_plus_left" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            button_plus_right
+            19
             <ButtonImg className="button_plus_right" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            button_outline
+            20
             <ButtonImg className="button_outline" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            button_outline_plus_left
+            21
             <ButtonImg className="button_outline_plus_left" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            button_outline_plus_right
+            22
             <ButtonImg className="button_outline_plus_right" />
           </ComponentBox>
           <ComponentFilledBox onClick={handleClick}>
-            button_outline_filled
+            23
             <ButtonImg className="button_outline_filled" />
           </ComponentFilledBox>
           <ComponentFilledBox onClick={handleClick}>
-            button_outline_filled_plus_left
+            24
             <ButtonImg className="button_outline_filled_plus_left" />
           </ComponentFilledBox>
           <ComponentFilledBox onClick={handleClick}>
-            button_outline_filled_plus_right
+            25
             <ButtonImg className="button_outline_filled_plus_right" />
           </ComponentFilledBox>
           <ComponentFilledBox onClick={handleClick}>
-            button_default_dark
+            26
             <ButtonImg className="button_default_dark" />
           </ComponentFilledBox>
           <ComponentFilledBox onClick={handleClick}>
-            button_plus_left_dark
+            27
             <ButtonImg className="button_plus_left_dark" />
           </ComponentFilledBox>
           <ComponentFilledBox onClick={handleClick}>
-            button_plus_right_dark
+            28
             <ButtonImg className="button_plus_right_dark" />
           </ComponentFilledBox>
         </ComponentsBottomRow>
         <Title>Disable Button</Title>
         <ComponentsBottomRow>
           <ComponentBox onClick={handleClick}>
-            button_outline_disable
+            29
             <ButtonImg className="button_outline_disable" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            button_disable
+            30
             <ButtonImg className="button_disable" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            button_filled_disable
+            31
             <ButtonImg className="button_filled_disable" />
           </ComponentBox>
         </ComponentsBottomRow>
         <Title>Toggle</Title>
         <ComponentsBottomRow>
           <ComponentBox onClick={handleClick}>
-            toggle_aos
+            32
             <CheckboxImg className="toggle_aos" />
           </ComponentBox>
           <ComponentBox onClick={handleClick}>
-            toggle_ios
+            33
             <CheckboxImg className="toggle_ios" />
           </ComponentBox>
         </ComponentsBottomRow>
