@@ -2,6 +2,11 @@ import styled from 'styled-components';
 // components
 import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
+import {
+  BREAKPOINTMOBILE,
+  BREAKPOINTTABLET,
+  BREAKPOINTDESKTOP,
+} from '../../breakpoint';
 // images
 import inputComponents from '../../assets/images/input-min.png';
 import checkboxComponents from '../../assets/images/checkbox-min.png';
@@ -17,6 +22,14 @@ const ComponentsBottomContainer = styled.div`
   width: 132rem;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 100%;
+    align-items: center;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+  }
 `;
 const ComponentsBottomRow = styled.div`
   width: 100%;
@@ -24,6 +37,13 @@ const ComponentsBottomRow = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
   padding-bottom: 7rem;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    justify-content: center;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+  }
 `;
 const Title = styled.div`
   ${FONT_STYLE_V1.text.text_20_medium}
@@ -58,6 +78,15 @@ const ComponentBigBox = styled.div`
   }
   .search_bar {
     background-position-y: -78rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 21.6rem;
+    height: 21.6rem;
   }
 `;
 const ComponentBox = styled.div`
@@ -132,6 +161,16 @@ const ComponentBox = styled.div`
   .toggle_ios {
     background-position-y: -106.2rem;
   }
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 2rem;
+  }
 `;
 const ComponentFilledBox = styled.div`
   width: 20rem;
@@ -177,6 +216,16 @@ const ComponentFilledBox = styled.div`
   }
   .round_checkbox_black_label {
     background-position-y: -85.2rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 2rem;
   }
 `;
 const InputImg = styled.div`

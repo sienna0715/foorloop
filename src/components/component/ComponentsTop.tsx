@@ -5,6 +5,11 @@ import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import codeDatas from '../../data/componentsCodeDatas';
 import CodeBlock from '../CodeBlock';
+import {
+  BREAKPOINTMOBILE,
+  BREAKPOINTTABLET,
+  BREAKPOINTDESKTOP,
+} from '../../breakpoint';
 
 const ComponentsTopWrap = styled.div`
   width: 100%;
@@ -13,18 +18,35 @@ const ComponentsTopWrap = styled.div`
   align-items: flex-end;
   padding-bottom: 26rem;
   border-bottom: 1px solid ${PALLETTE_MAIN.sub_main};
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    padding-bottom: 18rem;
+  }
 `;
 const PreviewBox = styled.div`
   margin-right: 13rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+  }
 `;
 const CodeBlockBox = styled.div``;
 
 const Preview = styled.div<{ $fill: string }>`
   width: 60rem;
-  height: 58rem;
+  height: 60rem;
   background-color: ${(props) =>
     props.$fill === 'true' ? PALLETTE_MAIN.main : PALLETTE_MAIN.sub_main};
   border: 2px solid ${PALLETTE_MAIN.sub_main};
@@ -33,11 +55,19 @@ const Preview = styled.div<{ $fill: string }>`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 25rem;
+    height: 25rem;
+  }
 `;
 const BackgroundToggle = styled.div<{ $fill: string }>`
-  ${FONT_STYLE_V1.text.text_24_medium}
-  width: 12rem;
-  height: 5rem;
+  ${FONT_STYLE_V1.text.text_16_medium}
+  width: 8rem;
+  height: 3rem;
   margin-bottom: 2rem;
   padding: 0 0.75rem;
   display: flex;
@@ -53,8 +83,8 @@ const BackgroundToggle = styled.div<{ $fill: string }>`
   cursor: pointer;
 `;
 const BackgroundToggleDot = styled.div<{ $fill: string }>`
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   background-color: ${(props) =>
     props.$fill === 'true' ? PALLETTE_MAIN.main : PALLETTE_MAIN.sub_main};
@@ -71,9 +101,18 @@ const Title = styled.div`
 const TitleDot = styled.div`
   width: 2rem;
   height: 2rem;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
   background-color: ${PALLETTE_MAIN.sub_main};
   border-radius: 50%;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 1rem;
+  }
 `;
 const TitleText = styled.div`
   display: flex;
@@ -82,21 +121,66 @@ const TitleText = styled.div`
   ${FONT_STYLE_V1.text.text_18_medium}
   font-weight: 400;
   color: ${PALLETTE_MAIN.sub_main};
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_14_medium}
+  }
 `;
-const ControlBar = styled.div``;
+const ControlBar = styled.div`
+  display: flex;
+  margin-bottom: 5rem;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    margin-bottom: 2rem;
+  }
+`;
 const ControlTitle = styled.div`
   width: 18rem;
   height: 3.6rem;
-  margin-bottom: 5rem;
   margin-right: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid ${PALLETTE_MAIN.sub_main};
+  border: 1px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 1.8rem;
   ${FONT_STYLE_V1.text.text_24_medium}
   font-weight: 400;
   color: ${PALLETTE_MAIN.sub_main};
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_14_medium}
+    width: 7rem;
+    height: 3rem;
+    margin-right: 1rem;
+  }
+`;
+const ControlInput = styled.input`
+  width: 18rem;
+  height: 3.6rem;
+  padding: 1rem;
+  background-color: transparent;
+  color: ${PALLETTE_MAIN.sub_main};
+  border: 1px solid ${PALLETTE_MAIN.sub_main};
+  border-radius: 1.8rem;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_14_medium}
+    width: 16rem;
+    height: 3rem;
+    margin-left: 1rem;
+  }
 `;
 
 interface IComponentsTopProps {
@@ -132,6 +216,7 @@ function ComponentsTop({ currentItem }: IComponentsTopProps) {
         </Title>
         <ControlBar>
           <ControlTitle>Size</ControlTitle>
+          <ControlInput type="text" />
         </ControlBar>
         <CodeBlock
           titles={['React', 'Styled-components']}
