@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 // components
 import { PALLETTE_MAIN } from '../../styles/colors';
@@ -234,9 +234,13 @@ interface IComponentsTopProps {
   currentItem: string;
 }
 
+export const value = { size: 0 };
+
 function ComponentsTop({ currentItem }: IComponentsTopProps) {
   const [isFill, setIsFill] = useState('false');
+  const [size, setSize] = useState(0);
   const datas = codeDatas[+currentItem];
+  const code = datas?.code[0].replace('size', `${size}`);
 
   const isFillClickHandler = () => {
     if (isFill === 'true') {
@@ -245,6 +249,14 @@ function ComponentsTop({ currentItem }: IComponentsTopProps) {
       setIsFill('true');
     }
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSize(+e.target.value);
+  };
+
+  useEffect(() => {
+    value.size = size;
+  }, [size]);
 
   return (
     <ComponentsTopWrap>
@@ -266,12 +278,13 @@ function ComponentsTop({ currentItem }: IComponentsTopProps) {
           </Title>
           <ControlBar>
             <ControlTitle>Size</ControlTitle>
-            <ControlInput type="text" />
+            <ControlInput
+              type="text"
+              placeholder="Please enter the number type"
+              onChange={handleChange}
+            />
           </ControlBar>
-          <CodeBlock
-            titles={['React', 'Styled-components']}
-            codes={datas?.code}
-          />
+          <CodeBlock titles={['React', '']} codes={[code, datas?.code[1]]} />
         </CodeBlockBox>
       </ComponentsTopContainer>
       <Bar />
