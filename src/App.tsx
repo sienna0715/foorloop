@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // component
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+// optimization
 const Main = React.lazy(() => import('./pages/Main'));
 const Components = React.lazy(() => import('./pages/Components'));
 const Icons = React.lazy(() => import('./pages/Icons'));
