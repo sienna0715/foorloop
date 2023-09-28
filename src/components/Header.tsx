@@ -39,20 +39,6 @@ const Logo = styled.span`
     ${FONT_STYLE_V1.text.text_18_medium};
   }
 `;
-const Button = styled.button`
-  width: 5rem;
-  height: 5rem;
-  appearance: none;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
-  border-radius: 0;
-  cursor: pointer;
-  display: none;
-  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    display: block;
-  }
-`;
 const MenuBox = styled.ul`
   ${FONT_STYLE_V1.text.text_18_medium};
   display: flex;
@@ -70,6 +56,20 @@ const menuSlideOpen = keyframes`
     height: 100vh;
   }
 `;
+const Button = styled.button`
+  width: 5rem;
+  height: 5rem;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  cursor: pointer;
+  display: none;
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    display: block;
+  }
+`;
 const MMenuBox = styled.ul`
   ${FONT_STYLE_V1.text.text_14_medium};
   display: flex;
@@ -82,7 +82,7 @@ const MMenuBox = styled.ul`
   top: 80px;
   z-index: 999;
   animation: ${menuSlideOpen} 1s ease;
-  @media screen and (min-width: ${BREAKPOINTMOBILE}px) {
+  @media screen and (min-width: ${BREAKPOINTMOBILE + 1}px) {
     display: none;
   }
 `;
@@ -132,8 +132,12 @@ function Header() {
       </HeaderContainer>
       {isMenu && (
         <MMenuBox>
-          <Menu>components</Menu>
-          <Menu>icon</Menu>
+          <Menu onClick={() => setIsMenu(false)}>
+            <Link to="/components">components</Link>
+          </Menu>
+          <Menu onClick={() => setIsMenu(false)}>
+            <Link to="/icons">icon</Link>
+          </Menu>
           <Menu>about us</Menu>
         </MMenuBox>
       )}

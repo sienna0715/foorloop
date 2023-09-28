@@ -1,5 +1,5 @@
 import { styled, keyframes } from 'styled-components';
-import { PALETTE_COMPONENT } from '../../styles/colors';
+import { PALLETTE_MAIN } from '../../styles/colors';
 import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../../breakpoint';
 
 const rotate = keyframes`
@@ -18,7 +18,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${PALETTE_COMPONENT.primary_black};
+  background-color: ${PALLETTE_MAIN.main};
   overflow: hidden;
 `;
 

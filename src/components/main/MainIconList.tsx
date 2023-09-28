@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
-import { PALETTE_COMPONENT } from '../../styles/colors';
+import { PALLETTE_MAIN } from '../../styles/colors';
 import data from '../../data/iconData';
 import ArrowButton from '../ArrowButton';
 import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../../breakpoint';
@@ -21,7 +21,7 @@ const Title = styled.div`
   ${FONT_STYLE_V1.text.text_100_medium}
   font-weight: 400;
   line-height: 4rem;
-  color: ${PALETTE_COMPONENT.primary_beige};
+  color: ${PALLETTE_MAIN.sub_main};
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     margin-bottom: 55rem;
     font-size: 6rem;
@@ -91,7 +91,7 @@ const SideListContentItemIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid ${PALETTE_COMPONENT.primary_beige};
+  border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 50%;
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     width: 8rem;
@@ -115,7 +115,7 @@ const SideListContentItemText = styled.div`
   height: 3rem;
   ${FONT_STYLE_V1.text.text_24_medium}
   font-weight: 400;
-  color: ${PALETTE_COMPONENT.primary_beige};
+  color: ${PALLETTE_MAIN.sub_main};
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     font-size: 1.2rem;
   }
@@ -153,7 +153,7 @@ const SelectIconImg = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: ${PALETTE_COMPONENT.primary_beige};
+  background-color: ${PALLETTE_MAIN.sub_main};
 
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     width: 20rem;
@@ -182,11 +182,11 @@ const SelectIconText = styled.div`
   align-items: center;
   ${FONT_STYLE_V1.text.text_50_medium}
   font-weight: 400;
-  color: ${PALETTE_COMPONENT.primary_beige};
+  color: ${PALLETTE_MAIN.sub_main};
 
   > div {
     padding: 2rem 5rem;
-    background-color: ${PALETTE_COMPONENT.primary_black};
+    background-color: ${PALLETTE_MAIN.main};
   }
 
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
@@ -302,7 +302,7 @@ function MainIconList() {
               >
                 <SideListContentItemIcon
                   dangerouslySetInnerHTML={{
-                    __html: prevData.icon(PALETTE_COMPONENT.primary_beige, 55),
+                    __html: prevData.icon(PALLETTE_MAIN.sub_main, 55),
                   }}
                 />
                 <SideListContentItemText>
@@ -319,7 +319,7 @@ function MainIconList() {
               >
                 <SideListContentItemIcon
                   dangerouslySetInnerHTML={{
-                    __html: nextData.icon(PALETTE_COMPONENT.primary_beige, 55),
+                    __html: nextData.icon(PALLETTE_MAIN.sub_main, 55),
                   }}
                 />
                 <SideListContentItemText>
@@ -340,7 +340,7 @@ function MainIconList() {
         <SelectIcon>
           <SelectIconImg
             dangerouslySetInnerHTML={{
-              __html: selectDatas.icon(PALETTE_COMPONENT.primary_black, 140),
+              __html: selectDatas.icon(PALLETTE_MAIN.main, 140),
             }}
           />
           <SelectIconText>

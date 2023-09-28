@@ -1,8 +1,7 @@
 # FOR{LOOP}
 아이콘, 재사용 컴포넌트를 쉽게 사용할 수 있는 라이브러리
 
-- [배포 사이트 👉](https://foorloop-sienna0715.vercel.app/)
-- [Team Notion  👉](https://fluoridated-locust-c63.notion.site/ff3f6e2beb81474b950bfac3994b4cb6?v=e7f5e4757d6e48958beecdb5ae210de7&pvs=4)
+- [배포 사이트 👉](https://forloop.vercel.app/)
 
 ### Member
 🐶 **김무성** | [lampu의 깃헙 →](https://github.com/lapmu) <br />
@@ -17,7 +16,7 @@
 - TypeScript
 - React-Router
 - Styled-components
-- Redux Toolkit
+- react-code-blocks
 - ESLint
 - Prettier
 - Vercel

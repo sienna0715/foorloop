@@ -18,7 +18,7 @@ const InputForm = styled.form`
 `;
 const InputWrap = styled.div<{ width: number }>`
   width: ${(props) => (props.width ? props.width : 400)}px;
-  height: 60px;
+  height: 70px;
   padding: 0.8rem;
   border: 1px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 1rem;
@@ -38,16 +38,19 @@ const Label = styled.label`
   color: ${PALETTE_COMPONENT.gray04};
   padding-bottom: 0.3rem;
 `;
-const Input = styled.input<{ color: string }>`
+const Input = styled.input`
   ${FONT_STYLE_V1.text.text_18_medium};
   width: 100%;
   outline: none;
   border: none;
   background-color: transparent;
-  color: ${(props) => (props.color ? props.color : 'black')};
+  color: ${PALETTE_COMPONENT.primary_black};
   &::placeholder {
     color: ${PALETTE_COMPONENT.gray03};
   }
+`;
+const ButtoneBox = styled.div`
+  display: flex;
 `;
 const DeleteBtn = styled.img`
   padding-right: 0.5rem;
@@ -60,13 +63,9 @@ const ResultIcon = styled.img`
 
 interface IInputCheckProps {
   width: number;
-  color: string;
 }
 
-export default function InputCheckIcon({
-  width = 400,
-  color = 'black',
-}: IInputCheckProps) {
+export default function InputCheckIcon({ width = 400 }: IInputCheckProps) {
   const [value, setValue] = useState('');
   const [isFocus, setIsFocus] = useState(false);
   const [checkIcon, isCheckIcon] = useState(false);
@@ -95,7 +94,6 @@ export default function InputCheckIcon({
               value={value}
               onFocus={() => setIsFocus(true)}
               onChange={handleChange}
-              color={color}
             />
           </InputContainer>
           {isFocus && count !== 0 && (
@@ -112,16 +110,17 @@ export default function InputCheckIcon({
               value={value}
               onFocus={() => setIsFocus(true)}
               onChange={handleChange}
-              color={color}
             />
           </InputContainer>
-          {isFocus && count !== 0 && (
-            <DeleteBtn src={DeleteIcon} onClick={() => setValue('')} />
-          )}
-          <ResultIcon
-            src={checkIcon ? CheckIcon : AlertIcon}
-            onClick={() => setValue('')}
-          />
+          <ButtoneBox>
+            {isFocus && count !== 0 && (
+              <DeleteBtn src={DeleteIcon} onClick={() => setValue('')} />
+            )}
+            <ResultIcon
+              src={checkIcon ? CheckIcon : AlertIcon}
+              onClick={() => setValue('')}
+            />
+          </ButtoneBox>
         </InputWrap>
       )}
     </InputForm>

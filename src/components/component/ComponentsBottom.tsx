@@ -2,6 +2,11 @@ import styled from 'styled-components';
 // components
 import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
+import {
+  BREAKPOINTMOBILE,
+  BREAKPOINTTABLET,
+  BREAKPOINTDESKTOP,
+} from '../../breakpoint';
 // images
 import inputComponents from '../../assets/images/input-min.png';
 import checkboxComponents from '../../assets/images/checkbox-min.png';
@@ -15,8 +20,36 @@ const ComponentsBottomWrap = styled.div`
 `;
 const ComponentsBottomContainer = styled.div`
   width: 132rem;
+
   display: flex;
   flex-direction: column;
+  .big_grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 3rem;
+  }
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    width: 90vw;
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 100%;
+    align-items: center;
+    .big_grid {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 3rem;
+    }
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
+    }
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+  }
 `;
 const ComponentsBottomRow = styled.div`
   width: 100%;
@@ -24,19 +57,24 @@ const ComponentsBottomRow = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
   padding-bottom: 7rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    justify-content: center;
+  }
 `;
 const Title = styled.div`
   ${FONT_STYLE_V1.text.text_20_medium}
   padding-bottom: 4rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_30_medium}
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_18_medium}
+  }
 `;
 const ComponentBigBox = styled.div`
   /* overflow: hidden; */
   width: 37rem;
   height: 37rem;
-  margin-right: 2rem;
-  &:nth-last-child(1) {
-    margin-right: 0;
-  }
   border: 1px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 3rem;
   display: flex;
@@ -59,15 +97,30 @@ const ComponentBigBox = styled.div`
   .search_bar {
     background-position-y: -78rem;
   }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 21.6rem;
+    height: 21.6rem;
+    margin-bottom: 1rem;
+    .input_default {
+      background-position-y: 0rem;
+    }
+    .input_count {
+      background-position-y: -11rem;
+    }
+    .input_check {
+      background-position-y: -23rem;
+    }
+    .dropdown_default {
+      background-position-y: -34rem;
+    }
+    .search_bar {
+      background-position-y: -44.7rem;
+    }
+  }
 `;
 const ComponentBox = styled.div`
   width: 20rem;
   height: 20rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
-  &:nth-last-child(1) {
-    margin-right: 0;
-  }
   border: 1px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 3rem;
   display: flex;
@@ -132,14 +185,77 @@ const ComponentBox = styled.div`
   .toggle_ios {
     background-position-y: -106.2rem;
   }
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 2rem;
+    .button_default {
+      background-position-y: 0rem;
+    }
+    .button_plus_left {
+      background-position-y: -7.3rem;
+    }
+    .button_plus_right {
+      background-position-y: -14.7rem;
+    }
+    .button_outline {
+      background-position-y: -22rem;
+    }
+    .button_outline_plus_left {
+      background-position-y: -29.5rem;
+    }
+    .button_outline_plus_right {
+      background-position-y: -37rem;
+    }
+    .button_outline_disable {
+      background-position-y: -89rem;
+    }
+    .button_disable {
+      background-position-y: -96.4rem;
+    }
+    .button_filled_disable {
+      background-position-y: -103.7rem;
+    }
+    .checkbox_beige {
+      background-position-y: 0rem;
+    }
+    .round_checkbox_beige {
+      background-position-y: -3.8rem;
+    }
+    .checkbox_beige_label {
+      background-position-y: -7.6rem;
+    }
+    .round_checkbox_beige_label {
+      background-position-y: -11.5rem;
+    }
+    .checkbox_red {
+      background-position-y: -15.5rem;
+    }
+    .round_checkbox_red {
+      background-position-y: -19.5rem;
+    }
+    .checkbox_red_label {
+      background-position-y: -23.2rem;
+    }
+    .round_checkbox_red_label {
+      background-position-y: -27rem;
+    }
+    .toggle_aos {
+      background-position-y: -47.6rem;
+    }
+    .toggle_ios {
+      background-position-y: -53.1rem;
+    }
+  }
 `;
 const ComponentFilledBox = styled.div`
   width: 20rem;
   height: 20rem;
-  margin-right: 2rem;
-  &:nth-last-child(1) {
-    margin-right: 0;
-  }
   background-color: ${PALLETTE_MAIN.sub_main};
   border: 1px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 3rem;
@@ -178,24 +294,91 @@ const ComponentFilledBox = styled.div`
   .round_checkbox_black_label {
     background-position-y: -85.2rem;
   }
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 2rem;
+    .button_outline_filled {
+      background-position-y: -44.3rem;
+    }
+    .button_outline_filled_plus_left {
+      background-position-y: -52rem;
+    }
+    .button_outline_filled_plus_right {
+      background-position-y: -59.4rem;
+    }
+    .button_default_dark {
+      background-position-y: -66.5rem;
+    }
+    .button_plus_left_dark {
+      background-position-y: -74rem;
+    }
+    .button_plus_right_dark {
+      background-position-y: -81.5rem;
+    }
+    .checkbox_black {
+      background-position-y: -31rem;
+    }
+    .round_checkbox_black {
+      background-position-y: -35rem;
+    }
+    .chceckbox_black_label {
+      background-position-y: -38.7rem;
+    }
+    .round_checkbox_black_label {
+      background-position-y: -42.7rem;
+    }
+  }
 `;
 const InputImg = styled.div`
   width: 30rem;
   height: 7rem;
   background-image: url('${inputComponents}');
   background-size: cover;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 17rem;
+    height: 3.5rem;
+  }
 `;
 const ButtonImg = styled.div`
   width: 12rem;
   height: 5rem;
   background-image: url('${buttonComponents}');
   background-size: cover;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 6rem;
+    height: 2.5rem;
+  }
 `;
 const CheckboxImg = styled.div`
   width: 10rem;
   height: 3.5rem;
   background-image: url('${checkboxComponents}');
   background-size: cover;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    margin: 0;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 5rem;
+    height: 1.7rem;
+  }
 `;
 
 interface IComponentsBottomProps {
@@ -211,7 +394,7 @@ function ComponentsBottom({ setCurrentItem }: IComponentsBottomProps) {
     <ComponentsBottomWrap>
       <ComponentsBottomContainer>
         <Title>Input</Title>
-        <ComponentsBottomRow>
+        <ComponentsBottomRow className="big_grid">
           <ComponentBigBox onClick={handleClick}>
             0
             <InputImg className="input_default" />
@@ -226,7 +409,7 @@ function ComponentsBottom({ setCurrentItem }: IComponentsBottomProps) {
           </ComponentBigBox>
         </ComponentsBottomRow>
         <Title>Dropdown & Search</Title>
-        <ComponentsBottomRow>
+        <ComponentsBottomRow className="big_grid">
           <ComponentBigBox onClick={handleClick}>
             3
             <InputImg className="dropdown_default" />
@@ -237,7 +420,7 @@ function ComponentsBottom({ setCurrentItem }: IComponentsBottomProps) {
           </ComponentBigBox>
         </ComponentsBottomRow>
         <Title>Checkbox</Title>
-        <ComponentsBottomRow>
+        <ComponentsBottomRow className="grid">
           <ComponentBox onClick={handleClick}>
             5
             <CheckboxImg className="checkbox_beige" />
@@ -288,7 +471,7 @@ function ComponentsBottom({ setCurrentItem }: IComponentsBottomProps) {
           </ComponentFilledBox>
         </ComponentsBottomRow>
         <Title>Button</Title>
-        <ComponentsBottomRow>
+        <ComponentsBottomRow className="grid">
           <ComponentBox onClick={handleClick}>
             17
             <ButtonImg className="button_default" />
@@ -339,7 +522,7 @@ function ComponentsBottom({ setCurrentItem }: IComponentsBottomProps) {
           </ComponentFilledBox>
         </ComponentsBottomRow>
         <Title>Disable Button</Title>
-        <ComponentsBottomRow>
+        <ComponentsBottomRow className="grid">
           <ComponentBox onClick={handleClick}>
             29
             <ButtonImg className="button_outline_disable" />
@@ -354,7 +537,7 @@ function ComponentsBottom({ setCurrentItem }: IComponentsBottomProps) {
           </ComponentBox>
         </ComponentsBottomRow>
         <Title>Toggle</Title>
-        <ComponentsBottomRow>
+        <ComponentsBottomRow className="grid">
           <ComponentBox onClick={handleClick}>
             32
             <CheckboxImg className="toggle_aos" />

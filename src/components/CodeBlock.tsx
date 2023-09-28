@@ -4,7 +4,11 @@ import { CopyBlock, hybrid } from 'react-code-blocks';
 // components
 import { PALLETTE_MAIN } from '../styles/colors';
 import { FONT_STYLE_V1 } from '../styles/fontStyles';
-import { BREAKPOINTMOBILE, BREAKPOINTTABLET } from '../breakpoint';
+import {
+  BREAKPOINTMOBILE,
+  BREAKPOINTTABLET,
+  BREAKPOINTDESKTOP,
+} from '../breakpoint';
 
 const CodeBlockContainer = styled.div`
   .border {
@@ -24,29 +28,30 @@ const TabBox = styled.div`
   display: flex;
   justify-content: flex-start;
   .current {
-    height: 5rem;
+    height: 5.2rem;
     background-color: ${PALLETTE_MAIN.code};
     border: 1px solid ${PALLETTE_MAIN.sub_main};
     border-bottom: none;
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
   }
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    width: 65rem;
+  }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    width: 40rem;
-    height: 7rem;
-    margin-bottom: -3rem;
     ${FONT_STYLE_V1.text.text_16_medium}
+    width: 55rem;
+    height: 7rem;
     .current {
-      height: 4rem;
+      height: 4.1rem;
     }
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    width: 30rem;
-    height: 6rem;
-    margin-bottom: -3rem;
     ${FONT_STYLE_V1.text.text_14_medium}
+    width: 30rem;
+    height: 6.5rem;
     .current {
-      height: 3rem;
+      height: 3.6rem;
     }
   }
 `;
@@ -63,17 +68,25 @@ const CodeBox = styled.div`
     width: 0.5rem;
     display: none;
   }
-  /* &::-webkit-scrollbar-thumb {
-    height: 1rem;
-    background: ${PALLETTE_MAIN.sub_main};
-    border-radius: 1rem;
+  span {
+    &::-webkit-scrollbar {
+      height: 0.4rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: ${PALLETTE_MAIN.main};
+    }
+    &::-webkit-scrollbar-track {
+      background: ${PALLETTE_MAIN.code};
+      border: none;
+    }
   }
-  &::-webkit-scrollbar-track {
-    background: ${PALLETTE_MAIN.code};
-  } */
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    width: 65rem;
+    height: 40rem;
+  }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_12_medium};
-    width: 40rem;
+    width: 55rem;
     height: 25rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
@@ -85,12 +98,19 @@ const CodeBox = styled.div`
 const Tab = styled.li`
   margin-bottom: 3rem;
   padding: 0 4rem;
+  margin-top: -0.1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
   &:nth-child(1) {
     border-left: none;
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_12_medium};
+    padding: 0 3rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
   }
 `;
 

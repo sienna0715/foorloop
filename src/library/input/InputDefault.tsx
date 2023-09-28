@@ -7,7 +7,7 @@ import DeleteIcon from '../../assets/input-delete.svg';
 
 const InputWrap = styled.div<{ width: number }>`
   width: ${(props) => (props.width ? props.width : 400)}px;
-  height: 60px;
+  height: 70px;
   padding: 0.8rem;
   border: 1px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 1rem;
@@ -27,13 +27,13 @@ const Label = styled.label`
   color: ${PALETTE_COMPONENT.gray04};
   padding-bottom: 0.3rem;
 `;
-const Input = styled.input<{ color: string }>`
+const Input = styled.input`
   ${FONT_STYLE_V1.text.text_18_medium};
   width: 100%;
   outline: none;
   border: none;
   background-color: transparent;
-  color: ${(props) => (props.color ? props.color : 'black')};
+  color: ${PALETTE_COMPONENT.primary_black};
   &::placeholder {
     color: ${PALETTE_COMPONENT.gray03};
   }
@@ -46,13 +46,9 @@ const DeleteBtn = styled.img`
 
 interface IInputDefaultProps {
   width: number;
-  color: string;
 }
 
-export default function InputDefault({
-  width = 400,
-  color = 'black',
-}: IInputDefaultProps) {
+export default function InputDefault({ width = 400 }: IInputDefaultProps) {
   const [value, setValue] = useState('');
   const [isFocus, setIsFocus] = useState(false);
   const count = value.length;
@@ -71,7 +67,6 @@ export default function InputDefault({
           onFocus={() => setIsFocus(true)}
           // onBlur={() => setIsFocus(false)}
           onChange={handleChange}
-          color={color}
         />
       </InputContainer>
       {isFocus && count !== 0 && (
