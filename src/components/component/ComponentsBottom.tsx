@@ -20,7 +20,7 @@ const ComponentsBottomWrap = styled.div`
 `;
 const ComponentsBottomContainer = styled.div`
   width: 132rem;
-  padding-left: 2rem;
+
   display: flex;
   flex-direction: column;
   .big_grid {
@@ -57,12 +57,8 @@ const ComponentsBottomRow = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
   padding-bottom: 7rem;
-  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-  }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     justify-content: center;
-  }
-  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
   }
 `;
 const Title = styled.div`
@@ -70,6 +66,9 @@ const Title = styled.div`
   padding-bottom: 4rem;
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_30_medium}
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    ${FONT_STYLE_V1.text.text_18_medium}
   }
 `;
 const ComponentBigBox = styled.div`
