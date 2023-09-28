@@ -14,28 +14,29 @@ import {
 const ComponentsTopWrap = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const ComponentsTopContainer = styled.div`
+  display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 26rem;
-  border-bottom: 1px solid ${PALLETTE_MAIN.sub_main};
-  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-  }
-  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+  @media screen and (max-width: ${1024}px) {
     flex-direction: column;
     align-items: center;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    padding-bottom: 18rem;
   }
 `;
 const PreviewBox = styled.div`
-  margin-right: 13rem;
+  margin-right: 8rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    margin-right: 5rem;
   }
-  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+  @media screen and (max-width: ${1024}px) {
     margin-right: 0;
     margin-bottom: 3rem;
   }
@@ -56,12 +57,29 @@ const Preview = styled.div<{ $fill: string }>`
   align-items: center;
   overflow: hidden;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    width: 55rem;
+    height: 55rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 45rem;
+    height: 45rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    width: 25rem;
-    height: 25rem;
+    width: 30rem;
+    height: 30rem;
+  }
+`;
+const Component = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    transform: scale(0.8);
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    transform: scale(0.7);
   }
 `;
 const BackgroundToggle = styled.div<{ $fill: string }>`
@@ -81,6 +99,21 @@ const BackgroundToggle = styled.div<{ $fill: string }>`
     props.$fill === 'true' ? PALLETTE_MAIN.main : PALLETTE_MAIN.sub_main};
   transition: background-color 0.5s ease-in;
   cursor: pointer;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 7rem;
+    height: 3rem;
+    padding: ${(props) =>
+      props.$fill === 'true' ? `0 1.2rem 0 0.8rem` : `0 0.2rem 0 0.5rem`};
+    ${FONT_STYLE_V1.text.text_10_medium}
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 5rem;
+    height: 2rem;
+    padding: ${(props) =>
+      props.$fill === 'true' ? `0 1.2rem 0 0.8rem` : `0 0.4rem 0 0.4rem`};
+    ${FONT_STYLE_V1.text.text_10_medium}
+    margin-right: 1rem;
+  }
 `;
 const BackgroundToggleDot = styled.div<{ $fill: string }>`
   width: 2rem;
@@ -91,12 +124,23 @@ const BackgroundToggleDot = styled.div<{ $fill: string }>`
   transform: ${(props) =>
     props.$fill === 'true' ? 'translateX(40%)' : 'none'};
   transition: background-color transform 0.5s ease-in;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 2rem;
+    height: 2rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 1rem;
+    height: 1rem;
+    transform: ${(props) =>
+      props.$fill === 'true' ? 'translateX(100%)' : 'none'};
+  }
 `;
 const Title = styled.div`
   width: 100%;
   margin-bottom: 4rem;
   display: flex;
   align-items: center;
+  margin-left: 1rem;
 `;
 const TitleDot = styled.div`
   width: 2rem;
@@ -104,10 +148,6 @@ const TitleDot = styled.div`
   margin-right: 1.5rem;
   background-color: ${PALLETTE_MAIN.sub_main};
   border-radius: 50%;
-  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-  }
-  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-  }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     width: 1rem;
     height: 1rem;
@@ -121,10 +161,6 @@ const TitleText = styled.div`
   ${FONT_STYLE_V1.text.text_18_medium}
   font-weight: 400;
   color: ${PALLETTE_MAIN.sub_main};
-  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-  }
-  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-  }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_14_medium}
   }
@@ -132,10 +168,6 @@ const TitleText = styled.div`
 const ControlBar = styled.div`
   display: flex;
   margin-bottom: 5rem;
-  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-  }
-  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-  }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     margin-bottom: 2rem;
   }
@@ -152,9 +184,8 @@ const ControlTitle = styled.div`
   ${FONT_STYLE_V1.text.text_24_medium}
   font-weight: 400;
   color: ${PALLETTE_MAIN.sub_main};
-  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-  }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_18_medium}
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_14_medium}
@@ -164,22 +195,38 @@ const ControlTitle = styled.div`
   }
 `;
 const ControlInput = styled.input`
-  width: 18rem;
+  width: 50rem;
   height: 3.6rem;
   padding: 1rem;
   background-color: transparent;
   color: ${PALLETTE_MAIN.sub_main};
   border: 1px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 1.8rem;
+  ${FONT_STYLE_V1.text.text_16_medium}
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    width: 45rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_14_medium}
+    width: 35rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    ${FONT_STYLE_V1.text.text_14_medium}
-    width: 16rem;
+    width: 21rem;
     height: 3rem;
     margin-left: 1rem;
+  }
+`;
+
+const Bar = styled.div`
+  width: 100%;
+  border-bottom: 1px solid ${PALLETTE_MAIN.sub_main};
+  padding-top: 26rem;
+  @media screen and (max-width: ${1024}px) {
+    padding-top: 18rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 90%;
+    padding-top: 18rem;
   }
 `;
 
@@ -201,28 +248,33 @@ function ComponentsTop({ currentItem }: IComponentsTopProps) {
 
   return (
     <ComponentsTopWrap>
-      <PreviewBox>
-        <BackgroundToggle onClick={isFillClickHandler} $fill={isFill}>
-          {isFill === 'true' ? 'Fill' : null}
-          <BackgroundToggleDot $fill={isFill} />
-          {isFill === 'true' ? null : 'Empty'}
-        </BackgroundToggle>
-        <Preview $fill={isFill}>{datas?.component}</Preview>
-      </PreviewBox>
-      <CodeBlockBox>
-        <Title>
-          <TitleDot />
-          <TitleText>{`component > ${datas?.name} icon`}</TitleText>
-        </Title>
-        <ControlBar>
-          <ControlTitle>Size</ControlTitle>
-          <ControlInput type="text" />
-        </ControlBar>
-        <CodeBlock
-          titles={['React', 'Styled-components']}
-          codes={datas?.code}
-        />
-      </CodeBlockBox>
+      <ComponentsTopContainer>
+        <PreviewBox>
+          <BackgroundToggle onClick={isFillClickHandler} $fill={isFill}>
+            {isFill === 'true' ? 'Fill' : null}
+            <BackgroundToggleDot $fill={isFill} />
+            {isFill === 'true' ? null : 'Empty'}
+          </BackgroundToggle>
+          <Preview $fill={isFill}>
+            <Component>{datas?.component}</Component>
+          </Preview>
+        </PreviewBox>
+        <CodeBlockBox>
+          <Title>
+            <TitleDot />
+            <TitleText>{`component > ${datas?.name} icon`}</TitleText>
+          </Title>
+          <ControlBar>
+            <ControlTitle>Size</ControlTitle>
+            <ControlInput type="text" />
+          </ControlBar>
+          <CodeBlock
+            titles={['React', 'Styled-components']}
+            codes={datas?.code}
+          />
+        </CodeBlockBox>
+      </ComponentsTopContainer>
+      <Bar />
     </ComponentsTopWrap>
   );
 }
