@@ -87,10 +87,10 @@ const Button = styled.button`
 `;
 
 interface ILandingProps {
-  handleScrollView: React.MouseEventHandler<HTMLButtonElement>;
+  handleIntroView: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-function Landing({ handleScrollView }: ILandingProps) {
+function Landing({ handleIntroView }: ILandingProps) {
   return (
     <LandingWrap>
       <LandingContainer>
@@ -104,7 +104,7 @@ function Landing({ handleScrollView }: ILandingProps) {
         </TextBox>
         <RightImg className="side_img" />
       </LandingContainer>
-      <Button onClick={handleScrollView}>TRY NOW</Button>
+      <Button onClick={handleIntroView}>TRY NOW</Button>
     </LandingWrap>
   );
 }

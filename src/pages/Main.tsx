@@ -18,21 +18,33 @@ const ScrollView = styled.div`
 `;
 
 function Main() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const movetoIntroRef = useRef<HTMLDivElement>(null);
+  const movetoColorRef = useRef<HTMLDivElement>(null);
 
-  const handleScrollView = () => {
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const handleIntroView = () => {
+    movetoIntroRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+  };
+  const handleColorView = () => {
+    movetoColorRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
   };
 
   return (
     <MainWrap>
-      <Landing handleScrollView={handleScrollView} />
-      <ScrollView ref={scrollRef}>
+      <Landing handleIntroView={handleIntroView} />
+      <ScrollView ref={movetoIntroRef}>
         <Intro />
       </ScrollView>
-      <Contents />
+      <Contents handleColorView={handleColorView} />
       <MainIcon />
-      <MainColorTypography />
+      <ScrollView ref={movetoColorRef}>
+        <MainColorTypography />
+      </ScrollView>
       <MainComponent />
     </MainWrap>
   );
