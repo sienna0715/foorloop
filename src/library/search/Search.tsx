@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import DeleteImg from '../../assets/input-delete.svg';
-import { ReactComponent as SearchIcon } from '../../assets/search.svg';
+import SearchIcon from '../../assets/search.svg';
 
 const SearchWrap = styled.div`
   .focus {
@@ -17,7 +17,7 @@ const SearchContainer = styled.div<{ width: number }>`
   width: ${(props) => (props.width ? props.width : 400)}px;
   height: 70px;
   padding: 1rem;
-  border: 1px solid ${PALETTE_COMPONENT.primary_black};
+  border: 1.5px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
@@ -43,6 +43,7 @@ const DeleteBtn = styled.img`
   height: 16px;
   cursor: pointer;
 `;
+const SearchImg = styled.img``;
 
 interface ISearchProps {
   width: number;
@@ -60,7 +61,7 @@ export default function Search({ width = 400 }: ISearchProps) {
   return (
     <SearchWrap>
       <SearchContainer className={isFocus ? 'focus' : ''} width={width}>
-        <SearchIcon />
+        <SearchImg src={SearchIcon} />
         <Input
           type="text"
           placeholder="search..."

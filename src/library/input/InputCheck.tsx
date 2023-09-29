@@ -10,17 +10,17 @@ import CheckIcon from '../../assets/input-check.svg';
 const InputForm = styled.form`
   border-radius: 4px;
   .success {
-    border: 1px solid ${PALETTE_COMPONENT.primary_blue};
+    border: 1.5px solid ${PALETTE_COMPONENT.primary_blue};
   }
   .error {
-    border: 1px solid ${PALETTE_COMPONENT.primary_red};
+    border: 1.5px solid ${PALETTE_COMPONENT.primary_red};
   }
 `;
 const InputWrap = styled.div<{ width: number }>`
   width: ${(props) => (props.width ? props.width : 400)}px;
   height: 70px;
   padding: 0.8rem;
-  border: 1px solid ${PALETTE_COMPONENT.primary_black};
+  border: 1.5px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
