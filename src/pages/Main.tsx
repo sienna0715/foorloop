@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import styled from 'styled-components';
 // components
 import Contents from '../components/main/Contents';
@@ -12,12 +13,23 @@ const MainWrap = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+const ScrollView = styled.div`
+  width: 100%;
+`;
 
 function Main() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollView = () => {
+    scrollRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
   return (
     <MainWrap>
-      <Landing />
-      <Intro />
+      <Landing handleScrollView={handleScrollView} />
+      <ScrollView ref={scrollRef}>
+        <Intro />
+      </ScrollView>
       <Contents />
       <MainIcon />
       <MainColorTypography />
