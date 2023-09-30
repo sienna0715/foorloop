@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 // components
 import { PALLETTE_MAIN } from '../../styles/colors';
@@ -148,7 +149,11 @@ const ButtonBox = styled.div`
   }
 `;
 
-function Contents() {
+interface IContentProps {
+  handleColorView: React.MouseEventHandler<HTMLDivElement>;
+}
+
+function Contents({ handleColorView }: IContentProps) {
   return (
     <ContentsWrap>
       <ContentsContainer>
@@ -165,7 +170,9 @@ function Contents() {
               </CardText>
             </CardTextBox>
             <ButtonBox>
-              <ArrowButton />
+              <Link to="/icons">
+                <ArrowButton />
+              </Link>
             </ButtonBox>
           </Card>
           <Card>
@@ -179,7 +186,9 @@ function Contents() {
               </CardText>
             </CardTextBox>
             <ButtonBox>
-              <ArrowButton />
+              <Link to="/components">
+                <ArrowButton />
+              </Link>
             </ButtonBox>
           </Card>
           <Card>
@@ -192,7 +201,7 @@ function Contents() {
                 폴룹 라이브러리의 색상 <br /> 사용하러 가기
               </CardText>
             </CardTextBox>
-            <ButtonBox>
+            <ButtonBox onClick={handleColorView}>
               <ArrowButton />
             </ButtonBox>
           </Card>

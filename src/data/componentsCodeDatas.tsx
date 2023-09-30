@@ -126,13 +126,23 @@ const codeData = [
     id: 3,
     name: 'input_check',
     code: [
-      `// <InputCheck width={500} />
-<InputCheck width={size} />`,
+      `/* 
+  !! check에는 정규표현식만 입력해주세요.
+  <InputCheck width={500} check={/^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/} /> 
+
+  1) 영문 또는 숫자 조합 8자리 이상
+  /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/
+  2) 영문, 숫자 특수기호 조합 8자리 이상
+  /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{8,25}$/
+  3) 대문자, 소문자, 숫자, 특수기호 조합 8자리 이상
+  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,25}$/
+*/
+<InputCheck width={size} check={/^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/} />`,
       '',
     ],
     component: (
       <Suspense fallback={renderLoader()}>
-        <InputCheck width={500} />
+        <InputCheck width={500} check={/^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/} />
       </Suspense>
     ),
   },

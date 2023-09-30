@@ -1,14 +1,15 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 // components
 import { PALLETTE_MAIN } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
+import IntroSVG from './IntroSVG';
+import ArrowButton from '../ArrowButton';
 import {
   BREAKPOINTMOBILE,
   BREAKPOINTTABLET,
   BREAKPOINTDESKTOP,
 } from '../../breakpoint';
-import IntroSVG from './IntroSVG';
-import ArrowButton from '../ArrowButton';
 
 const IntroWrap = styled.div`
   width: 100%;
@@ -115,7 +116,9 @@ function Intro() {
           </Content>
         </TextContainer>
         <ButtonBox>
-          <ArrowButton />
+          <Link to="/aboutus">
+            <ArrowButton />
+          </Link>
         </ButtonBox>
       </IntroContainer>
     </IntroWrap>

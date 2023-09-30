@@ -10,17 +10,17 @@ import CheckIcon from '../../assets/input-check.svg';
 const InputForm = styled.form`
   border-radius: 4px;
   .success {
-    border: 1px solid ${PALETTE_COMPONENT.primary_blue};
+    border: 1.5px solid ${PALETTE_COMPONENT.primary_blue};
   }
   .error {
-    border: 1px solid ${PALETTE_COMPONENT.primary_red};
+    border: 1.5px solid ${PALETTE_COMPONENT.primary_red};
   }
 `;
 const InputWrap = styled.div<{ width: number }>`
   width: ${(props) => (props.width ? props.width : 400)}px;
   height: 70px;
   padding: 0.8rem;
-  border: 1px solid ${PALETTE_COMPONENT.primary_black};
+  border: 1.5px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
@@ -39,7 +39,7 @@ const Label = styled.label`
   padding-bottom: 0.3rem;
 `;
 const Input = styled.input`
-  ${FONT_STYLE_V1.text.text_18_medium};
+  ${FONT_STYLE_V1.text.text_20_medium};
   width: 100%;
   outline: none;
   border: none;
@@ -63,9 +63,13 @@ const ResultIcon = styled.img`
 
 interface IInputCheckProps {
   width: number;
+  check: RegExp;
 }
 
-export default function InputCheckIcon({ width = 400 }: IInputCheckProps) {
+export default function InputCheckIcon({
+  width = 400,
+  check = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/,
+}: IInputCheckProps) {
   const [value, setValue] = useState('');
   const [isFocus, setIsFocus] = useState(false);
   const [checkIcon, isCheckIcon] = useState(false);
@@ -76,7 +80,7 @@ export default function InputCheckIcon({ width = 400 }: IInputCheckProps) {
   };
 
   const handleCheck = () => {
-    if (count > 8) {
+    if (check.test(value)) {
       isCheckIcon(true);
     } else {
       isCheckIcon(false);
@@ -88,7 +92,7 @@ export default function InputCheckIcon({ width = 400 }: IInputCheckProps) {
       {count === 0 ? (
         <InputWrap width={width}>
           <InputContainer>
-            <Label>아이디</Label>
+            <Label>비밀번호</Label>
             <Input
               type="text"
               value={value}
@@ -103,9 +107,9 @@ export default function InputCheckIcon({ width = 400 }: IInputCheckProps) {
       ) : (
         <InputWrap width={width} className={checkIcon ? 'success' : 'error'}>
           <InputContainer>
-            <Label>아이디</Label>
+            <Label>비밀번호</Label>
             <Input
-              type="text"
+              type="password"
               placeholder="id"
               value={value}
               onFocus={() => setIsFocus(true)}

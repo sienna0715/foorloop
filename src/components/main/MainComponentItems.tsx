@@ -1,9 +1,9 @@
 import { styled } from 'styled-components';
 import MainComponentItem from './MainComponentItem';
 import PlusButton from '../../library/button/PlusButton';
-import InputDefault from '../../library/input/InputDefault';
 import DefaultDropdown from '../../library/dropdown/DefaultDropdown';
 import CheckboxRedLabel from '../../library/checkbox/label/CheckboxRedLabel';
+import IosToggle from '../../library/toggle/IosToggle';
 
 const Container = styled.div`
   width: 100%;
@@ -20,7 +20,7 @@ function MainComponentItems() {
   const datas = [
     { title: 'checkbox', component: <CheckboxRedLabel scale={1.5} /> },
     { title: 'button', component: <PlusButton /> },
-    { title: 'input', component: <InputDefault width={200} /> },
+    { title: 'toggle', component: <IosToggle /> },
     {
       title: 'dropdown',
       component: (
