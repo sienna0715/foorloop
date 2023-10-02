@@ -8,7 +8,7 @@ const DefaultDropdown = React.lazy(
   () => import('../library/dropdown/DefaultDropdown'),
 );
 // search
-const Search = React.lazy(() => import('../library/search/Search'));
+const SearchBar = React.lazy(() => import('../library/search/SearchBar'));
 // checkbox
 const CheckboxBeige = React.lazy(
   () => import('../library/checkbox/CheckboxBeige'),
@@ -163,13 +163,13 @@ const codeData = [
     id: 5,
     name: 'search_bar',
     code: [
-      `// <Search width={500} />
-<Search width={size} />`,
+      `// <SearchBar width={500} />
+<SearchBar width={size} />`,
       '',
     ],
     component: (
       <Suspense fallback={renderLoader()}>
-        <Search width={500} />
+        <SearchBar width={500} />
       </Suspense>
     ),
   },
