@@ -41,6 +41,7 @@ const PreviewBox = styled.div`
     margin-bottom: 8rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    margin-bottom: 5rem;
   }
 `;
 const CodeBlockBox = styled.div``;
@@ -138,10 +139,10 @@ const BackgroundToggleDot = styled.div<{ $fill: string }>`
 `;
 const Title = styled.div`
   width: 100%;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   display: flex;
   align-items: center;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 `;
 const TitleDot = styled.div`
   width: 2rem;
@@ -152,7 +153,6 @@ const TitleDot = styled.div`
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     width: 1rem;
     height: 1rem;
-    margin-left: 1rem;
   }
 `;
 const TitleText = styled.div`
@@ -193,7 +193,7 @@ const ControlTitle = styled.div`
     ${FONT_STYLE_V1.text.text_14_medium}
     width: 7rem;
     height: 3rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
 `;
 const ControlInput = styled.input`
