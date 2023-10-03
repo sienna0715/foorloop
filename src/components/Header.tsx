@@ -120,7 +120,9 @@ function Header() {
           <Menu>
             <Link to="/icons">icons</Link>
           </Menu>
-          <Menu>about us</Menu>
+          <Menu>
+            <Link to="/aboutus">about us</Link>
+          </Menu>
         </MenuBox>
         <Button>
           <Hamberger
@@ -138,7 +140,9 @@ function Header() {
           <Menu onClick={() => setIsMenu(false)}>
             <Link to="/icons">icon</Link>
           </Menu>
-          <Menu>about us</Menu>
+          <Menu onClick={() => setIsMenu(false)}>
+            <Link to="/aboutus">about us</Link>
+          </Menu>
         </MMenuBox>
       )}
     </HeaderWrap>

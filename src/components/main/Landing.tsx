@@ -86,7 +86,11 @@ const Button = styled.button`
   }
 `;
 
-function Landing() {
+interface ILandingProps {
+  handleIntroView: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+function Landing({ handleIntroView }: ILandingProps) {
   return (
     <LandingWrap>
       <LandingContainer>
@@ -100,7 +104,7 @@ function Landing() {
         </TextBox>
         <RightImg className="side_img" />
       </LandingContainer>
-      <Button>TRY NOW</Button>
+      <Button onClick={handleIntroView}>TRY NOW</Button>
     </LandingWrap>
   );
 }

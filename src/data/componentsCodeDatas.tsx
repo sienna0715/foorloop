@@ -8,7 +8,7 @@ const DefaultDropdown = React.lazy(
   () => import('../library/dropdown/DefaultDropdown'),
 );
 // search
-const Search = React.lazy(() => import('../library/search/Search'));
+const SearchBar = React.lazy(() => import('../library/search/SearchBar'));
 // checkbox
 const CheckboxBeige = React.lazy(
   () => import('../library/checkbox/CheckboxBeige'),
@@ -97,7 +97,11 @@ const codeData = [
   {
     id: 1,
     name: 'input_default',
-    code: [`<InputDefault width={450} color="black" />`, '메롱'],
+    code: [
+      `// <InputDefault width={500} />
+<InputDefault width={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <InputDefault width={500} />
@@ -108,37 +112,8 @@ const codeData = [
     id: 2,
     name: 'input_count',
     code: [
-      `interface IInputCountProps {
-      width: number;
-    }
-    
-    export default function InputCount({ width = 400 }: IInputCountProps) {
-      const [value, setValue] = useState('');
-      const [isFocus, setIsFocus] = useState(false);
-      const count = value.length;
-    
-      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value);
-      };
-    
-      return (
-        <InputWrap width={width}>
-          <InputContainer>
-            <Label>아이디</Label>
-            <Input
-              type="text"
-              value={value}
-              onFocus={() => setIsFocus(true)}
-              onChange={handleChange}
-            />
-          </InputContainer>
-          {isFocus && count !== 0 && (
-            <DeleteBtn src={DeleteIcon} onClick={() => setValue('')} />
-          )}
-          <TextLength>{count}/50</TextLength>
-        </InputWrap>
-      );
-    }`,
+      `// <InputCount width={500} />
+<InputCount width={size} />`,
       '',
     ],
     component: (
@@ -150,40 +125,62 @@ const codeData = [
   {
     id: 3,
     name: 'input_check',
-    code: ['', ''],
+    code: [
+      `/* 
+  !! check에는 정규표현식만 입력해주세요.
+  <InputCheck width={500} check={/^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/} /> 
+
+  1) 영문 또는 숫자 조합 8자리 이상
+  /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/
+  2) 영문, 숫자 특수기호 조합 8자리 이상
+  /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{8,25}$/
+  3) 대문자, 소문자, 숫자, 특수기호 조합 8자리 이상
+  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,25}$/
+*/
+<InputCheck width={size} check={/^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
-        <InputCheck width={500} />
+        <InputCheck width={500} check={/^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/} />
       </Suspense>
     ),
   },
   {
     id: 4,
     name: 'dropdown_default',
-    code: ['', ''],
+    code: [
+      `<DefaultDropdown width={size} list={['옵션 1', '옵션 2', '옵션 3', ...]}/>`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
-        <DefaultDropdown
-          width={400}
-          list={['옵션 1', '옵션 2', '옵션 3', '옵션 4', '옵션 5']}
-        />
+        <DefaultDropdown width={400} list={['옵션 1', '옵션 2', '옵션 3']} />
       </Suspense>
     ),
   },
   {
     id: 5,
     name: 'search_bar',
-    code: ['', ''],
+    code: [
+      `// <SearchBar width={500} />
+<SearchBar width={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
-        <Search width={500} />
+        <SearchBar width={500} />
       </Suspense>
     ),
   },
   {
     id: 6,
     name: 'checkbox_beige',
-    code: ['', ''],
+    code: [
+      `// <CheckboxBeige scale={3} />
+<CheckboxBeige scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <CheckboxBeige scale={3} />
@@ -193,7 +190,11 @@ const codeData = [
   {
     id: 7,
     name: 'round_checkbox_beige',
-    code: ['', ''],
+    code: [
+      `// <RCheckboxBeige scale={3} />
+<RCheckboxBeige scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <RCheckboxBeige scale={3} />
@@ -203,7 +204,11 @@ const codeData = [
   {
     id: 8,
     name: 'checkbox_beige_label',
-    code: ['', ''],
+    code: [
+      `// <CheckboxBeigeLabel scale={3} />
+<CheckboxBeigeLabel scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <CheckboxBeigeLabel scale={3} />
@@ -213,7 +218,11 @@ const codeData = [
   {
     id: 9,
     name: 'round_checkbox_beige_label',
-    code: ['', ''],
+    code: [
+      `// <RCheckboxBeigeLabel scale={3} />
+<RCheckboxBeigeLabel scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <RCheckboxBeigeLabel scale={3} />
@@ -223,7 +232,11 @@ const codeData = [
   {
     id: 10,
     name: 'checkbox_red',
-    code: ['', ''],
+    code: [
+      `// <CheckboxRed scale={3} />
+<CheckboxRed scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <CheckboxRed scale={3} />
@@ -233,7 +246,11 @@ const codeData = [
   {
     id: 11,
     name: 'round_checkbox_red',
-    code: ['', ''],
+    code: [
+      `// <RCheckboxRed scale={3} />
+<RCheckboxRed scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <RCheckboxRed scale={3} />
@@ -243,7 +260,11 @@ const codeData = [
   {
     id: 12,
     name: 'checkbox_red_label',
-    code: ['', ''],
+    code: [
+      `// <CheckboxRedLabel scale={3} />
+<CheckboxRedLabel scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <CheckboxRedLabel scale={3} />
@@ -253,7 +274,11 @@ const codeData = [
   {
     id: 13,
     name: 'round_checkbox_red_label',
-    code: ['', ''],
+    code: [
+      `// <RCheckboxRedLabel scale={3} />
+<RCheckboxRedLabel scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <RCheckboxRedLabel scale={3} />
@@ -263,7 +288,11 @@ const codeData = [
   {
     id: 14,
     name: 'checkbox_black',
-    code: ['', ''],
+    code: [
+      `// <CheckboxBlack scale={3} />
+<CheckboxBlack scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <CheckboxBlack scale={3} />
@@ -273,7 +302,11 @@ const codeData = [
   {
     id: 15,
     name: 'round_checkbox_black',
-    code: ['', ''],
+    code: [
+      `// <RCheckboxBlack scale={3} />
+<RCheckboxBlack scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <RCheckboxBlack scale={3} />
@@ -283,7 +316,11 @@ const codeData = [
   {
     id: 16,
     name: 'chceckbox_black_label',
-    code: ['', ''],
+    code: [
+      `// <CheckboxBlackLabel scale={3} />
+<CheckboxBlackLabel scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <CheckboxBlackLabel scale={3} />
@@ -293,7 +330,11 @@ const codeData = [
   {
     id: 17,
     name: 'round_checkbox_black_label',
-    code: ['', ''],
+    code: [
+      `// <RCheckboxBlackLabel scale={3} />
+<RCheckboxBlackLabel scale={size} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <RCheckboxBlackLabel scale={3} />
@@ -304,7 +345,7 @@ const codeData = [
   {
     id: 18,
     name: 'button_default',
-    code: ['', ''],
+    code: ['<DefaultButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <DefaultButton />
@@ -314,7 +355,7 @@ const codeData = [
   {
     id: 19,
     name: 'button_plus_left',
-    code: ['', ''],
+    code: ['<PlusButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <PlusButton />
@@ -324,7 +365,7 @@ const codeData = [
   {
     id: 20,
     name: 'button_plus_right',
-    code: ['', ''],
+    code: ['<RPlusButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <RPlusButton />
@@ -334,7 +375,7 @@ const codeData = [
   {
     id: 21,
     name: 'button_outline',
-    code: ['', ''],
+    code: ['<OutLineButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <OutLineButton />
@@ -344,7 +385,7 @@ const codeData = [
   {
     id: 22,
     name: 'button_outline_plus_left',
-    code: ['', ''],
+    code: ['<OutLinePlusButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <OutLinePlusButton />
@@ -354,7 +395,7 @@ const codeData = [
   {
     id: 23,
     name: 'button_outline_plus_right',
-    code: ['', ''],
+    code: ['<ROutLinePlusButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <ROutLinePlusButton />
@@ -364,7 +405,7 @@ const codeData = [
   {
     id: 24,
     name: 'button_outline_filled',
-    code: ['', ''],
+    code: ['<FilledOutLineButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <FilledOutLineButton />
@@ -374,7 +415,7 @@ const codeData = [
   {
     id: 25,
     name: 'button_outline_filled_plus_left',
-    code: ['', ''],
+    code: ['<FilledOutLinePlusButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <FilledOutLinePlusButton />
@@ -384,7 +425,7 @@ const codeData = [
   {
     id: 26,
     name: 'button_outline_filled_plus_right',
-    code: ['', ''],
+    code: ['<RFilledOutLinePlusButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <RFilledOutLinePlusButton />
@@ -394,7 +435,7 @@ const codeData = [
   {
     id: 27,
     name: 'button_default_dark',
-    code: ['', ''],
+    code: ['<DarkDefaultButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <DarkDefaultButton />
@@ -404,7 +445,7 @@ const codeData = [
   {
     id: 28,
     name: 'button_plus_left_dark',
-    code: ['', ''],
+    code: ['<DarkPlusButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <DarkPlusButton />
@@ -414,7 +455,7 @@ const codeData = [
   {
     id: 29,
     name: 'button_plus_right_dark',
-    code: ['', ''],
+    code: ['<RDarkPlusButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <RDarkPlusButton />
@@ -424,7 +465,7 @@ const codeData = [
   {
     id: 30,
     name: 'button_outline_disable',
-    code: ['', ''],
+    code: ['<DisableOutLineButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <DisableOutLineButton />
@@ -434,7 +475,7 @@ const codeData = [
   {
     id: 31,
     name: 'button_disable',
-    code: ['', ''],
+    code: ['<DisableButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <DisableButton />
@@ -444,7 +485,7 @@ const codeData = [
   {
     id: 32,
     name: 'button_filled_disable',
-    code: ['', ''],
+    code: ['<DisableFilledButton />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <DisableFilledButton />
@@ -454,7 +495,7 @@ const codeData = [
   {
     id: 33,
     name: 'toggle_aos',
-    code: ['', ''],
+    code: ['<AosToggle />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <AosToggle />
@@ -464,7 +505,7 @@ const codeData = [
   {
     id: 34,
     name: 'toggle_ios',
-    code: ['', ''],
+    code: ['<IosToggle />', ''],
     component: (
       <Suspense fallback={renderLoader()}>
         <IosToggle />

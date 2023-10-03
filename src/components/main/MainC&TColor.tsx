@@ -43,7 +43,7 @@ const BlackColor = styled.div<{ ishover: string }>`
   padding: 4rem;
   border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 4rem;
-  background-color: ${PALLETTE_MAIN.sub_main};
+  background-color: ${PALLETTE_MAIN.main};
   color: ${(props) =>
     props.ishover === 'true' ? PALLETTE_MAIN.sub_main : PALLETTE_MAIN.main};
   transition: all 0.5s 0.5s;

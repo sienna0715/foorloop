@@ -4,20 +4,20 @@ import styled from 'styled-components';
 import { PALETTE_COMPONENT } from '../../styles/colors';
 import { FONT_STYLE_V1 } from '../../styles/fontStyles';
 import DeleteImg from '../../assets/input-delete.svg';
-import { ReactComponent as SearchIcon } from '../../assets/search.svg';
+import SearchIcon from '../../assets/search.svg';
 
-const SearchWrap = styled.div`
+const SearchBarWrap = styled.div`
   .focus {
     border: 1px solid ${PALETTE_COMPONENT.primary_black};
     box-shadow: 0px 0px 3px 0px ${PALETTE_COMPONENT.primary_black};
   }
   cursor: pointer;
 `;
-const SearchContainer = styled.div<{ width: number }>`
+const SearchBarContainer = styled.div<{ width: number }>`
   width: ${(props) => (props.width ? props.width : 400)}px;
   height: 70px;
   padding: 1rem;
-  border: 1px solid ${PALETTE_COMPONENT.primary_black};
+  border: 1.5px solid ${PALETTE_COMPONENT.primary_black};
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
@@ -43,12 +43,13 @@ const DeleteBtn = styled.img`
   height: 16px;
   cursor: pointer;
 `;
+const SearchImg = styled.img``;
 
 interface ISearchProps {
   width: number;
 }
 
-export default function Search({ width = 400 }: ISearchProps) {
+export default function SearchBar({ width = 400 }: ISearchProps) {
   const [value, setValue] = useState('');
   const [isFocus, setIsFocus] = useState(false);
   const count = value.length;
@@ -58,9 +59,9 @@ export default function Search({ width = 400 }: ISearchProps) {
   };
 
   return (
-    <SearchWrap>
-      <SearchContainer className={isFocus ? 'focus' : ''} width={width}>
-        <SearchIcon />
+    <SearchBarWrap>
+      <SearchBarContainer className={isFocus ? 'focus' : ''} width={width}>
+        <SearchImg src={SearchIcon} />
         <Input
           type="text"
           placeholder="search..."
@@ -72,7 +73,7 @@ export default function Search({ width = 400 }: ISearchProps) {
         {count !== 0 && (
           <DeleteBtn src={DeleteImg} onClick={() => setValue('')} />
         )}
-      </SearchContainer>
-    </SearchWrap>
+      </SearchBarContainer>
+    </SearchBarWrap>
   );
 }
