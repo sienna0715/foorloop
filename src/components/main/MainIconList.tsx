@@ -229,7 +229,7 @@ const LeftArrowButtonBorder = styled(ArrowButtonBorder)`
 `;
 
 interface IMainIconList {
-  icon: (color: string, size: number) => string;
+  icon: (color: string, size: string) => string;
   name: string;
 }
 
@@ -302,7 +302,7 @@ function MainIconList() {
               >
                 <SideListContentItemIcon
                   dangerouslySetInnerHTML={{
-                    __html: prevData.icon(PALLETTE_MAIN.sub_main, 55),
+                    __html: prevData.icon(PALLETTE_MAIN.sub_main, '55'),
                   }}
                 />
                 <SideListContentItemText>
@@ -319,7 +319,7 @@ function MainIconList() {
               >
                 <SideListContentItemIcon
                   dangerouslySetInnerHTML={{
-                    __html: nextData.icon(PALLETTE_MAIN.sub_main, 55),
+                    __html: nextData.icon(PALLETTE_MAIN.sub_main, '55'),
                   }}
                 />
                 <SideListContentItemText>
@@ -340,7 +340,7 @@ function MainIconList() {
         <SelectIcon>
           <SelectIconImg
             dangerouslySetInnerHTML={{
-              __html: selectDatas.icon(PALLETTE_MAIN.main, 140),
+              __html: selectDatas.icon(PALLETTE_MAIN.main, '140'),
             }}
           />
           <SelectIconText>
