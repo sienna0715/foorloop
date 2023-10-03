@@ -1,14 +1,15 @@
 # FOR{LOOP}
 아이콘, 재사용 컴포넌트를 쉽게 사용할 수 있는 라이브러리
 
-- [배포 사이트 👉](https://forloop.vercel.app/)
+- [FOR{LOOP} 홈페이지 👉](https://forloop.vercel.app/)
+- [NPM 라이브러리 👉](https://www.npmjs.com/package/for-loop-icons)
 
 ### Member
 🐶 **김무성** | [lampu의 깃헙 →](https://github.com/lapmu) <br />
 🐼 **이시온** | [sienna의 깃헙 →](https://github.com/sienna0715)
 
 ### Preiod
-2023.08.23 ~ img
+2023.08.23 ~ 2023.10.04
 
 ### Development environment
 - Vite
