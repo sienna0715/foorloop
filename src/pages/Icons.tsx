@@ -28,7 +28,7 @@ const Wrapper = styled.div`
     margin-bottom: 18rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    margin: 0 1rem;
+    margin: 0;
     margin-bottom: 10rem;
   }
 `;
@@ -42,6 +42,12 @@ const PreView = styled.div`
   justify-content: center;
   align-items: center;
   gap: 13rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    gap: 8rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    gap: 5rem;
+  }
 `;
 
 const IconPreView = styled.div`
@@ -60,6 +66,14 @@ const ZoomIcon = styled.div<{ $fill: string }>`
     props.$fill === 'true' ? PALLETTE_MAIN.main : PALLETTE_MAIN.sub_main};
   border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 50%;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    width: 55rem;
+    height: 55rem;
+    > svg {
+      width: 30rem;
+      height: 30rem;
+    }
+  }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     width: 40rem;
     height: 40rem;
@@ -67,13 +81,13 @@ const ZoomIcon = styled.div<{ $fill: string }>`
       width: 20rem;
       height: 20rem;
     }
-    @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-      width: 30rem;
-      height: 30rem;
-      > svg {
-        width: 15rem;
-        height: 15rem;
-      }
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 28rem;
+    height: 28rem;
+    > svg {
+      width: 15rem;
+      height: 15rem;
     }
   }
 `;
@@ -263,14 +277,30 @@ const SizeInput = styled.input`
 `;
 
 const IconsList = styled.div`
-  width: 100%;
-  padding-top: 18rem;
-  display: flex;
-  justify-content: space-around;
+  width: 90%;
+  max-width: 192rem;
+  padding-top: 10rem;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2rem;
   border-top: 2px solid ${PALLETTE_MAIN.sub_main};
+  @media screen and (max-width: 1004px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media screen and (max-width: 870px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const IconListItem = styled.div`

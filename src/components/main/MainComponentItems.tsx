@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1439px) {
     justify-content: center;
   }
 `;
