@@ -125,6 +125,10 @@ const Button = styled.button`
     background-color: ${PALLETTE_MAIN.sub_main};
     color: ${PALLETTE_MAIN.main};
   }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_24_medium};
+    padding: 0 6rem;
+  }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_12_medium};
     border: 1px solid ${PALLETTE_MAIN.sub_main};
