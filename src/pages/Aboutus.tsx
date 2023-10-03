@@ -10,6 +10,7 @@ import {
 import developer1 from '../assets/images/sion.png';
 import developer2 from '../assets/images/moosung.png';
 import designer1 from '../assets/images/hyejin.png';
+import designer2 from '../assets/images/miye.png';
 
 const AboutusWrap = styled.div`
   width: 100%;
@@ -140,8 +141,8 @@ function Aboutus() {
               <MemerUrl>lhj941123@gmail.com</MemerUrl>
             </Member>
             <Member>
-              <MemerImg />
-              <MemerName>Lee Si On</MemerName>
+              <MemerImg src={designer2} alt="designer-miye" />
+              <MemerName>Gil Mi Ye</MemerName>
               <MemerPositon>Designer</MemerPositon>
               <MemerUrl>Github</MemerUrl>
             </Member>
