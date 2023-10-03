@@ -38,7 +38,7 @@ const PreviewBox = styled.div`
   }
   @media screen and (max-width: ${1024}px) {
     margin-right: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 8rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
   }
@@ -57,12 +57,12 @@ const Preview = styled.div<{ $fill: string }>`
   align-items: center;
   overflow: hidden;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    width: 55rem;
-    height: 55rem;
+    width: 50rem;
+    height: 50rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    width: 45rem;
-    height: 45rem;
+    width: 40rem;
+    height: 40rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     width: 30rem;
@@ -74,6 +74,7 @@ const Component = styled.div`
   display: flex;
   justify-content: center;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    transform: scale(0.9);
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     transform: scale(0.8);
@@ -186,6 +187,7 @@ const ControlTitle = styled.div`
   color: ${PALLETTE_MAIN.sub_main};
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_18_medium}
+    width: 13rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_14_medium}
@@ -204,11 +206,11 @@ const ControlInput = styled.input`
   border-radius: 1.8rem;
   ${FONT_STYLE_V1.text.text_16_medium}
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    width: 45rem;
+    width: 35rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_14_medium}
-    width: 35rem;
+    width: 25rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     width: 21rem;
