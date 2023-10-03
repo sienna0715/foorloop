@@ -182,7 +182,7 @@ const Color = styled.div`
 const ColorText = styled.div`
   width: 18rem;
   height: 3.6rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   margin-right: 1.5rem;
   display: flex;
   justify-content: center;
@@ -207,7 +207,7 @@ const ColorText = styled.div`
 const SelectedColor = styled.div<{ $color: ISelectedColor }>`
   width: 18rem;
   height: 3.6rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 1.8rem;
   background-color: ${(props) =>
@@ -240,6 +240,25 @@ const ColorPicker = styled.div`
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     top: 2.2rem;
     left: 8.5rem;
+  }
+`;
+
+const SizeInput = styled.input`
+  width: 18rem;
+  height: 3.6rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: transparent;
+  color: ${PALLETTE_MAIN.sub_main};
+  border: 2px solid ${PALLETTE_MAIN.sub_main};
+  border-radius: 1.8rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 9rem;
+    height: 2.5rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 7rem;
+    height: 2rem;
   }
 `;
 
@@ -280,7 +299,7 @@ const IconText = styled.div`
 `;
 
 interface IMainIconList {
-  icon: (color: string, size: number) => string;
+  icon: (color: string, size: string) => string;
   name: string;
 }
 
@@ -315,6 +334,7 @@ function Icons() {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [hexColor, setHexColor] = useState('#000000');
   const [isFill, setIsFill] = useState('false');
+  const [sizeInput, setSizeInput] = useState('40');
 
   const IconClickHandler = (name: string) => {
     setSelectedData(data[data.map((el) => el.name).indexOf(name)]);
@@ -354,13 +374,23 @@ function Icons() {
     }
   };
 
+  const sizeInputChangeHadler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (Number(e.target.value)) {
+      setSizeInput(e.target.value);
+    } else if (e.target.value === '') {
+      setSizeInput(e.target.value);
+    } else {
+      alert('숫자를 입력하세요');
+    }
+  };
+
   return (
     <Wrapper>
       <PreView>
         <IconPreView>
           <ZoomIcon
             dangerouslySetInnerHTML={{
-              __html: selectedData.icon(hexColor, 370),
+              __html: selectedData.icon(hexColor, '370'),
             }}
             $fill={isFill}
           />
@@ -375,6 +405,10 @@ function Icons() {
             <TitleDot />
             <TitleText>{`icon > ${selectedData.name} icon`}</TitleText>
           </Title>
+          <Color>
+            <ColorText>size</ColorText>
+            <SizeInput value={sizeInput} onChange={sizeInputChangeHadler} />
+          </Color>
           <Color>
             <ColorText>color</ColorText>
             <SelectedColor
@@ -391,10 +425,17 @@ function Icons() {
               </ColorPicker>
             ) : null}
           </Color>
-          {/* react code block 추기 */}
+
+          {/* react code block 추가 */}
           <CodeBlock
             titles={['React', 'SVG']}
-            codes={['react code', selectedData.icon(hexColor, 370)]}
+            codes={[
+              `import ${selectedData.name} from 'for-loop-icons'
+            
+<${selectedData.name} size={${sizeInput}} color={${hexColor}}>
+            `,
+              selectedData.icon(hexColor, '370'),
+            ]}
           />
         </CodePreView>
       </PreView>
@@ -403,7 +444,7 @@ function Icons() {
           <IconListItem key={el.name} onClick={() => IconClickHandler(el.name)}>
             <IconListItemIcon
               dangerouslySetInnerHTML={{
-                __html: el.icon(PALLETTE_MAIN.sub_main, 40),
+                __html: el.icon(PALLETTE_MAIN.sub_main, '40'),
               }}
             />
             <IconText>{el.name}</IconText>
