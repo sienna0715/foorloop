@@ -36,11 +36,11 @@ const TabBox = styled.div`
     border-top-right-radius: 3rem;
   }
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    width: 65rem;
+    width: 55rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_16_medium}
-    width: 55rem;
+    width: 40rem;
     height: 7rem;
     .current {
       height: 4.1rem;
@@ -81,12 +81,12 @@ const CodeBox = styled.div`
     }
   }
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    width: 65rem;
-    height: 40rem;
+    width: 55rem;
+    height: 35rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_12_medium};
-    width: 55rem;
+    width: 40rem;
     height: 25rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
