@@ -127,7 +127,7 @@ function Aboutus() {
             <br />
             The core value of FOR&#123;LOOP&#125; is that it is a library you
             want to use again. <br /> With that in mind, we came up with the
-            name &#39;FOR&#123;LOOP&#125;&#39;, which means loop statement.
+            name &#39;FOR&#123;LOOP&#125;&#39; which means loop statement.
           </Content>
         </Section>
         <Section>
