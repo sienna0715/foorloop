@@ -8,6 +8,7 @@ import CodeBlock from '../CodeBlock';
 import {
   BREAKPOINTMOBILE,
   BREAKPOINTTABLET,
+  BREAKPOINTDESKTOPSMALL,
   BREAKPOINTDESKTOP,
 } from '../../breakpoint';
 
@@ -21,7 +22,7 @@ const ComponentsTopContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  @media screen and (max-width: ${1024}px) {
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
     flex-direction: column;
     align-items: center;
   }
@@ -36,7 +37,7 @@ const PreviewBox = styled.div`
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     margin-right: 5rem;
   }
-  @media screen and (max-width: ${1024}px) {
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
     margin-right: 0;
     margin-bottom: 8rem;
   }
@@ -223,7 +224,7 @@ const Bar = styled.div`
   width: 100%;
   border-bottom: 1px solid ${PALLETTE_MAIN.sub_main};
   padding-top: 26rem;
-  @media screen and (max-width: ${1024}px) {
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
     padding-top: 18rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {

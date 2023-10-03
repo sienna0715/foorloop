@@ -5,6 +5,7 @@ import { PALLETTE_MAIN } from '../../styles/colors';
 import {
   BREAKPOINTMOBILE,
   BREAKPOINTTABLET,
+  BREAKPOINTDESKTOPSMALL,
   BREAKPOINTDESKTOP,
 } from '../../breakpoint';
 import { ReactComponent as LeftImg } from '../../assets/landing-left.svg';
@@ -22,8 +23,44 @@ const LandingContainer = styled.div`
   position: relative;
   margin-bottom: 3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
+  .side_img {
+    position: absolute;
+    top: 4rem;
+    transform: scale(0.8);
+  }
+  .left {
+    left: -4rem;
+  }
+  .right {
+    right: -3rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    .side_img {
+      top: -1rem;
+      transform: scale(0.6);
+    }
+    .left {
+      left: -5rem;
+    }
+    .right {
+      right: -5rem;
+    }
+  }
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
+    .side_img {
+      top: -3rem;
+      transform: scale(0.5);
+    }
+    .left {
+      left: -10rem;
+    }
+    .right {
+      right: -10rem;
+    }
+  }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     justify-content: center;
     .side_img {
@@ -37,13 +74,16 @@ const TextBox = styled.div`
   align-items: center;
 `;
 const Title = styled.span`
-  ${FONT_STYLE_V1.text.text_180_medium};
+  ${FONT_STYLE_V1.text.text_150_medium};
   padding: 1rem 2rem;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     ${FONT_STYLE_V1.text.text_100_medium};
   }
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
+    ${FONT_STYLE_V1.text.text_80_medium};
+  }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    ${FONT_STYLE_V1.text.text_120_medium};
+    ${FONT_STYLE_V1.text.text_60_medium};
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_45_medium};
@@ -51,13 +91,19 @@ const Title = styled.span`
   }
 `;
 const Contents = styled.span`
-  ${FONT_STYLE_V1.text.text_100_medium};
+  ${FONT_STYLE_V1.text.text_80_medium};
   width: max-content;
   text-align: center;
   line-height: 1;
   margin-bottom: 3rem;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     ${FONT_STYLE_V1.text.text_60_medium};
+  }
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
+    ${FONT_STYLE_V1.text.text_50_medium};
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_40_medium};
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_24_medium};
@@ -94,7 +140,7 @@ function Landing({ handleIntroView }: ILandingProps) {
   return (
     <LandingWrap>
       <LandingContainer>
-        <LeftImg className="side_img" />
+        <LeftImg className="side_img left" />
         <TextBox>
           <Title>FOR&#123;LOOP&#125;</Title>
           <Contents>
@@ -102,7 +148,7 @@ function Landing({ handleIntroView }: ILandingProps) {
             COMPONENT LIBRARY
           </Contents>
         </TextBox>
-        <RightImg className="side_img" />
+        <RightImg className="side_img right" />
       </LandingContainer>
       <Button onClick={handleIntroView}>TRY NOW</Button>
     </LandingWrap>
