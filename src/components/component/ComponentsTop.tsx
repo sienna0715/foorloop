@@ -8,6 +8,7 @@ import CodeBlock from '../CodeBlock';
 import {
   BREAKPOINTMOBILE,
   BREAKPOINTTABLET,
+  BREAKPOINTDESKTOPSMALL,
   BREAKPOINTDESKTOP,
 } from '../../breakpoint';
 
@@ -21,7 +22,7 @@ const ComponentsTopContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  @media screen and (max-width: ${1024}px) {
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
     flex-direction: column;
     align-items: center;
   }
@@ -36,11 +37,12 @@ const PreviewBox = styled.div`
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     margin-right: 5rem;
   }
-  @media screen and (max-width: ${1024}px) {
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
     margin-right: 0;
     margin-bottom: 8rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    margin-bottom: 5rem;
   }
 `;
 const CodeBlockBox = styled.div``;
@@ -138,10 +140,10 @@ const BackgroundToggleDot = styled.div<{ $fill: string }>`
 `;
 const Title = styled.div`
   width: 100%;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   display: flex;
   align-items: center;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 `;
 const TitleDot = styled.div`
   width: 2rem;
@@ -152,7 +154,6 @@ const TitleDot = styled.div`
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     width: 1rem;
     height: 1rem;
-    margin-left: 1rem;
   }
 `;
 const TitleText = styled.div`
@@ -193,7 +194,7 @@ const ControlTitle = styled.div`
     ${FONT_STYLE_V1.text.text_14_medium}
     width: 7rem;
     height: 3rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
 `;
 const ControlInput = styled.input`
@@ -223,7 +224,7 @@ const Bar = styled.div`
   width: 100%;
   border-bottom: 1px solid ${PALLETTE_MAIN.sub_main};
   padding-top: 26rem;
-  @media screen and (max-width: ${1024}px) {
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
     padding-top: 18rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {

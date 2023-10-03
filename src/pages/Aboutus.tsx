@@ -10,6 +10,7 @@ import {
 import developer1 from '../assets/images/sion.png';
 import developer2 from '../assets/images/moosung.png';
 import designer1 from '../assets/images/hyejin.png';
+import designer2 from '../assets/images/miye.png';
 
 const AboutusWrap = styled.div`
   width: 100%;
@@ -127,7 +128,7 @@ function Aboutus() {
             <br />
             The core value of FOR&#123;LOOP&#125; is that it is a library you
             want to use again. <br /> With that in mind, we came up with the
-            name &#39;FOR&#123;LOOP&#125;&#39;, which means loop statement.
+            name &#39;FOR&#123;LOOP&#125;&#39; which means loop statement.
           </Content>
         </Section>
         <Section>
@@ -137,13 +138,15 @@ function Aboutus() {
               <MemerImg src={designer1} alt="designer-hyejin" />
               <MemerName>Lee Hye Jin</MemerName>
               <MemerPositon>Designer</MemerPositon>
+              <MemerUrl>.</MemerUrl>
               <MemerUrl>lhj941123@gmail.com</MemerUrl>
             </Member>
             <Member>
-              <MemerImg />
-              <MemerName>Lee Si On</MemerName>
+              <MemerImg src={designer2} alt="designer-miye" />
+              <MemerName>Gil Mi Ye</MemerName>
               <MemerPositon>Designer</MemerPositon>
-              <MemerUrl>Github</MemerUrl>
+              <MemerUrl>.</MemerUrl>
+              <MemerUrl>.</MemerUrl>
             </Member>
             <Member>
               <MemerImg src={developer2} alt="develper-moosung" />

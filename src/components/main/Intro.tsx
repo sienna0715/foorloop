@@ -33,7 +33,7 @@ const IntroContainer = styled.div`
     margin: 0 5rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    width: 60rem;
+    width: 40rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     min-width: 30rem;
@@ -62,7 +62,11 @@ const ButtonBox = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    padding-top: 2rem;
+  }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    padding-top: 0;
     svg {
       width: 2.88rem;
       height: 2.88rem;
@@ -78,6 +82,9 @@ const Title = styled.div`
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     ${FONT_STYLE_V1.text.text_60_medium};
   }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_35_medium};
+  }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_30_medium};
   }
@@ -89,10 +96,13 @@ const Content = styled.span`
   padding-left: 5rem;
   padding-top: 2rem;
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    ${FONT_STYLE_V1.text.text_14_medium};
     padding: 0;
+    padding-top: 2rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_12_medium};
+    padding-top: 0;
   }
 `;
 
