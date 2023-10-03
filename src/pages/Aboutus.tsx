@@ -138,13 +138,15 @@ function Aboutus() {
               <MemerImg src={designer1} alt="designer-hyejin" />
               <MemerName>Lee Hye Jin</MemerName>
               <MemerPositon>Designer</MemerPositon>
+              <MemerUrl>.</MemerUrl>
               <MemerUrl>lhj941123@gmail.com</MemerUrl>
             </Member>
             <Member>
               <MemerImg src={designer2} alt="designer-miye" />
               <MemerName>Gil Mi Ye</MemerName>
               <MemerPositon>Designer</MemerPositon>
-              <MemerUrl>Github</MemerUrl>
+              <MemerUrl>.</MemerUrl>
+              <MemerUrl>.</MemerUrl>
             </Member>
             <Member>
               <MemerImg src={developer2} alt="develper-moosung" />
