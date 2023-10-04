@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 // components
 import Contents from '../components/main/Contents';
@@ -33,6 +33,10 @@ function Main() {
       block: 'center',
     });
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <MainWrap>

@@ -43,7 +43,7 @@ const Title = styled.span`
     ${FONT_STYLE_V1.text.text_60_medium};
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    ${FONT_STYLE_V1.text.text_60_medium};
+    ${FONT_STYLE_V1.text.text_45_medium};
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_30_medium};
@@ -81,8 +81,6 @@ const Card = styled.div`
     }
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    width: 40rem;
-    height: 50rem;
     margin: 0;
     margin-bottom: 5rem;
   }
@@ -90,7 +88,6 @@ const Card = styled.div`
     width: 21.6rem;
     height: 30rem;
     border-radius: 3.6rem;
-    margin: 0;
     margin-bottom: 3rem;
   }
 `;
@@ -139,9 +136,17 @@ const CardText = styled.span`
 `;
 const ButtonBox = styled.div`
   position: absolute;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 3rem;
+  right: 3rem;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    bottom: 2rem;
+    right: 2rem;
     svg {
       width: 2.88rem;
       height: 2.88rem;

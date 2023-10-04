@@ -21,7 +21,7 @@ const BottomTransfer = styled.g`
     transform: translateY(-5.5rem);
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    transform: translateY(1.7rem);
+    transform: translateY(0.5rem);
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     transform: translateY(-11.3rem);

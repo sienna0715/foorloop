@@ -56,9 +56,11 @@ const ArrowButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  svg {
-    width: 2.88rem;
-    height: 2.88rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    svg {
+      width: 2.88rem;
+      height: 2.88rem;
+    }
   }
 `;
 

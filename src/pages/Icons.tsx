@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { ChromePicker } from 'react-color';
 import { PALLETTE_MAIN } from '../styles/colors';
@@ -28,7 +28,7 @@ const Wrapper = styled.div`
     margin-bottom: 18rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-    margin: 0 1rem;
+    margin: 0;
     margin-bottom: 10rem;
   }
 `;
@@ -42,6 +42,12 @@ const PreView = styled.div`
   justify-content: center;
   align-items: center;
   gap: 13rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    gap: 8rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    gap: 5rem;
+  }
 `;
 
 const IconPreView = styled.div`
@@ -60,6 +66,14 @@ const ZoomIcon = styled.div<{ $fill: string }>`
     props.$fill === 'true' ? PALLETTE_MAIN.main : PALLETTE_MAIN.sub_main};
   border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 50%;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    width: 55rem;
+    height: 55rem;
+    > svg {
+      width: 30rem;
+      height: 30rem;
+    }
+  }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     width: 40rem;
     height: 40rem;
@@ -67,13 +81,13 @@ const ZoomIcon = styled.div<{ $fill: string }>`
       width: 20rem;
       height: 20rem;
     }
-    @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
-      width: 30rem;
-      height: 30rem;
-      > svg {
-        width: 15rem;
-        height: 15rem;
-      }
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 28rem;
+    height: 28rem;
+    > svg {
+      width: 15rem;
+      height: 15rem;
     }
   }
 `;
@@ -182,7 +196,7 @@ const Color = styled.div`
 const ColorText = styled.div`
   width: 18rem;
   height: 3.6rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   margin-right: 1.5rem;
   display: flex;
   justify-content: center;
@@ -207,7 +221,7 @@ const ColorText = styled.div`
 const SelectedColor = styled.div<{ $color: ISelectedColor }>`
   width: 18rem;
   height: 3.6rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   border: 2px solid ${PALLETTE_MAIN.sub_main};
   border-radius: 1.8rem;
   background-color: ${(props) =>
@@ -243,15 +257,50 @@ const ColorPicker = styled.div`
   }
 `;
 
+const SizeInput = styled.input`
+  width: 18rem;
+  height: 3.6rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: transparent;
+  color: ${PALLETTE_MAIN.sub_main};
+  border: 2px solid ${PALLETTE_MAIN.sub_main};
+  border-radius: 1.8rem;
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    width: 9rem;
+    height: 2.5rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    width: 7rem;
+    height: 2rem;
+  }
+`;
+
 const IconsList = styled.div`
-  width: 100%;
-  padding-top: 18rem;
-  display: flex;
-  justify-content: space-around;
+  width: 90%;
+  max-width: 192rem;
+  padding-top: 10rem;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2rem;
   border-top: 2px solid ${PALLETTE_MAIN.sub_main};
+  @media screen and (max-width: 1004px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media screen and (max-width: 870px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (max-width: ${BREAKPOINTTABLET}px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0rem;
+  }
+  @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const IconListItem = styled.div`
@@ -280,7 +329,7 @@ const IconText = styled.div`
 `;
 
 interface IMainIconList {
-  icon: (color: string, size: number) => string;
+  icon: (color: string, size: string) => string;
   name: string;
 }
 
@@ -315,6 +364,7 @@ function Icons() {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [hexColor, setHexColor] = useState('#000000');
   const [isFill, setIsFill] = useState('false');
+  const [sizeInput, setSizeInput] = useState('40');
 
   const IconClickHandler = (name: string) => {
     setSelectedData(data[data.map((el) => el.name).indexOf(name)]);
@@ -354,13 +404,27 @@ function Icons() {
     }
   };
 
+  const sizeInputChangeHadler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (Number(e.target.value)) {
+      setSizeInput(e.target.value);
+    } else if (e.target.value === '') {
+      setSizeInput(e.target.value);
+    } else {
+      alert('숫자를 입력하세요');
+    }
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Wrapper>
       <PreView>
         <IconPreView>
           <ZoomIcon
             dangerouslySetInnerHTML={{
-              __html: selectedData.icon(hexColor, 370),
+              __html: selectedData.icon(hexColor, '370'),
             }}
             $fill={isFill}
           />
@@ -375,6 +439,10 @@ function Icons() {
             <TitleDot />
             <TitleText>{`icon > ${selectedData.name} icon`}</TitleText>
           </Title>
+          <Color>
+            <ColorText>size</ColorText>
+            <SizeInput value={sizeInput} onChange={sizeInputChangeHadler} />
+          </Color>
           <Color>
             <ColorText>color</ColorText>
             <SelectedColor
@@ -391,10 +459,17 @@ function Icons() {
               </ColorPicker>
             ) : null}
           </Color>
-          {/* react code block 추기 */}
+
+          {/* react code block 추가 */}
           <CodeBlock
             titles={['React', 'SVG']}
-            codes={['react code', selectedData.icon(hexColor, 370)]}
+            codes={[
+              `import { ${selectedData.name} } from 'for-loop-icons'
+            
+<${selectedData.name} size={${sizeInput}} color={${hexColor}}>
+            `,
+              selectedData.icon(hexColor, '370'),
+            ]}
           />
         </CodePreView>
       </PreView>
@@ -403,7 +478,7 @@ function Icons() {
           <IconListItem key={el.name} onClick={() => IconClickHandler(el.name)}>
             <IconListItemIcon
               dangerouslySetInnerHTML={{
-                __html: el.icon(PALLETTE_MAIN.sub_main, 40),
+                __html: el.icon(PALLETTE_MAIN.sub_main, '40'),
               }}
             />
             <IconText>{el.name}</IconText>

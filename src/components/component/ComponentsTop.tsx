@@ -8,6 +8,7 @@ import CodeBlock from '../CodeBlock';
 import {
   BREAKPOINTMOBILE,
   BREAKPOINTTABLET,
+  BREAKPOINTDESKTOPSMALL,
   BREAKPOINTDESKTOP,
 } from '../../breakpoint';
 
@@ -21,7 +22,7 @@ const ComponentsTopContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  @media screen and (max-width: ${1024}px) {
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
     flex-direction: column;
     align-items: center;
   }
@@ -36,11 +37,12 @@ const PreviewBox = styled.div`
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
     margin-right: 5rem;
   }
-  @media screen and (max-width: ${1024}px) {
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
     margin-right: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 8rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    margin-bottom: 5rem;
   }
 `;
 const CodeBlockBox = styled.div``;
@@ -57,12 +59,12 @@ const Preview = styled.div<{ $fill: string }>`
   align-items: center;
   overflow: hidden;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    width: 55rem;
-    height: 55rem;
+    width: 50rem;
+    height: 50rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
-    width: 45rem;
-    height: 45rem;
+    width: 40rem;
+    height: 40rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     width: 30rem;
@@ -74,6 +76,7 @@ const Component = styled.div`
   display: flex;
   justify-content: center;
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    transform: scale(0.9);
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     transform: scale(0.8);
@@ -137,10 +140,10 @@ const BackgroundToggleDot = styled.div<{ $fill: string }>`
 `;
 const Title = styled.div`
   width: 100%;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   display: flex;
   align-items: center;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 `;
 const TitleDot = styled.div`
   width: 2rem;
@@ -151,7 +154,6 @@ const TitleDot = styled.div`
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     width: 1rem;
     height: 1rem;
-    margin-left: 1rem;
   }
 `;
 const TitleText = styled.div`
@@ -186,12 +188,13 @@ const ControlTitle = styled.div`
   color: ${PALLETTE_MAIN.sub_main};
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_18_medium}
+    width: 13rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     ${FONT_STYLE_V1.text.text_14_medium}
     width: 7rem;
     height: 3rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
 `;
 const ControlInput = styled.input`
@@ -204,11 +207,11 @@ const ControlInput = styled.input`
   border-radius: 1.8rem;
   ${FONT_STYLE_V1.text.text_16_medium}
   @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
-    width: 45rem;
+    width: 35rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     ${FONT_STYLE_V1.text.text_14_medium}
-    width: 35rem;
+    width: 25rem;
   }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
     width: 21rem;
@@ -221,7 +224,7 @@ const Bar = styled.div`
   width: 100%;
   border-bottom: 1px solid ${PALLETTE_MAIN.sub_main};
   padding-top: 26rem;
-  @media screen and (max-width: ${1024}px) {
+  @media screen and (max-width: ${BREAKPOINTDESKTOPSMALL}px) {
     padding-top: 18rem;
   }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
