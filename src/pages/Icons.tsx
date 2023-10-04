@@ -466,7 +466,7 @@ function Icons() {
             codes={[
               `import { ${selectedData.name} } from 'for-loop-icons'
             
-<${selectedData.name} size={${sizeInput}} color={${hexColor}}>
+<${selectedData.name} size='${sizeInput}' color='${hexColor}'>
             `,
               selectedData.icon(hexColor, '370'),
             ]}
