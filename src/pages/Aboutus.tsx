@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import { FONT_STYLE_V1 } from '../styles/fontStyles';
 import { PALLETTE_MAIN } from '../styles/colors';
@@ -113,6 +114,10 @@ const MemerUrl = styled.a`
 `;
 
 function Aboutus() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <AboutusWrap>
       <AboutusContainer>

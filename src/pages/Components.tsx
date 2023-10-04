@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 // components
 import ComponentsTop from '../components/component/ComponentsTop';
@@ -17,6 +17,10 @@ const ComponentsContainer = styled.div`
 
 function Components() {
   const [currentItem, setCurrentItem] = useState('');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <ComponentsWrap>

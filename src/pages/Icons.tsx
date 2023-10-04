@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { ChromePicker } from 'react-color';
 import { PALLETTE_MAIN } from '../styles/colors';
@@ -413,6 +413,10 @@ function Icons() {
       alert('숫자를 입력하세요');
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Wrapper>

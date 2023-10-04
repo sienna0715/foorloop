@@ -136,9 +136,17 @@ const CardText = styled.span`
 `;
 const ButtonBox = styled.div`
   position: absolute;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 3rem;
+  right: 3rem;
+  @media screen and (max-width: ${BREAKPOINTDESKTOP}px) {
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
   @media screen and (max-width: ${BREAKPOINTMOBILE}px) {
+    bottom: 2rem;
+    right: 2rem;
     svg {
       width: 2.88rem;
       height: 2.88rem;

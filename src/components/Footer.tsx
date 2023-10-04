@@ -16,6 +16,9 @@ const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  a {
+    color: ${PALLETTE_MAIN.main};
+  }
   @media screen and (max-width: ${BREAKPOINTTABLET}px) {
     margin: 0 2.5rem;
   }
@@ -53,13 +56,19 @@ function Footer() {
   return (
     <FooterWrap>
       <FooterContainer>
-        <Logo>FOR&#123;LOOP&#125;</Logo>
+        <Logo>
+          <Link to="/">FOR&#123;LOOP&#125;</Link>
+        </Logo>
         <MenuBox>
-          <Menu>components</Menu>
+          <Menu>
+            <Link to="/components">components</Link>
+          </Menu>
           <Menu>
             <Link to="/icons">icons</Link>
           </Menu>
-          <Menu>about us</Menu>
+          <Menu>
+            <Link to="/aboutus">about us</Link>
+          </Menu>
         </MenuBox>
       </FooterContainer>
     </FooterWrap>
