@@ -460,7 +460,7 @@ function Icons() {
           <CodeBlock
             titles={['React', 'SVG']}
             codes={[
-              `import ${selectedData.name} from 'for-loop-icons'
+              `import { ${selectedData.name} } from 'for-loop-icons'
             
 <${selectedData.name} size={${sizeInput}} color={${hexColor}}>
             `,
