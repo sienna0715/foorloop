@@ -111,6 +111,7 @@ const MemerPositon = styled.span`
 const MemerUrl = styled.a`
   ${FONT_STYLE_V1.text.text_14_medium};
   color: ${PALLETTE_MAIN.main};
+  line-height: 1.5;
 `;
 
 function Aboutus() {
@@ -143,29 +144,31 @@ function Aboutus() {
               <MemerImg src={designer1} alt="designer-hyejin" />
               <MemerName>Lee Hye Jin</MemerName>
               <MemerPositon>Designer</MemerPositon>
-              <MemerUrl>.</MemerUrl>
               <MemerUrl>lhj941123@gmail.com</MemerUrl>
+              <MemerUrl>.</MemerUrl>
             </Member>
             <Member>
               <MemerImg src={designer2} alt="designer-miye" />
               <MemerName>Gil Mi Ye</MemerName>
               <MemerPositon>Designer</MemerPositon>
-              <MemerUrl>.</MemerUrl>
-              <MemerUrl>.</MemerUrl>
+              <MemerUrl>gilmiye0516@gmail.com</MemerUrl>
+              <MemerUrl href="https://www.behance.net/gilmiyaed2fd">
+                Portfolio
+              </MemerUrl>
             </Member>
             <Member>
               <MemerImg src={developer2} alt="develper-moosung" />
               <MemerName>Kim Moo Sung</MemerName>
               <MemerPositon>FrontEnd Developer</MemerPositon>
-              <MemerUrl href="https://github.com/lapmu">Github</MemerUrl>
               <MemerUrl>antjdgkdl@gmail.com</MemerUrl>
+              <MemerUrl href="https://github.com/lapmu">Github</MemerUrl>
             </Member>
             <Member>
               <MemerImg src={developer1} alt="develper-sion" />
               <MemerName>Lee Si On</MemerName>
               <MemerPositon>FrontEnd Developer</MemerPositon>
-              <MemerUrl href="https://github.com/sienna0715">Github</MemerUrl>
               <MemerUrl>sion8120@gmail.com</MemerUrl>
+              <MemerUrl href="https://github.com/sienna0715">Github</MemerUrl>
             </Member>
           </MemberBox>
         </Section>
