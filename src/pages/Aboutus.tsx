@@ -151,7 +151,7 @@ function Aboutus() {
               <MemerImg src={designer2} alt="designer-miye" />
               <MemerName>Gil Mi Ye</MemerName>
               <MemerPositon>Designer</MemerPositon>
-              <MemerUrl>gilmiyae0516@gmail.com</MemerUrl>
+              <MemerUrl>gilmiye0516@gmail.com</MemerUrl>
               <MemerUrl href="https://www.behance.net/gilmiyaed2fd">
                 Portfolio
               </MemerUrl>
