@@ -99,7 +99,7 @@ const codeData = [
     name: 'input_default',
     code: [
       `// <InputDefault width={500} />
-<InputDefault width={size} />`,
+<InputDefault width={value} />`,
       '',
     ],
     component: (
@@ -113,7 +113,7 @@ const codeData = [
     name: 'input_count',
     code: [
       `// <InputCount width={500} />
-<InputCount width={size} />`,
+<InputCount width={value} />`,
       '',
     ],
     component: (
@@ -137,7 +137,7 @@ const codeData = [
   3) 대문자, 소문자, 숫자, 특수기호 조합 8자리 이상
   /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,25}$/
 */
-<InputCheck width={size} check={/^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/} />`,
+<InputCheck width={value} check={/^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/} />`,
       '',
     ],
     component: (
@@ -150,7 +150,7 @@ const codeData = [
     id: 4,
     name: 'dropdown_default',
     code: [
-      `<DefaultDropdown width={size} list={['옵션 1', '옵션 2', '옵션 3', ...]}/>`,
+      `<DefaultDropdown width={value} list={['옵션 1', '옵션 2', '옵션 3', ...]}/>`,
       '',
     ],
     component: (
@@ -164,7 +164,7 @@ const codeData = [
     name: 'search_bar',
     code: [
       `// <SearchBar width={500} />
-<SearchBar width={size} />`,
+<SearchBar width={value} />`,
       '',
     ],
     component: (
@@ -178,7 +178,7 @@ const codeData = [
     name: 'checkbox_beige',
     code: [
       `// <CheckboxBeige scale={3} />
-<CheckboxBeige scale={size} />`,
+<CheckboxBeige scale={value} />`,
       '',
     ],
     component: (
@@ -192,7 +192,7 @@ const codeData = [
     name: 'round_checkbox_beige',
     code: [
       `// <RCheckboxBeige scale={3} />
-<RCheckboxBeige scale={size} />`,
+<RCheckboxBeige scale={value} />`,
       '',
     ],
     component: (
@@ -206,7 +206,7 @@ const codeData = [
     name: 'checkbox_beige_label',
     code: [
       `// <CheckboxBeigeLabel scale={3} />
-<CheckboxBeigeLabel scale={size} />`,
+<CheckboxBeigeLabel scale={value} />`,
       '',
     ],
     component: (
@@ -220,7 +220,7 @@ const codeData = [
     name: 'round_checkbox_beige_label',
     code: [
       `// <RCheckboxBeigeLabel scale={3} />
-<RCheckboxBeigeLabel scale={size} />`,
+<RCheckboxBeigeLabel scale={value} />`,
       '',
     ],
     component: (
@@ -234,7 +234,7 @@ const codeData = [
     name: 'checkbox_red',
     code: [
       `// <CheckboxRed scale={3} />
-<CheckboxRed scale={size} />`,
+<CheckboxRed scale={value} />`,
       '',
     ],
     component: (
@@ -248,7 +248,7 @@ const codeData = [
     name: 'round_checkbox_red',
     code: [
       `// <RCheckboxRed scale={3} />
-<RCheckboxRed scale={size} />`,
+<RCheckboxRed scale={value} />`,
       '',
     ],
     component: (
@@ -262,7 +262,7 @@ const codeData = [
     name: 'checkbox_red_label',
     code: [
       `// <CheckboxRedLabel scale={3} />
-<CheckboxRedLabel scale={size} />`,
+<CheckboxRedLabel scale={value} />`,
       '',
     ],
     component: (
@@ -276,7 +276,7 @@ const codeData = [
     name: 'round_checkbox_red_label',
     code: [
       `// <RCheckboxRedLabel scale={3} />
-<RCheckboxRedLabel scale={size} />`,
+<RCheckboxRedLabel scale={value} />`,
       '',
     ],
     component: (
@@ -290,7 +290,7 @@ const codeData = [
     name: 'checkbox_black',
     code: [
       `// <CheckboxBlack scale={3} />
-<CheckboxBlack scale={size} />`,
+<CheckboxBlack scale={value} />`,
       '',
     ],
     component: (
@@ -304,7 +304,7 @@ const codeData = [
     name: 'round_checkbox_black',
     code: [
       `// <RCheckboxBlack scale={3} />
-<RCheckboxBlack scale={size} />`,
+<RCheckboxBlack scale={value} />`,
       '',
     ],
     component: (
@@ -318,7 +318,7 @@ const codeData = [
     name: 'chceckbox_black_label',
     code: [
       `// <CheckboxBlackLabel scale={3} />
-<CheckboxBlackLabel scale={size} />`,
+<CheckboxBlackLabel scale={value} />`,
       '',
     ],
     component: (
@@ -332,7 +332,7 @@ const codeData = [
     name: 'round_checkbox_black_label',
     code: [
       `// <RCheckboxBlackLabel scale={3} />
-<RCheckboxBlackLabel scale={size} />`,
+<RCheckboxBlackLabel scale={value} />`,
       '',
     ],
     component: (
@@ -345,7 +345,11 @@ const codeData = [
   {
     id: 18,
     name: 'button_default',
-    code: ['<DefaultButton />', ''],
+    code: [
+      `// <DefaultButton size={80} />
+<DefaultButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <DefaultButton />
@@ -355,7 +359,11 @@ const codeData = [
   {
     id: 19,
     name: 'button_plus_left',
-    code: ['<PlusButton />', ''],
+    code: [
+      `// <PlusButton size={115} />
+<PlusButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <PlusButton />
@@ -365,7 +373,11 @@ const codeData = [
   {
     id: 20,
     name: 'button_plus_right',
-    code: ['<RPlusButton />', ''],
+    code: [
+      `// <RPlusButton size={115} />
+<RPlusButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <RPlusButton />
@@ -375,7 +387,11 @@ const codeData = [
   {
     id: 21,
     name: 'button_outline',
-    code: ['<OutLineButton />', ''],
+    code: [
+      `// <OutLineButton size={80} />
+<OutLineButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <OutLineButton />
@@ -385,7 +401,11 @@ const codeData = [
   {
     id: 22,
     name: 'button_outline_plus_left',
-    code: ['<OutLinePlusButton />', ''],
+    code: [
+      `// <OutLinePlusButton size={115} />
+<OutLinePlusButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <OutLinePlusButton />
@@ -395,7 +415,11 @@ const codeData = [
   {
     id: 23,
     name: 'button_outline_plus_right',
-    code: ['<ROutLinePlusButton />', ''],
+    code: [
+      `// <ROutLinePlusButton size={115} />
+<ROutLinePlusButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <ROutLinePlusButton />
@@ -405,7 +429,11 @@ const codeData = [
   {
     id: 24,
     name: 'button_outline_filled',
-    code: ['<FilledOutLineButton />', ''],
+    code: [
+      `// <FilledOutLineButton size={80} />
+<FilledOutLineButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <FilledOutLineButton />
@@ -415,7 +443,11 @@ const codeData = [
   {
     id: 25,
     name: 'button_outline_filled_plus_left',
-    code: ['<FilledOutLinePlusButton />', ''],
+    code: [
+      `// <FilledOutLinePlusButton size={115} />
+<FilledOutLinePlusButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <FilledOutLinePlusButton />
@@ -425,7 +457,11 @@ const codeData = [
   {
     id: 26,
     name: 'button_outline_filled_plus_right',
-    code: ['<RFilledOutLinePlusButton />', ''],
+    code: [
+      `// <RFilledOutLinePlusButton size={115} />
+<RFilledOutLinePlusButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <RFilledOutLinePlusButton />
@@ -435,7 +471,11 @@ const codeData = [
   {
     id: 27,
     name: 'button_default_dark',
-    code: ['<DarkDefaultButton />', ''],
+    code: [
+      `// <DarkDefaultButton size={80} />
+<DarkDefaultButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <DarkDefaultButton />
@@ -445,7 +485,11 @@ const codeData = [
   {
     id: 28,
     name: 'button_plus_left_dark',
-    code: ['<DarkPlusButton />', ''],
+    code: [
+      `// <DarkPlusButton size={115} />
+<DarkPlusButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <DarkPlusButton />
@@ -455,7 +499,11 @@ const codeData = [
   {
     id: 29,
     name: 'button_plus_right_dark',
-    code: ['<RDarkPlusButton />', ''],
+    code: [
+      `// <RDarkPlusButton size={115} />
+<RDarkPlusButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <RDarkPlusButton />
@@ -465,7 +513,11 @@ const codeData = [
   {
     id: 30,
     name: 'button_outline_disable',
-    code: ['<DisableOutLineButton />', ''],
+    code: [
+      `// <DisableOutLineButton size={80} />
+<DisableOutLineButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <DisableOutLineButton />
@@ -475,7 +527,11 @@ const codeData = [
   {
     id: 31,
     name: 'button_disable',
-    code: ['<DisableButton />', ''],
+    code: [
+      `// <DisableButton size={80} />
+<DisableButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <DisableButton />
@@ -485,7 +541,11 @@ const codeData = [
   {
     id: 32,
     name: 'button_filled_disable',
-    code: ['<DisableFilledButton />', ''],
+    code: [
+      `// <DisableFilledButton size={80} />
+<DisableFilledButton size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <DisableFilledButton />
@@ -495,7 +555,11 @@ const codeData = [
   {
     id: 33,
     name: 'toggle_aos',
-    code: ['<AosToggle />', ''],
+    code: [
+      `// <AosToggle size={40} /> />
+<AosToggle size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <AosToggle />
@@ -505,7 +569,11 @@ const codeData = [
   {
     id: 34,
     name: 'toggle_ios',
-    code: ['<IosToggle />', ''],
+    code: [
+      `// <IosToggle size={40} /> />
+<IosToggle size={value} />`,
+      '',
+    ],
     component: (
       <Suspense fallback={renderLoader()}>
         <IosToggle />
