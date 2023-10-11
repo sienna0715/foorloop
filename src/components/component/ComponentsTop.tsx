@@ -237,13 +237,13 @@ interface IComponentsTopProps {
   currentItem: string;
 }
 
-export const value = { size: 0 };
+export const valueStore = { value: 0 };
 
 function ComponentsTop({ currentItem }: IComponentsTopProps) {
   const [isFill, setIsFill] = useState('false');
   const [size, setSize] = useState(0);
   const datas = codeDatas[+currentItem];
-  const code = datas?.code[0].replace('size', `${size}`);
+  const code = datas?.code[0].replace('value', `${size}`);
 
   const isFillClickHandler = () => {
     if (isFill === 'true') {
@@ -258,7 +258,7 @@ function ComponentsTop({ currentItem }: IComponentsTopProps) {
   };
 
   useEffect(() => {
-    value.size = size;
+    valueStore.value = size;
   }, [size]);
 
   return (
