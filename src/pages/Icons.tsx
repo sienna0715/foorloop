@@ -465,9 +465,10 @@ function Icons() {
             titles={['React', 'SVG']}
             codes={[
               `import { ${selectedData.name} } from 'for-loop-icons'
-            
-<${selectedData.name} size='${sizeInput}' color='${hexColor}'>
-            `,
+
+function App () {
+  return <${selectedData.name} size={${sizeInput}} color='${hexColor}'>;
+} `,
               selectedData.icon(hexColor, '370'),
             ]}
           />
