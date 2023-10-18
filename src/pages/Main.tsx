@@ -6,7 +6,7 @@ import Intro from '../components/main/Intro';
 import Landing from '../components/main/Landing';
 import MainColorTypography from '../components/main/MainC&T';
 import MainComponent from '../components/main/MainComponent';
-import MainIcon from '../components/main/MainIcon';
+import MainIcon from '../components/main/icon/MainIcon';
 
 const MainWrap = styled.div`
   display: flex;
