@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+// components
 import MainIconBackground from './MainIconBackground';
 import MainIconList from './MainIconList';
 
